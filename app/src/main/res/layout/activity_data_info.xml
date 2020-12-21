@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ff_ff_ff"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_top_bar" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_10"
+        android:background="@color/color_f2_f3_f8" />
+
+    <LinearLayout
+        android:id="@+id/llEducation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dimen_16"
+        android:paddingRight="@dimen/dimen_8">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/app_education"
+            android:textColor="@color/color_0d_0d_0d"
+            android:textSize="@dimen/dimen_16" />
+
+        <TextView
+            android:id="@+id/tvEducation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableRight="@drawable/jd_icon_next"
+            android:gravity="center_vertical|right"
+            android:hint="@string/app_please_select_highest_education"
+            android:singleLine="true"
+            android:textColor="@color/color_0d_0d_0d"
+            android:textColorHint="@color/color_db_db_db"
+            android:textSize="@dimen/dimen_16" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1"
+        android:layout_marginLeft="@dimen/dimen_16"
+        android:layout_marginRight="@dimen/dimen_16"
+        android:background="@color/color_f2_f3_f8" />
+
+    <LinearLayout
+        android:id="@+id/llIncome"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dimen_16"
+        android:paddingRight="@dimen/dimen_8">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/app_income_year"
+            android:textColor="@color/color_0d_0d_0d"
+            android:textSize="@dimen/dimen_16" />
+
+        <TextView
+            android:id="@+id/tvIncomeYear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableRight="@drawable/jd_icon_next"
+            android:gravity="center_vertical|right"
+            android:hint="@string/app_please_select_income_year"
+            android:singleLine="true"
+            android:textColor="@color/color_0d_0d_0d"
+            android:textColorHint="@color/color_db_db_db"
+            android:textSize="@dimen/dimen_16" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1"
+        android:layout_marginLeft="@dimen/dimen_16"
+        android:layout_marginRight="@dimen/dimen_16"
+        android:background="@color/color_f2_f3_f8" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dimen_16"
+        android:paddingRight="@dimen/dimen_16">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/app_loan_use"
+            android:textColor="@color/color_0d_0d_0d"
+            android:textSize="@dimen/dimen_16" />
+
+        <EditText
+            android:id="@+id/etLoanUse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical|right"
+            android:hint="@string/app_please_input_loan_use"
+            android:singleLine="true"
+            android:textColor="@color/color_0d_0d_0d"
+            android:textColorHint="@color/color_db_db_db"
+            android:textSize="@dimen/dimen_16" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1"
+        android:layout_marginLeft="@dimen/dimen_16"
+        android:layout_marginRight="@dimen/dimen_16"
+        android:background="@color/color_f2_f3_f8" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dimen_16"
+        android:paddingRight="@dimen/dimen_27">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="@string/app_had_house"
+            android:textColor="@color/color_0d_0d_0d"
+            android:textSize="@dimen/dimen_16" />
+
+        <RadioGroup
+            android:id="@+id/rgHouse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbHadHouse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:button="@null"
+                android:checked="true"
+                android:drawableLeft="@drawable/app_choose_selector"
+                android:drawablePadding="@dimen/dimen_8"
+                android:text="@string/app_had"
+                android:textColor="@color/color_0d_0d_0d"
+                android:textSize="@dimen/dimen_16" />
+
+            <RadioButton
+                android:id="@+id/rbNoHouse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dimen_44"
+                android:button="@null"
+                android:drawableLeft="@drawable/app_choose_selector"
+                android:drawablePadding="@dimen/dimen_8"
+                android:text="@string/app_no"
+                android:textColor="@color/color_0d_0d_0d"
+                android:textSize="@dimen/dimen_16" />
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1"
+        android:layout_marginLeft="@dimen/dimen_16"
+        android:layout_marginRight="@dimen/dimen_16"
+        android:background="@color/color_f2_f3_f8" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dimen_16"
+        android:paddingRight="@dimen/dimen_27">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="@string/app_had_car"
+            android:textColor="@color/color_0d_0d_0d"
+            android:textSize="@dimen/dimen_16" />
+
+        <RadioGroup
+            android:id="@+id/rgCar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbHadCar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:button="@null"
+                android:drawableLeft="@drawable/app_choose_selector"
+                android:drawablePadding="@dimen/dimen_8"
+                android:checked="true"
+                android:text="@string/app_had"
+                android:textColor="@color/color_0d_0d_0d"
+                android:textSize="@dimen/dimen_16" />
+
+            <RadioButton
+                android:id="@+id/rbNoCar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dimen_44"
+                android:button="@null"
+                android:drawableLeft="@drawable/app_choose_selector"
+                android:drawablePadding="@dimen/dimen_8"
+                android:text="@string/app_no"
+                android:textColor="@color/color_0d_0d_0d"
+                android:textSize="@dimen/dimen_16" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1"
+        android:layout_marginLeft="@dimen/dimen_16"
+        android:layout_marginRight="@dimen/dimen_16"
+        android:background="@color/color_f2_f3_f8" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tvSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_49"
+        android:layout_marginLeft="@dimen/dimen_16"
+        android:layout_marginRight="@dimen/dimen_16"
+        android:background="@drawable/app_shape_4968ea_25"
+        android:gravity="center"
+        android:text="@string/app_submit"
+        android:textColor="@color/color_ff_ff_ff"
+        android:textSize="@dimen/dimen_18" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

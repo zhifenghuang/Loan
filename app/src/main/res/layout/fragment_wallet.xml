@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ff_ff_ff"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dimen_16"
+    android:paddingRight="@dimen/dimen_16">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_19"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="@dimen/dimen_50"
+            android:layout_height="@dimen/dimen_50"
+            android:src="@drawable/app_shape_000000_circle" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_19"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="南极小企鹅"
+                android:textColor="@color/color_0d_0d_0d"
+                android:textSize="@dimen/dimen_18"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="625362514"
+                android:textColor="@color/color_8b_8b_8b"
+                android:textSize="@dimen/dimen_16" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dimen_18">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_107"
+                android:background="@drawable/app_gradient_4968ea_to_6f3dfe_45"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dimen_20"
+                android:paddingRight="@dimen/dimen_22">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/app_account_balance"
+                        android:textColor="@color/color_e6_e9_f8"
+                        android:textSize="@dimen/dimen_13" />
+
+                    <TextView
+                        android:id="@+id/tvBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="912.23"
+                        android:textColor="@color/color_ff_ff_ff"
+                        android:textSize="@dimen/dimen_30"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvWithdraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/app_shape_ffffff_25"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dimen_19"
+                    android:paddingRight="@dimen/dimen_19"
+                    android:text="@string/app_withdraw_now"
+                    android:textColor="@color/color_49_68_ea"
+                    android:textSize="@dimen/dimen_13" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_18"
+                android:text="@string/app_my_bank_card"
+                android:textColor="@color/color_0d_0d_0d"
+                android:textSize="@dimen/dimen_18"
+                android:textStyle="bold" />
+
+            <com.common.lib.view.ScaleLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:background="@drawable/jd_qianbao_bankcard"
+                app:width_height_scale="0.4252">
+
+                <TextView
+                    android:id="@+id/tvBankName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_26"
+                    android:paddingLeft="@dimen/dimen_19"
+                    android:paddingRight="@dimen/dimen_19"
+                    android:text="渣打银行"
+                    android:textColor="@color/color_ff_ff_ff"
+                    android:textSize="@dimen/dimen_16" />
+
+                <TextView
+                    android:id="@+id/tvBankCardNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvBankName"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:paddingLeft="@dimen/dimen_19"
+                    android:paddingRight="@dimen/dimen_19"
+                    android:text="**** **** **** 7258"
+                    android:textColor="@color/color_ff_ff_ff"
+                    android:textSize="@dimen/dimen_30"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvNoBankCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/app_no_bind_bank_card"
+                    android:textColor="@color/color_ff_ff_ff"
+                    android:textSize="@dimen/dimen_18"
+                    android:visibility="gone" />
+
+
+            </com.common.lib.view.ScaleLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:drawableLeft="@drawable/jd_qianbao_anquan"
+                android:drawablePadding="@dimen/dimen_8"
+                android:gravity="center_vertical"
+                android:text="@string/app_bank_protect_account_money"
+                android:textColor="@color/color_db_db_db"
+                android:textSize="@dimen/dimen_13" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:text="@string/app_withdraw_status_title"
+                android:textColor="@color/color_0d_0d_0d"
+                android:textSize="@dimen/dimen_18"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="@dimen/dimen_90"
+                    android:text="@string/app_withdraw_time"
+                    android:textColor="@color/color_8b_8b_8b"
+                    android:textSize="@dimen/dimen_16" />
+
+                <TextView
+                    android:id="@+id/tvWithdrawTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2020-11-19  18：05"
+                    android:textColor="@color/color_0d_0d_0d"
+                    android:textSize="@dimen/dimen_16" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="@dimen/dimen_90"
+                    android:text="@string/app_withdraw_money"
+                    android:textColor="@color/color_8b_8b_8b"
+                    android:textSize="@dimen/dimen_16" />
+
+                <TextView
+                    android:id="@+id/tvWithdrawMoney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="912.23（฿）"
+                    android:textColor="@color/color_0d_0d_0d"
+                    android:textSize="@dimen/dimen_16" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="@dimen/dimen_90"
+                    android:text="@string/app_withdraw_status"
+                    android:textColor="@color/color_8b_8b_8b"
+                    android:textSize="@dimen/dimen_16" />
+
+                <TextView
+                    android:id="@+id/tvWithdrawStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_withdraw_status_0"
+                    android:textColor="@color/color_f2_bc_0b"
+                    android:textSize="@dimen/dimen_16" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="@dimen/dimen_90"
+                    android:text="@string/app_withdraw_reason"
+                    android:textColor="@color/color_8b_8b_8b"
+                    android:textSize="@dimen/dimen_16" />
+
+                <TextView
+                    android:id="@+id/tvWithdrawReason"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="提现正在审核中，请耐心等待"
+                    android:textColor="@color/color_0d_0d_0d"
+                    android:textSize="@dimen/dimen_16" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

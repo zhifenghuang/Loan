@@ -1,0 +1,164 @@
+<resources>
+    <string name="app_name">Loan</string>
+
+
+    <string name="app_can_loan_highest_money">最高1,000,000贷款额度</string>
+    <string name="app_loan_tip">10分钟到账月利率最低只需0.5％\n无需抵押凭身份证即可贷款</string>
+    <string name="app_login">登录</string>
+    <string name="app_register">注册</string>
+    <string name="app_please_input_phone">请输入你的手机号</string>
+    <string name="app_please_input_password">请输入你的密码</string>
+    <string name="app_please_input_verify_code">请输入你的验证码</string>
+    <string name="app_get_ver_code">获取验证码</string>
+    <string name="app_send_again">重新发送</string>
+    <string name="app_register_login">注册并登录</string>
+
+    <string name="app_my_loan">我的借款</string>
+    <string name="app_wallet">钱包</string>
+    <string name="app_service">客服</string>
+    <string name="app_mine">我的</string>
+
+    <string name="app_jd_e_loan">京东E贷</string>
+    <string name="app_easy_loan">轻松贷款</string>
+    <string name="app_quick_loan">快速放款</string>
+    <string name="app_highest_money">最高可贷100万泰铢</string>
+    <string name="app_ten_minute_loan">10分钟放款</string>
+    <string name="app_estimate_loan_value">预计贷款金额（฿）</string>
+    <string name="app_month_rate">月利率</string>
+    <string name="app_loan_time_month">贷款时间（月）</string>
+    <string name="app_loan_time">贷款时间</string>
+    <string name="app_apply_now">立即申请</string>
+    <string name="app_money_0">10,000-50,000</string>
+    <string name="app_money_1">50,000-100,000</string>
+    <string name="app_money_2">100,000-200,000</string>
+    <string name="app_money_3">200,000-500,000</string>
+    <string name="app_money_4">500,000-\n1,000,000</string>
+    <string name="app_money_5">1,000,000以上</string>
+    <string name="app_loan_time_0">12个月</string>
+    <string name="app_loan_time_1">18个月</string>
+    <string name="app_loan_time_2">24个月</string>
+    <string name="app_loan_time_3">36个月</string>
+    <string name="app_sum_month">个月</string>
+
+    <string name="app_account_balance">账户余额（฿）</string>
+    <string name="app_withdraw_now">立即提现</string>
+    <string name="app_my_bank_card">我的银行卡</string>
+    <string name="app_no_bind_bank_card">没有绑定的银行卡</string>
+    <string name="app_bank_protect_account_money">账户资金安全由银行保障</string>
+    <string name="app_withdraw_status_title">提现状态</string>
+    <string name="app_withdraw_time">提现时间：</string>
+    <string name="app_withdraw_money">提现金额：</string>
+    <string name="app_xxx_money">%1$s（฿）</string>
+    <string name="app_withdraw_status">提现状态：</string>
+    <string name="app_withdraw_status_0">提现审核</string>
+    <string name="app_withdraw_status_1">提现失败</string>
+    <string name="app_withdraw_status_2">提现成功</string>
+    <string name="app_withdraw_reason">原因：</string>
+
+    <string name="app_your_line_service_manager">你的专属Line客服经理</string>
+    <string name="app_click_contact">点击联系</string>
+    <string name="app_service_time">客服的工作时间为：每天早上09:00至晚上09:00</string>
+
+    <string name="app_wallet_balance">钱包余额</string>
+    <string name="app_real_name_verify">实名验证</string>
+    <string name="app_not_verify">未认证</string>
+    <string name="app_my_loan_2">我的贷款</string>
+    <string name="app_my_back_money">我的还款</string>
+    <string name="app_online_service">在线客服</string>
+    <string name="app_common_question">常见问题</string>
+
+    <string name="app_setting">设定</string>
+    <string name="app_modify_login_psw">修改登录密码</string>
+    <string name="app_about_us">关于我们</string>
+    <string name="app_version">版本</string>
+    <string name="app_logout">退出登录</string>
+
+    <string name="app_old_psw">旧密码</string>
+    <string name="app_please_input_old_psw">请输入旧密码</string>
+    <string name="app_new_psw">新密码</string>
+    <string name="app_please_input_new_psw">请输入新密码</string>
+    <string name="app_sure_new_psw">确认新密码</string>
+    <string name="app_please_input_new_psw_again">请再次输入新密码</string>
+
+    <string name="app_identity_security_auth">身份安全验证</string>
+    <string name="app_real_name_tip">为保障您的资金安全，请如实填写以下信息</string>
+    <string name="app_identity_info">身份信息</string>
+    <string name="app_completed">已完成</string>
+    <string name="app_data_info">资料信息</string>
+    <string name="app_bank_card">收款银行卡</string>
+    <string name="app_phone_auth">手机认证</string>
+    <string name="app_hand_mark">手写签名</string>
+    <string name="app_go_blank">去填写</string>
+
+    <string name="app_real_name">真实姓名</string>
+    <string name="app_please_input_real_name">请输入你的真实姓名</string>
+    <string name="app_cer_no">身份证号</string>
+    <string name="app_please_input_cer_no">请输入你的13位身份证号</string>
+    <string name="app_upload_cer_phone">上传身份证照片</string>
+    <string name="app_upload_front_cer_phone">上传身份证正面照片</string>
+    <string name="app_upload_back_cer_phone">上传身份证反面照片</string>
+    <string name="app_submit">确认提交</string>
+
+    <string name="app_education">学历</string>
+    <string name="app_please_select_highest_education">请选择本人最高学历</string>
+    <string name="app_income_year">个人年收入</string>
+    <string name="app_please_select_income_year">请选择个人年收入</string>
+    <string name="app_loan_use">贷款用途</string>
+    <string name="app_please_input_loan_use">请输入贷款用途</string>
+    <string name="app_had_house">有无房产</string>
+    <string name="app_had_car">有无汽车</string>
+    <string name="app_had">有</string>
+    <string name="app_no">无</string>
+    <string name="app_ok">确定</string>
+    <string name="app_education_0">初中及以下</string>
+    <string name="app_education_1">高中</string>
+    <string name="app_education_2">大学</string>
+    <string name="app_education_3">大学以上</string>
+    <string name="app_income_0">100,000以下</string>
+    <string name="app_income_1">100,001-300,000</string>
+    <string name="app_income_2">300,001-500,000</string>
+    <string name="app_income_3">500,001-1,000,000</string>
+    <string name="app_income_4">1,000,000-500,000-</string>
+
+
+    <string name="app_card_owner_name">持卡人姓名</string>
+    <string name="app_please_input_card_owner_name">请输入持卡人姓名</string>
+    <string name="app_open_card_bank">开户银行</string>
+    <string name="app_please_select_bank">请选择所属银行</string>
+    <string name="app_bank_card_no">银行卡号</string>
+    <string name="app_please_input_card_no">请输入16位银行卡卡号</string>
+
+    <string name="app_phone_number">手机号码</string>
+
+    <string name="app_write_again">重写</string>
+    <string name="app_hand_write_tip">请在虚线内签字 签名需规范、完整、字迹清晰</string>
+
+    <string name="app_loan_no_xxx">贷款编号：%1$s</string>
+    <string name="app_loan_money">贷款金额</string>
+    <string name="app_apply_time">申请时间</string>
+    <string name="app_look_contract">查看合同</string>
+    <string name="app_loan_detail">借款详情</string>
+    <string name="app_loan_status_0">审核中</string>
+    <string name="app_loan_status_1">审核成功</string>
+    <string name="app_loan_status_2">审核失败</string>
+
+    <string name="app_not_back_loan">未还款</string>
+    <string name="app_back_loan_time">还款时间</string>
+    <string name="app_back_loan_money">还款金额</string>
+    <string name="app_back_loan_way">还款方式</string>
+    <string name="app_you_have_no_back_loan_order">你当前没有任何还款订单</string>
+
+
+    <string name="app_loan_progress">贷款进度</string>
+    <string name="app_submit_complete">提交完成</string>
+    <string name="app_receive_success">到账成功</string>
+    <string name="app_information">情况说明</string>
+    <string name="app_explain">说明：</string>
+    <string name="app_loan_detail_1">贷款明细</string>
+    <string name="app_order_no">订单编号：%1$s</string>
+    <string name="app_loan_money_xxx">贷款金额：%1$s</string>
+    <string name="app_loan_time_xxx">贷款时间：%1$s</string>
+    <string name="app_receive_bank">到账银行：%1$s</string>
+    <string name="app_back_month_xxx">每月还款：%1$s</string>
+    <string name="app_back_information">还款说明：%1$s</string>
+</resources>

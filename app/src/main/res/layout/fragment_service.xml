@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ff_ff_ff"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_44"
+        android:text="@string/app_service"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:textColor="@color/color_0d_0d_0d"
+        android:textSize="@dimen/dimen_18" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dimen_30"
+        android:src="@drawable/jd_kefu_ai"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_your_line_service_manager"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dimen_4"
+        android:textColor="@color/color_49_68_ea"
+        android:textSize="@dimen/dimen_18" />
+
+
+    <TextView
+        android:id="@+id/tvContact"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_49"
+        android:text="@string/app_click_contact"
+        android:layout_marginTop="@dimen/dimen_42"
+        android:textColor="@color/color_ff_ff_ff"
+        android:layout_marginLeft="@dimen/dimen_16"
+        android:layout_marginRight="@dimen/dimen_16"
+        android:gravity="center"
+        android:background="@drawable/app_shape_4968ea_25"
+        android:textSize="@dimen/dimen_18" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_service_time"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:textColor="@color/color_0d_0d_0d"
+        android:textSize="@dimen/dimen_13" />
+
+
+</LinearLayout>

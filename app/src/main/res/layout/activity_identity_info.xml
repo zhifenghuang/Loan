@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ff_ff_ff"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_top_bar" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_10"
+        android:background="@color/color_f2_f3_f8" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dimen_16"
+        android:paddingRight="@dimen/dimen_16">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/app_real_name"
+            android:textColor="@color/color_0d_0d_0d"
+            android:textSize="@dimen/dimen_16" />
+
+        <EditText
+            android:id="@+id/etRealName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical|right"
+            android:hint="@string/app_please_input_real_name"
+            android:singleLine="true"
+            android:textColor="@color/color_0d_0d_0d"
+            android:textColorHint="@color/color_db_db_db"
+            android:textSize="@dimen/dimen_16" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1"
+        android:layout_marginLeft="@dimen/dimen_16"
+        android:layout_marginRight="@dimen/dimen_16"
+        android:background="@color/color_f2_f3_f8" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dimen_16"
+        android:paddingRight="@dimen/dimen_16">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/app_cer_no"
+            android:textColor="@color/color_0d_0d_0d"
+            android:textSize="@dimen/dimen_16" />
+
+        <EditText
+            android:id="@+id/etCerNo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical|right"
+            android:hint="@string/app_please_input_cer_no"
+            android:maxLength="13"
+            android:singleLine="true"
+            android:inputType="number"
+            android:textColor="@color/color_0d_0d_0d"
+            android:textColorHint="@color/color_db_db_db"
+            android:textSize="@dimen/dimen_16" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_10"
+        android:background="@color/color_f2_f3_f8" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_16"
+        android:layout_marginTop="@dimen/dimen_19"
+        android:text="@string/app_upload_cer_phone"
+        android:textColor="@color/color_0d_0d_0d"
+        android:textSize="@dimen/dimen_16" />
+
+    <RelativeLayout
+        android:id="@+id/rlCerFront"
+        android:layout_width="250dp"
+        android:layout_height="@dimen/dimen_170"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dimen_20">
+
+        <ImageView
+            android:id="@+id/ivCerFront"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/jd_shim_zheng" />
+
+        <TextView
+            android:id="@+id/tvCerFront"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dimen_28"
+            android:text="@string/app_upload_front_cer_phone"
+            android:textColor="@color/color_49_68_ea"
+            android:textSize="@dimen/dimen_16" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlCerBack"
+        android:layout_width="250dp"
+        android:layout_height="@dimen/dimen_170"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dimen_20">
+
+        <ImageView
+            android:id="@+id/ivCerBack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/jd_shim_fan" />
+
+        <TextView
+            android:id="@+id/tvCerBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dimen_28"
+            android:text="@string/app_upload_back_cer_phone"
+            android:textColor="@color/color_49_68_ea"
+            android:textSize="@dimen/dimen_16" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tvSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_49"
+        android:layout_marginLeft="@dimen/dimen_16"
+        android:layout_marginRight="@dimen/dimen_16"
+        android:background="@drawable/app_shape_4968ea_25"
+        android:gravity="center"
+        android:text="@string/app_submit"
+        android:textColor="@color/color_ff_ff_ff"
+        android:textSize="@dimen/dimen_18" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

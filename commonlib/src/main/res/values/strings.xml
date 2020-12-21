@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<resources>
+    <string name="common_ok">确定</string>
+    <string name="common_cancel">取消</string>
+    <string name="common_take_photo">相机拍照</string>
+    <string name="common_record">相机拍摄</string>
+    <string name="common_album">相册选择</string>
+</resources>
