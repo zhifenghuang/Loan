@@ -3,6 +3,8 @@ package com.elephant.loan.activity;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.core.content.ContextCompat;
+
 import com.common.lib.activity.BaseActivity;
 import com.common.lib.mvp.contract.EmptyContract;
 import com.common.lib.mvp.presenter.EmptyPresenter;
@@ -24,6 +26,8 @@ public class LoanDetailActivity extends BaseActivity<EmptyContract.Presenter> im
 
     @Override
     protected void onCreated(@Nullable Bundle savedInstanceState) {
+        setTopStatusBarStyle(R.id.flTop);
+        findViewById(R.id.topView).setBackgroundColor(ContextCompat.getColor(this, R.color.color_ff_ff_ff));
         setText(R.id.tv_title, R.string.app_loan_detail);
     }
 

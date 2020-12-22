@@ -1,9 +1,7 @@
 package com.common.lib.network
 
 import android.text.TextUtils
-import com.common.lib.bean.ArticleBean
-import com.common.lib.bean.BasicResponse
-import com.common.lib.bean.RealInfoBean
+import com.common.lib.bean.*
 import com.common.lib.manager.ConfigurationManager
 import com.common.lib.manager.DataManager
 import com.common.lib.utils.BaseUtils
@@ -23,6 +21,7 @@ import java.io.File
 import java.io.IOException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
+import java.time.temporal.TemporalAmount
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.TimeoutException
 
@@ -128,10 +127,31 @@ class HttpMethods private constructor() {
         toSubscribe(observable, observer)
     }
 
+    fun paramsIndex(
+        observer: HttpObserver<BasicResponse<ArrayList<HashMap<String, String>>>, ArrayList<HashMap<String, String>>>
+    ) {
+        val observable = api.paramsIndex(
+            BaseUtils.getDeviceId(
+                ConfigurationManager.getInstance().getContext()!!
+            )!!
+        )
+        toSubscribe(observable, observer)
+    }
+
     fun banner(
         observer: HttpObserver<BasicResponse<String>, String>
     ) {
         val observable = api.banner()
+        toSubscribe(observable, observer)
+    }
+
+    fun applyLoan(
+        amount: String,
+        a_class: String,
+        term: String,
+        observer: HttpObserver<BasicResponse<Any>, Any>
+    ) {
+        val observable = api.applyLoan(amount, a_class, term)
         toSubscribe(observable, observer)
     }
 
@@ -146,6 +166,20 @@ class HttpMethods private constructor() {
         observer: HttpObserver<BasicResponse<ArrayList<ArticleBean>>, ArrayList<ArticleBean>>
     ) {
         val observable = api.aboutUs()
+        toSubscribe(observable, observer)
+    }
+
+    fun balance(
+        observer: HttpObserver<BasicResponse<BalanceBean>, BalanceBean>
+    ) {
+        val observable = api.balance()
+        toSubscribe(observable, observer)
+    }
+
+    fun loanInfo(
+        observer: HttpObserver<BasicResponse<ArrayList<LoanInfoBean>>, ArrayList<LoanInfoBean>>
+    ) {
+        val observable = api.loanInfo()
         toSubscribe(observable, observer)
     }
 

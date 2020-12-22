@@ -32,13 +32,28 @@
     <string name="app_money_1">50,000-100,000</string>
     <string name="app_money_2">100,000-200,000</string>
     <string name="app_money_3">200,000-500,000</string>
-    <string name="app_money_4">500,000-\n1,000,000</string>
+    <string name="app_money_4">500,000-1,000,000</string>
     <string name="app_money_5">1,000,000以上</string>
     <string name="app_loan_time_0">12个月</string>
     <string name="app_loan_time_1">18个月</string>
     <string name="app_loan_time_2">24个月</string>
     <string name="app_loan_time_3">36个月</string>
     <string name="app_sum_month">个月</string>
+    <string name="app_sorry">抱歉</string>
+    <string name="app_please_verify_real_name_first">请先实名认证之后在申请贷款</string>
+    <string name="app_click_to_real_name">点击刷新到实名认证界面</string>
+    <string name="app_click_look_contract">点击查看贷款合同</string>
+    <string name="app_loan_agreement">我本人已经认真阅读贷款合同，并彻底核对了贷款信息。点击确定申请贷款按钮之后，贷款合同正式生效。如果因我个人原因违约，愿意承担一切法律后果。</string>
+    <string name="app_sure_apply_loan">确定申请贷款</string>
+
+    <string name="app_contralation">恭喜</string>
+    <string name="app_loan_success_tip">你的贷款订单申请成功\n贷款审核成功后，本平台会通过短信或电话通知你</string>
+    <string name="app_the_window_will_close_xxx_second">此窗口会在%1$s秒后自动关闭</string>
+    <string name="app_loan_failed_tip">你已成功申请了贷款\n暂时无法继续申请贷款\n详情请联系在线客服</string>
+
+
+    <string name="app_sure_loan_info">贷款信息确认</string>
+    <string name="app_loan_user_info">贷款人姓名：%1$s\n\n贷款人身份证号：%2$s\n\n贷款人手机号：%3$s\n\n预计贷款金额：%4$s\n\n贷款时间：%5$s\n\n个月每月利率：%6$s\n</string>
 
     <string name="app_account_balance">账户余额（฿）</string>
     <string name="app_withdraw_now">立即提现</string>
@@ -62,6 +77,7 @@
     <string name="app_wallet_balance">钱包余额</string>
     <string name="app_real_name_verify">实名验证</string>
     <string name="app_not_verify">未认证</string>
+    <string name="app_verified">已认证</string>
     <string name="app_my_loan_2">我的贷款</string>
     <string name="app_my_back_money">我的还款</string>
     <string name="app_online_service">在线客服</string>
@@ -118,7 +134,7 @@
     <string name="app_income_1">100,001-300,000</string>
     <string name="app_income_2">300,001-500,000</string>
     <string name="app_income_3">500,001-1,000,000</string>
-    <string name="app_income_4">1,000,000-500,000-</string>
+    <string name="app_income_4">1,000,001-5,000,000</string>
 
 
     <string name="app_card_owner_name">持卡人姓名</string>

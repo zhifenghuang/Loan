@@ -24,6 +24,8 @@ class MyDialogFragment(layout: Int) : DialogFragment(), View.OnClickListener {
 
     private var mIsNeedDismiss = false
 
+    private var mOutClickDismiss = false
+
 
     fun setOnMyDialogListener(onMyDialogListener: OnMyDialogListener?) {
         mOnMyDialogListener = onMyDialogListener
@@ -78,6 +80,7 @@ class MyDialogFragment(layout: Int) : DialogFragment(), View.OnClickListener {
             val width = ViewGroup.LayoutParams.MATCH_PARENT
             val height = ViewGroup.LayoutParams.WRAP_CONTENT
             dialog.window!!.setLayout(width, height)
+            dialog.setCanceledOnTouchOutside(mOutClickDismiss)
         }
     }
 
@@ -90,6 +93,10 @@ class MyDialogFragment(layout: Int) : DialogFragment(), View.OnClickListener {
 
     fun setNeedDismiss(isNeedDismiss: Boolean) {
         mIsNeedDismiss = isNeedDismiss
+    }
+
+    fun setOutClickDismiss(outClickDismiss: Boolean) {
+        mOutClickDismiss = outClickDismiss
     }
 
     override fun onClick(view: View) {

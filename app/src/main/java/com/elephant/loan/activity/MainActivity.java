@@ -88,6 +88,11 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
     @Override
     protected void updateUIText() {
         getPresenter().getRealInfo();
+        getBalance();
+    }
+
+    public void getBalance() {
+        getPresenter().balance();
     }
 
     private void resetBottomBar(int currentPos) {

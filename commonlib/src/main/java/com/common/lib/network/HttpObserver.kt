@@ -1,15 +1,19 @@
 package com.common.lib.network
 
 
+import android.content.ComponentName
+import android.content.Intent
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
 import com.common.lib.bean.BasicResponse
+import com.common.lib.manager.ConfigurationManager
+import com.common.lib.manager.DataManager
 import com.common.lib.mvp.IView
-import com.common.lib.utils.LogUtil
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
+
 
 class HttpObserver<T : BasicResponse<Data>, Data> : Observer<T> {
 
@@ -60,13 +64,24 @@ class HttpObserver<T : BasicResponse<Data>, Data> : Observer<T> {
         if (t.isSuccess()) {
             listener?.onSuccess(t.data, t.msg)
         } else {
+            if (t.code == 404) {
+                val intent = Intent()
+                val com = ComponentName(
+                    "com.elephant.loan",
+                    "com.elephant.loan.activity.LoginActivity"
+                )
+                intent.component = com
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                ConfigurationManager.getInstance().getContext()?.startActivity(intent)
+                DataManager.getInstance().logout()
+                return
+            }
             listener?.dataError(t.code, t.msg)
         }
     }
 
     override fun onError(e: Throwable) {
         hideLoading()
-        LogUtil.LogE(e.message)
         listener?.connectError(e)
     }
 

@@ -61,7 +61,7 @@ abstract class BaseDialogActivity : BaseMediaActivity() {
 
     fun logout() {
         onLogout()
-        DataManager.getInstance().saveMyInfo(null)
+        DataManager.getInstance().logout()
         EventBus.getDefault().post(BaseUtils.getMap(EventBusEvent.FINISH_ACTIVITIES, ""))
   //      ARouter.getInstance().build(APP_LOGIN_ACTIVITY).navigation()
     }

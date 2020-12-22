@@ -1,9 +1,11 @@
 package com.common.lib.manager
 
 import android.text.TextUtils
+import com.common.lib.bean.BalanceBean
 import com.common.lib.bean.RealInfoBean
 import com.common.lib.utils.PrefUtil
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 
 class DataManager private constructor() {
@@ -54,9 +56,26 @@ class DataManager private constructor() {
         return mMyUserInfo
     }
 
-//    fun getMyUserId(): Int {
-//        return getMyInfo()?.userId!!
-//    }
+    fun saveLoanInfo(list: ArrayList<HashMap<String, String>>) {
+        PrefUtil.putString(
+            ConfigurationManager.getInstance().getContext(),
+            "loan_info",
+            mGson.toJson(list)
+        )
+    }
+
+
+    fun getLoanInfo(): ArrayList<HashMap<String, String>>? {
+        val str =
+            PrefUtil.getString(ConfigurationManager.getInstance().getContext(), "loan_info", "")
+        if (TextUtils.isEmpty(str)) {
+            return null
+        }
+        return mGson.fromJson(
+            str,
+            object : TypeToken<ArrayList<HashMap<String, String>>?>() {}.type
+        )
+    }
 
     fun saveToken(token: String) {
         PrefUtil.putString(ConfigurationManager.getInstance().getContext(), "token", token)
@@ -64,6 +83,27 @@ class DataManager private constructor() {
 
     fun getToken(): String {
         return PrefUtil.getString(ConfigurationManager.getInstance().getContext(), "token", "")
+    }
+
+    fun saveBalance(bean: BalanceBean?) {
+        PrefUtil.putString(
+            ConfigurationManager.getInstance().getContext(),
+            "balance",
+            if (bean == null) {
+                ""
+            } else {
+                mGson.toJson(bean)
+            }
+        )
+    }
+
+    fun getBalance(): BalanceBean? {
+        val str =
+            PrefUtil.getString(ConfigurationManager.getInstance().getContext(), "balance", "")
+        if (TextUtils.isEmpty(str)) {
+            return null
+        }
+        return mGson.fromJson(str, BalanceBean::class.java)
     }
 
 
@@ -86,5 +126,6 @@ class DataManager private constructor() {
     fun logout() {
         saveMyInfo(null)
         saveToken("")
+        saveBalance(null)
     }
 }

@@ -3,13 +3,19 @@ package com.elephant.loan.fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 
+import com.common.lib.bean.BalanceBean;
 import com.common.lib.bean.RealInfoBean;
 import com.common.lib.constant.EventBusEvent;
 import com.common.lib.fragment.BaseFragment;
 import com.common.lib.manager.DataManager;
 import com.elephant.loan.R;
+import com.elephant.loan.activity.CommonProblemActivity;
+import com.elephant.loan.activity.MainActivity;
+import com.elephant.loan.activity.MyBackLoanActivity;
+import com.elephant.loan.activity.MyLoanActivity;
 import com.elephant.loan.activity.RealNameVerifyActivity;
 import com.elephant.loan.activity.SettingActivity;
 import com.elephant.loan.contract.MineContract;
@@ -40,6 +46,9 @@ public class MineFragment extends BaseFragment<MineContract.Presenter> implement
         setTopStatusBarStyle(view);
         setViewsOnClickListener(R.id.ivSetting, R.id.llWallet, R.id.llRealNameVerify,
                 R.id.llMyLoan, R.id.llMyBackMoney, R.id.llOnlineService, R.id.llCommonQuestion);
+        if (DataManager.Companion.getInstance().getBalance() == null) {
+            ((MainActivity) getActivity()).getBalance();
+        }
     }
 
     @Override
@@ -55,22 +64,41 @@ public class MineFragment extends BaseFragment<MineContract.Presenter> implement
                 openActivity(RealNameVerifyActivity.class);
                 break;
             case R.id.llMyLoan:
+                openActivity(MyLoanActivity.class);
                 break;
             case R.id.llMyBackMoney:
+                openActivity(MyBackLoanActivity.class);
                 break;
             case R.id.llOnlineService:
                 getPresenter().getServiceUrl();
                 break;
             case R.id.llCommonQuestion:
+                openActivity(CommonProblemActivity.class);
                 break;
         }
     }
 
     @Override
     protected void updateUIText() {
+        BalanceBean bean = DataManager.Companion.getInstance().getBalance();
+        setText(R.id.tvBalance, bean == null ? "0.00" : String.valueOf(bean.getMoney()));
         RealInfoBean infoBean = DataManager.Companion.getInstance().getMyInfo();
-        setText(R.id.tvId, String.valueOf(infoBean.getUser_id()));
-        setText(R.id.tvName, infoBean.getName());
+        if (TextUtils.isEmpty(infoBean.getName())) {
+            setText(R.id.tvId, "");
+            setText(R.id.tvName, infoBean.getLoginAccount());
+        } else {
+            setText(R.id.tvId, String.valueOf(infoBean.getUser_id()));
+            setText(R.id.tvName, infoBean.getName());
+        }
+        if (TextUtils.isEmpty(infoBean.getName())
+                || TextUtils.isEmpty(infoBean.getEducation())
+                || TextUtils.isEmpty(infoBean.getBank_id_card())
+                || TextUtils.isEmpty(infoBean.getPhone())
+                || TextUtils.isEmpty(infoBean.getSign())) {
+            setText(R.id.tvVerifyStatus, R.string.app_not_verify);
+        } else {
+            setText(R.id.tvVerifyStatus, R.string.app_verified);
+        }
     }
 
     @Override

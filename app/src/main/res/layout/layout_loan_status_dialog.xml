@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dimen_16">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/app_shape_ffffff_8"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dimen_22"
+        android:paddingTop="@dimen/dimen_26"
+        android:paddingRight="@dimen/dimen_22"
+        android:paddingBottom="@dimen/dimen_20">
+
+        <ImageView
+            android:id="@+id/ivStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/jd_home_t_succ" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="@string/app_contralation"
+            android:textColor="@color/color_00_00_00"
+            android:textSize="@dimen/dimen_18"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:gravity="center"
+            android:text="@string/app_loan_success_tip"
+            android:textColor="@color/color_8b_8b_8b"
+            android:textSize="@dimen/dimen_16" />
+
+
+        <TextView
+            android:id="@+id/tvCloseTip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:gravity="center"
+            android:textColor="@color/color_49_68_ea"
+            android:textSize="@dimen/dimen_13" />
+    </LinearLayout>
+
+</RelativeLayout>

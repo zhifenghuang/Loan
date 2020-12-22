@@ -1,5 +1,6 @@
 package com.elephant.loan.presenter;
 
+import com.common.lib.bean.BalanceBean;
 import com.common.lib.bean.RealInfoBean;
 import com.common.lib.constant.EventBusEvent;
 import com.common.lib.manager.DataManager;
@@ -38,13 +39,42 @@ public class MainPresenter extends BasePresenter<MainContract.View> implements M
                         if (getRootView() == null) {
                             return;
                         }
-                        DataManager.Companion.getInstance().saveMyInfo(bean);
                         getRootView().getRealInfoSuccess(bean);
                     }
 
                     @Override
                     public void dataError(@Nullable int code, @Nullable String msg) {
 
+                    }
+
+                    @Override
+                    public void connectError(@Nullable Throwable e) {
+
+                    }
+                }, getCompositeDisposable()));
+    }
+
+    @Override
+    public void balance() {
+        HttpMethods.Companion.getInstance().balance(
+                new HttpObserver(false, getRootView(), new HttpListener<BalanceBean>() {
+                    @Override
+                    public void onSuccess(@Nullable BalanceBean bean, @Nullable String msg) {
+                        if (bean == null) {
+                            return;
+                        }
+                        DataManager.Companion.getInstance().saveBalance(bean);
+                        HashMap<String, Object> map = new HashMap<>();
+                        map.put(EventBusEvent.GET_REAL_INFO_SUCCESS, "");
+                        EventBus.getDefault().post(map);
+                    }
+
+                    @Override
+                    public void dataError(@Nullable int code, @Nullable String msg) {
+                        if (getRootView() == null) {
+                            return;
+                        }
+                        getRootView().showErrorDialog(code, msg);
                     }
 
                     @Override

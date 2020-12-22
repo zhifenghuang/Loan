@@ -37,6 +37,9 @@ interface Api {
         @Query("phone") phone: String
     ): Observable<BasicResponse<Any>>
 
+    @GET("api/params/index")
+    fun paramsIndex(@Query("key") key: String): Observable<BasicResponse<ArrayList<HashMap<String,String>>>>
+
     @GET("api/params/banner")
     fun banner(): Observable<BasicResponse<String>>
 
@@ -45,6 +48,12 @@ interface Api {
 
     @GET("api/article/about")
     fun aboutUs(): Observable<BasicResponse<ArrayList<ArticleBean>>>
+
+    @GET("api/cashout/umoney")
+    fun balance(): Observable<BasicResponse<BalanceBean>>
+
+    @GET("api/loan/info")
+    fun loanInfo(): Observable<BasicResponse<ArrayList<LoanInfoBean>>>
 
     @POST("api/params/cpwd")
     fun changePsw(
