@@ -1,14 +1,11 @@
 package com.elephant.loan.presenter;
 
-import com.common.lib.constant.EventBusEvent;
 import com.common.lib.manager.DataManager;
 import com.common.lib.mvp.BasePresenter;
 import com.common.lib.network.HttpListener;
 import com.common.lib.network.HttpMethods;
 import com.common.lib.network.HttpObserver;
 import com.elephant.loan.contract.MyLoanContract;
-
-import org.greenrobot.eventbus.EventBus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -57,9 +54,6 @@ public class MyLoanPresenter extends BasePresenter<MyLoanContract.View> implemen
                             return;
                         }
                         DataManager.Companion.getInstance().saveLoanInfo(list);
-                        HashMap<String, Object> map = new HashMap<>();
-                        map.put(EventBusEvent.GET_REAL_INFO_SUCCESS, "");
-                        EventBus.getDefault().post(map);
                         if (getRootView() == null) {
                             return;
                         }

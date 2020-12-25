@@ -2,74 +2,82 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="40dp">
+    android:padding="@dimen/dimen_16">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/common_dialog_background"
         android:orientation="vertical"
-        android:paddingTop="15dp">
+        android:paddingLeft="@dimen/dimen_16"
+        android:paddingTop="@dimen/dimen_16"
+        android:paddingRight="@dimen/dimen_16"
+        android:paddingBottom="@dimen/dimen_24">
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:src="@drawable/common_jd_home_t_close" />
 
         <TextView
             android:id="@+id/tv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:textColor="@color/color_00_00_00"
-            android:textSize="16dp" />
+            android:layout_marginTop="-24dp"
+            android:gravity="center"
+            android:textColor="@color/color_0d_0d_0d"
+            android:textSize="@dimen/dimen_18"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="@dimen/dimen_6"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:layout_marginRight="6dp"
             android:gravity="center"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:textColor="@color/color_00_00_00"
-            android:textSize="15dp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginTop="25dp"
-            android:background="@color/color_52_5a_65" />
+            android:textColor="@color/color_8b_8b_8b"
+            android:textSize="@dimen/dimen_16" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/dimen_6"
+            android:layout_marginTop="@dimen/dimen_30"
+            android:layout_marginRight="@dimen/dimen_6"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/btn1"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="@dimen/dimen_40"
                 android:layout_weight="1"
+                android:background="@drawable/common_dialog_btn1"
                 android:gravity="center"
-                android:textColor="@color/color_48_70_9c"
-                android:textSize="16dp" />
+                android:textColor="@color/color_49_68_ea"
+                android:textSize="@dimen/dimen_16" />
 
             <View
-                android:layout_width="0.5dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical"
-                android:background="@color/color_52_5a_65" />
+                android:layout_width="@dimen/dimen_20"
+                android:layout_height="@dimen/dimen_1" />
 
             <TextView
                 android:id="@+id/btn2"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="@dimen/dimen_40"
                 android:layout_weight="1"
+                android:background="@drawable/common_dialog_btn2"
                 android:gravity="center"
-                android:textColor="@color/color_48_70_9c"
-                android:textSize="16dp" />
+                android:textColor="@color/color_ff_ff_ff"
+                android:textSize="@dimen/dimen_16" />
 
         </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

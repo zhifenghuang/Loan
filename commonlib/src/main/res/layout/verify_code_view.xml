@@ -12,133 +12,133 @@
 
         <LinearLayout
             android:layout_width="40dp"
-            android:layout_height="50dp"
+            android:layout_height="41dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvCode0"
                 android:layout_width="match_parent"
-                android:layout_height="49dp"
+                android:layout_height="40dp"
                 android:background="@null"
                 android:gravity="center"
-                android:textColor="@color/color_00_00_00"
+                android:textColor="@color/color_a0_a7_bc"
                 android:textSize="@dimen/dimen_24" />
 
             <View
                 android:id="@+id/line0"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_ec_ed_ef" />
+                android:background="@color/color_a0_a7_bc" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="15dp"
+            android:layout_height="41dp"
+            android:layout_marginLeft="12dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvCode1"
                 android:layout_width="match_parent"
-                android:layout_height="49dp"
+                android:layout_height="40dp"
                 android:background="@null"
                 android:gravity="center"
-                android:textColor="@color/color_00_00_00"
+                android:textColor="@color/color_a0_a7_bc"
                 android:textSize="@dimen/dimen_24" />
 
             <View
                 android:id="@+id/line1"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_ec_ed_ef" />
+                android:background="@color/color_a0_a7_bc" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="15dp"
+            android:layout_height="41dp"
+            android:layout_marginLeft="12dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvCode2"
                 android:layout_width="match_parent"
-                android:layout_height="49dp"
+                android:layout_height="40dp"
                 android:background="@null"
                 android:gravity="center"
-                android:textColor="@color/color_00_00_00"
+                android:textColor="@color/color_a0_a7_bc"
                 android:textSize="@dimen/dimen_24" />
 
             <View
                 android:id="@+id/line2"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_ec_ed_ef" />
+                android:background="@color/color_a0_a7_bc" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="15dp"
+            android:layout_height="41dp"
+            android:layout_marginLeft="12dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvCode3"
                 android:layout_width="match_parent"
-                android:layout_height="49dp"
+                android:layout_height="40dp"
                 android:background="@null"
                 android:gravity="center"
-                android:textColor="@color/color_00_00_00"
+                android:textColor="@color/color_a0_a7_bc"
                 android:textSize="@dimen/dimen_24" />
 
             <View
                 android:id="@+id/line3"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_ec_ed_ef" />
+                android:background="@color/color_a0_a7_bc" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="15dp"
+            android:layout_height="41dp"
+            android:layout_marginLeft="12dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvCode4"
                 android:layout_width="match_parent"
-                android:layout_height="49dp"
+                android:layout_height="40dp"
                 android:background="@null"
                 android:gravity="center"
-                android:textColor="@color/color_00_00_00"
+                android:textColor="@color/color_a0_a7_bc"
                 android:textSize="@dimen/dimen_24" />
 
             <View
                 android:id="@+id/line4"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_ec_ed_ef" />
+                android:background="@color/color_a0_a7_bc" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="15dp"
+            android:layout_height="41dp"
+            android:layout_marginLeft="12dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvCode5"
                 android:layout_width="match_parent"
-                android:layout_height="49dp"
+                android:layout_height="40dp"
                 android:background="@null"
                 android:gravity="center"
-                android:textColor="@color/color_00_00_00"
+                android:textColor="@color/color_a0_a7_bc"
                 android:textSize="@dimen/dimen_24" />
 
             <View
                 android:id="@+id/line5"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_ec_ed_ef" />
+                android:background="@color/color_a0_a7_bc" />
         </LinearLayout>
     </LinearLayout>
 
@@ -148,8 +148,6 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/llCode"
         android:background="@android:color/transparent"
-        android:cursorVisible="false"
-        android:digits="0123456789"
-        android:inputType="number"
+        android:inputType="textPassword"
         android:textColor="@android:color/transparent" />
 </RelativeLayout>

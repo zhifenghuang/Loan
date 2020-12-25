@@ -15,6 +15,7 @@
         android:background="@color/color_f2_f3_f8" />
 
     <LinearLayout
+        android:id="@+id/ll1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_236"
         android:layout_marginLeft="@dimen/dimen_16"
@@ -31,6 +32,7 @@
 
     </LinearLayout>
 
+
     <TextView
         android:id="@+id/tvTip"
         android:layout_width="match_parent"
@@ -42,6 +44,40 @@
         android:text="@string/app_hand_write_tip"
         android:textColor="@color/color_0d_0d_0d"
         android:textSize="@dimen/dimen_16" />
+
+
+    <TextView
+        android:id="@+id/tvYourSign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_16"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_marginRight="@dimen/dimen_16"
+        android:text="@string/app_you_sign"
+        android:textColor="@color/color_0d_0d_0d"
+        android:textSize="@dimen/dimen_16"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_236"
+        android:layout_marginLeft="@dimen/dimen_16"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_marginRight="@dimen/dimen_16"
+        android:background="@drawable/app_shape_f2f3f8_8"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/ivSign"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center" />
+
+
+    </LinearLayout>
 
 
     <View

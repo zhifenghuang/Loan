@@ -38,7 +38,11 @@ interface Api {
     ): Observable<BasicResponse<Any>>
 
     @GET("api/params/index")
-    fun paramsIndex(@Query("key") key: String): Observable<BasicResponse<ArrayList<HashMap<String,String>>>>
+    fun paramsIndex(
+        @Query("device_type") device_type: Int,
+        @Query("device_info") device_info: String,
+        @Query("device_key") device_key: String
+    ): Observable<BasicResponse<ArrayList<HashMap<String, String>>>>
 
     @GET("api/params/banner")
     fun banner(): Observable<BasicResponse<String>>
@@ -48,6 +52,9 @@ interface Api {
 
     @GET("api/article/about")
     fun aboutUs(): Observable<BasicResponse<ArrayList<ArticleBean>>>
+
+    @GET("api/article/list")
+    fun articleList(): Observable<BasicResponse<ArrayList<ArticleBean>>>
 
     @GET("api/cashout/umoney")
     fun balance(): Observable<BasicResponse<BalanceBean>>
@@ -94,13 +101,13 @@ interface Api {
         @Part("id_card") id_card: RequestBody,
         @Part card_img1: MultipartBody.Part,
         @Part card_img2: MultipartBody.Part
-    ): Observable<BasicResponse<Any>>
+    ): Observable<BasicResponse<RealInfoBean>>
 
     @Multipart
     @POST("api/real/writesign")
     fun writeSign(
         @Part sign: MultipartBody.Part
-    ): Observable<BasicResponse<Any>>
+    ): Observable<BasicResponse<RealInfoBean>>
 
     @POST("api/real/bank")
     fun realBank(
@@ -115,4 +122,15 @@ interface Api {
     fun phoneVerify(
         @Query("phone") phone: String
     ): Observable<BasicResponse<Any>>
+
+    @POST("api/cashout/apply")
+    fun applyWithdraw(
+        @Query("code") code: String
+    ): Observable<BasicResponse<Any>>
+
+    @GET("api/cashout/info")
+    fun withdrawDetail(): Observable<BasicResponse<ArrayList<WithdrawDetailBean>>>
+
+    @GET("api/loan/repay")
+    fun getRepayList(): Observable<BasicResponse<ArrayList<RepayBean>>>
 }

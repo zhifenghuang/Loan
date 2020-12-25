@@ -47,7 +47,7 @@ abstract class BaseDialogFragment : BaseMediaFragment() {
     }
 
     fun showErrorDialog(errorCode: Int, msg: String?) {
-        if (TextUtils.isEmpty(msg)) {
+        if (TextUtils.isEmpty(msg) || msg.equals("null")) {
             return
         }
         val dialogFragment = showOneBtnDialog(msg, getString(R.string.common_ok))

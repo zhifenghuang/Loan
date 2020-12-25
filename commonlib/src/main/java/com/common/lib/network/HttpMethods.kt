@@ -34,9 +34,9 @@ class HttpMethods private constructor() {
 
     companion object {
         const val TAG = "HttpMethods"
-        const val CONNECT_TIMEOUT: Long = 60
-        const val WRITE_TIMEOUT: Long = 60
-        const val READ_TIMEOUT: Long = 60
+        const val CONNECT_TIMEOUT: Long = 30
+        const val WRITE_TIMEOUT: Long = 30
+        const val READ_TIMEOUT: Long = 30
 
         @Volatile
         private var instance: HttpMethods? = null
@@ -92,7 +92,7 @@ class HttpMethods private constructor() {
         api = retrofit.create(Api::class.java)
     }
 
-    private fun getBaseUrl(): String {
+    public fun getBaseUrl(): String {
         return "http://103.231.255.117:88/"
     }
 
@@ -131,9 +131,9 @@ class HttpMethods private constructor() {
         observer: HttpObserver<BasicResponse<ArrayList<HashMap<String, String>>>, ArrayList<HashMap<String, String>>>
     ) {
         val observable = api.paramsIndex(
-            BaseUtils.getDeviceId(
-                ConfigurationManager.getInstance().getContext()!!
-            )!!
+            1,
+            "android",
+            BaseUtils.getDeviceId(ConfigurationManager.getInstance().getContext()!!)!!
         )
         toSubscribe(observable, observer)
     }
@@ -169,6 +169,13 @@ class HttpMethods private constructor() {
         toSubscribe(observable, observer)
     }
 
+    fun articleList(
+        observer: HttpObserver<BasicResponse<ArrayList<ArticleBean>>, ArrayList<ArticleBean>>
+    ) {
+        val observable = api.articleList()
+        toSubscribe(observable, observer)
+    }
+
     fun balance(
         observer: HttpObserver<BasicResponse<BalanceBean>, BalanceBean>
     ) {
@@ -180,6 +187,28 @@ class HttpMethods private constructor() {
         observer: HttpObserver<BasicResponse<ArrayList<LoanInfoBean>>, ArrayList<LoanInfoBean>>
     ) {
         val observable = api.loanInfo()
+        toSubscribe(observable, observer)
+    }
+
+    fun applyWithDraw(
+        pas: String,
+        observer: HttpObserver<BasicResponse<Any>, Any>
+    ) {
+        val observable = api.applyWithdraw(pas)
+        toSubscribe(observable, observer)
+    }
+
+    fun withdrawDetail(
+        observer: HttpObserver<BasicResponse<ArrayList<WithdrawDetailBean>>, ArrayList<WithdrawDetailBean>>
+    ) {
+        val observable = api.withdrawDetail()
+        toSubscribe(observable, observer)
+    }
+
+    fun getRepayList(
+        observer: HttpObserver<BasicResponse<ArrayList<RepayBean>>, ArrayList<RepayBean>>
+    ) {
+        val observable = api.getRepayList()
         toSubscribe(observable, observer)
     }
 
@@ -216,7 +245,7 @@ class HttpMethods private constructor() {
         id_card: String,
         card_img1: File,
         card_img2: File,
-        observer: HttpObserver<BasicResponse<Any>, Any>
+        observer: HttpObserver<BasicResponse<RealInfoBean>, RealInfoBean>
     ) {
         val part1: MultipartBody.Part =
             MultipartBody.Part.createFormData(
@@ -241,7 +270,7 @@ class HttpMethods private constructor() {
 
     fun writeSign(
         sign: File,
-        observer: HttpObserver<BasicResponse<Any>, Any>
+        observer: HttpObserver<BasicResponse<RealInfoBean>, RealInfoBean>
     ) {
         val part: MultipartBody.Part =
             MultipartBody.Part.createFormData(

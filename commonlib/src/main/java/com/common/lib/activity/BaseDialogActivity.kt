@@ -1,5 +1,7 @@
 package com.common.lib.activity
 
+import android.content.ComponentName
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
@@ -10,6 +12,7 @@ import com.common.lib.constant.EventBusEvent
 import com.common.lib.dialog.CommonProgressDialog
 import com.common.lib.dialog.MyDialogFragment
 import com.common.lib.interfaces.OnClickCallback
+import com.common.lib.manager.ConfigurationManager
 import com.common.lib.manager.DataManager
 import com.common.lib.utils.BaseUtils
 import com.common.lib.utils.StringUtil
@@ -46,7 +49,7 @@ abstract class BaseDialogActivity : BaseMediaActivity() {
     }
 
     fun showErrorDialog(errorCode: Int, msg: String?) {
-        if (TextUtils.isEmpty(msg)) {
+        if (TextUtils.isEmpty(msg) || msg.equals("null")) {
             return
         }
         val dialogFragment = showOneBtnDialog(msg, getString(R.string.common_ok))
@@ -61,9 +64,15 @@ abstract class BaseDialogActivity : BaseMediaActivity() {
 
     fun logout() {
         onLogout()
+        val intent = Intent()
+        val com = ComponentName(
+            "com.elephant.loan",
+            "com.elephant.loan.activity.LoginActivity"
+        )
+        intent.component = com
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        ConfigurationManager.getInstance().getContext()?.startActivity(intent)
         DataManager.getInstance().logout()
-        EventBus.getDefault().post(BaseUtils.getMap(EventBusEvent.FINISH_ACTIVITIES, ""))
-  //      ARouter.getInstance().build(APP_LOGIN_ACTIVITY).navigation()
     }
 
     open fun showOneBtnDialog(
@@ -129,7 +138,49 @@ abstract class BaseDialogActivity : BaseMediaActivity() {
                 (view.findViewById<View>(R.id.tv2) as TextView).text = msg
                 (view.findViewById<View>(R.id.btn1) as TextView).text = btnText1
                 (view.findViewById<View>(R.id.btn2) as TextView).text = btnText2
-                dialogFragment.setDialogViewsOnClickListener(view, R.id.btn1, R.id.btn2)
+                dialogFragment.setDialogViewsOnClickListener(
+                    view,
+                    R.id.ivClose,
+                    R.id.btn1,
+                    R.id.btn2
+                )
+            }
+
+            override fun onViewClick(viewId: Int) {
+                if (viewId == R.id.btn2) {
+                    callBack?.onClick(viewId)
+                }
+            }
+        })
+        dialogFragment.show(supportFragmentManager, "MyDialogFragment")
+    }
+
+    open fun showTwoBtnDialog(
+        title: String?,
+        msg: String?,
+        msgColor: Int,
+        btnText1: String?,
+        btnText2: String?,
+        callBack: OnClickCallback? = null
+    ) {
+        val dialogFragment = MyDialogFragment(R.layout.layout_two_btn_dialog)
+        dialogFragment.setOnMyDialogListener(object : MyDialogFragment.OnMyDialogListener {
+            override fun initView(view: View?) {
+                if (TextUtils.isEmpty(title)) {
+                    view!!.findViewById<View>(R.id.tv1).visibility = View.GONE
+                } else {
+                    (view!!.findViewById<View>(R.id.tv1) as TextView).text = title
+                }
+                (view.findViewById<View>(R.id.tv2) as TextView).text = msg
+                (view.findViewById<View>(R.id.tv2) as TextView).setTextColor(msgColor)
+                (view.findViewById<View>(R.id.btn1) as TextView).text = btnText1
+                (view.findViewById<View>(R.id.btn2) as TextView).text = btnText2
+                dialogFragment.setDialogViewsOnClickListener(
+                    view,
+                    R.id.ivClose,
+                    R.id.btn1,
+                    R.id.btn2
+                )
             }
 
             override fun onViewClick(viewId: Int) {

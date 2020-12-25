@@ -42,6 +42,16 @@
             android:textColorHint="@color/color_db_db_db"
             android:textSize="@dimen/dimen_16" />
 
+        <TextView
+            android:id="@+id/tvEducation2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:paddingRight="@dimen/dimen_8"
+            android:singleLine="true"
+            android:textColor="@color/color_0d_0d_0d"
+            android:textSize="@dimen/dimen_16"
+            android:visibility="gone" />
 
     </LinearLayout>
 
@@ -79,6 +89,17 @@
             android:textColor="@color/color_0d_0d_0d"
             android:textColorHint="@color/color_db_db_db"
             android:textSize="@dimen/dimen_16" />
+
+        <TextView
+            android:id="@+id/tvIncomeYear2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:paddingRight="@dimen/dimen_8"
+            android:singleLine="true"
+            android:visibility="gone"
+            android:textColor="@color/color_0d_0d_0d"
+            android:textSize="@dimen/dimen_16" />
     </LinearLayout>
 
     <View
@@ -113,6 +134,16 @@
             android:singleLine="true"
             android:textColor="@color/color_0d_0d_0d"
             android:textColorHint="@color/color_db_db_db"
+            android:textSize="@dimen/dimen_16" />
+
+        <TextView
+            android:id="@+id/tvLoanUse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:singleLine="true"
+            android:visibility="gone"
+            android:textColor="@color/color_0d_0d_0d"
             android:textSize="@dimen/dimen_16" />
     </LinearLayout>
 
@@ -214,9 +245,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:button="@null"
+                android:checked="true"
                 android:drawableLeft="@drawable/app_choose_selector"
                 android:drawablePadding="@dimen/dimen_8"
-                android:checked="true"
                 android:text="@string/app_had"
                 android:textColor="@color/color_0d_0d_0d"
                 android:textSize="@dimen/dimen_16" />

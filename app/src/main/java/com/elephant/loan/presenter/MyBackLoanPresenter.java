@@ -1,37 +1,35 @@
 package com.elephant.loan.presenter;
 
-import com.common.lib.bean.RealInfoBean;
-import com.common.lib.constant.EventBusEvent;
+import com.common.lib.bean.RepayBean;
 import com.common.lib.mvp.BasePresenter;
 import com.common.lib.network.HttpListener;
 import com.common.lib.network.HttpMethods;
 import com.common.lib.network.HttpObserver;
-import com.elephant.loan.contract.HandWriteContract;
+import com.elephant.loan.contract.MyBackLoanContract;
 
-import org.greenrobot.eventbus.EventBus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.File;
-import java.util.HashMap;
+import java.util.ArrayList;
 
 
-public class HandWritePresenter extends BasePresenter<HandWriteContract.View> implements HandWriteContract.Presenter {
+public class MyBackLoanPresenter extends BasePresenter<MyBackLoanContract.View> implements MyBackLoanContract.Presenter {
 
-    public HandWritePresenter(@NotNull HandWriteContract.View rootView) {
+    public MyBackLoanPresenter(@NotNull MyBackLoanContract.View rootView) {
         super(rootView);
     }
 
+
     @Override
-    public void uploadHandWrite(File sign) {
-        HttpMethods.Companion.getInstance().writeSign(sign,
-                new HttpObserver(true, getRootView(), new HttpListener<RealInfoBean>() {
+    public void loanRepay() {
+        HttpMethods.Companion.getInstance().getRepayList(
+                new HttpObserver(getRootView(), new HttpListener<ArrayList<RepayBean>>() {
                     @Override
-                    public void onSuccess(@Nullable RealInfoBean bean, @Nullable String msg) {
+                    public void onSuccess(@Nullable ArrayList<RepayBean> list, @Nullable String msg) {
                         if (getRootView() == null) {
                             return;
                         }
-                        getRootView().uploadSuccess(bean, msg);
+                        getRootView().getLoanRepaySuccess(list);
                     }
 
                     @Override
@@ -39,7 +37,7 @@ public class HandWritePresenter extends BasePresenter<HandWriteContract.View> im
                         if (getRootView() == null) {
                             return;
                         }
-                        getRootView().uploadFailed(msg);
+                        getRootView().showErrorDialog(code, msg);
                     }
 
                     @Override

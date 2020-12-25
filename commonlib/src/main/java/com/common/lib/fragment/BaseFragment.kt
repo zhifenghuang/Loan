@@ -123,6 +123,10 @@ abstract class BaseFragment<P : IPresenter> : BaseDialogFragment(), View.OnClick
         tv.text = serverKey
     }
 
+    protected fun setText(tv: TextView, strId: Int) {
+        tv.text = getString(strId)
+    }
+
 
     protected fun setText(id: Int, strId: Int) {
         view!!.findViewById<TextView>(id).setText(getString(strId))

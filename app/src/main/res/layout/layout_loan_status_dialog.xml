@@ -10,7 +10,7 @@
         android:background="@drawable/app_shape_ffffff_8"
         android:orientation="vertical"
         android:paddingLeft="@dimen/dimen_22"
-        android:paddingTop="@dimen/dimen_26"
+        android:paddingTop="@dimen/dimen_14"
         android:paddingRight="@dimen/dimen_22"
         android:paddingBottom="@dimen/dimen_20">
 
@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/jd_home_t_succ" />
+            android:src="@drawable/jd_home_t_chengg" />
 
         <TextView
             android:id="@+id/tvStatus"

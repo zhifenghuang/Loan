@@ -13,6 +13,7 @@ object Constants {
     const val BUNDLE_EXTRA_4 = "extra_4"
 
     const val JPG_EXTENSION = ".jpg"
+    const val PNG_EXTENSION = ".jpg"
     const val MP4_EXTENSION = ".mp4"
 
 

@@ -153,6 +153,14 @@ abstract class BaseActivity<P : IPresenter> : BaseDialogActivity(), View.OnClick
         }
     }
 
+    protected fun setBackgroundColor(id: Int, colorResId: Int) {
+        findViewById<View>(id).setBackgroundColor(ContextCompat.getColor(this, colorResId))
+    }
+
+    protected fun setBackground(id: Int, drawableId: Int) {
+        findViewById<View>(id).setBackgroundResource(drawableId)
+    }
+
     protected fun setTextColor(tv: TextView, colorResId: Int) {
         tv.setTextColor(ContextCompat.getColor(this, colorResId))
     }
@@ -242,7 +250,7 @@ abstract class BaseActivity<P : IPresenter> : BaseDialogActivity(), View.OnClick
      *
      * @param view
      */
-    fun onBackClick(view: View) {
+    open fun onBackClick(view: View) {
         onBackPressed()
     }
 

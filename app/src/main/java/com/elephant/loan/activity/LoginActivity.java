@@ -69,10 +69,19 @@ public class LoginActivity extends BaseActivity<LoginContract.Presenter> impleme
         int viewId = v.getId();
         switch (viewId) {
             case R.id.tvLogin:
+                String phone = getTextById(R.id.etPhone);
+                if (TextUtils.isEmpty(phone)) {
+                    showToast(getString(R.string.app_please_input_phone));
+                    return;
+                }
+                if (!isPhoneCorrect(phone)) {
+                    showToast(getString(R.string.app_input_phone_wrong));
+                    return;
+                }
                 if (mType == 0) {
-                    getPresenter().login(getTextById(R.id.etPhone), MD5Util.INSTANCE.getMd5(getTextById(R.id.etPassword)));
+                    getPresenter().login(phone, MD5Util.INSTANCE.getMd5(getTextById(R.id.etPassword)));
                 } else {
-                    getPresenter().register(getTextById(R.id.etPhone), getTextById(R.id.etPassword),
+                    getPresenter().register(phone, getTextById(R.id.etPassword),
                             getTextById(R.id.etVerCode));
                 }
                 break;
@@ -114,9 +123,13 @@ public class LoginActivity extends BaseActivity<LoginContract.Presenter> impleme
                 }
                 break;
             case R.id.tvGetVerCode:
-                String phone = getTextById(R.id.etPhone);
+                phone = getTextById(R.id.etPhone);
                 if (TextUtils.isEmpty(phone)) {
                     showToast(getString(R.string.app_please_input_phone));
+                    return;
+                }
+                if (!isPhoneCorrect(phone)) {
+                    showToast(getString(R.string.app_input_phone_wrong));
                     return;
                 }
                 if (NetUtil.isConnected(this)) {
@@ -256,5 +269,16 @@ public class LoginActivity extends BaseActivity<LoginContract.Presenter> impleme
                 }
             }
         });
+    }
+
+    private boolean isPhoneCorrect(String phone) {
+        int length = phone.length();
+        if (length == 10) {
+            return phone.startsWith("06") || phone.startsWith("08") || phone.startsWith("09");
+        }
+        if (length == 9) {
+            return phone.startsWith("6") || phone.startsWith("8") || phone.startsWith("9");
+        }
+        return false;
     }
 }

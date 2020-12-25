@@ -11,6 +11,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.common.lib.activity.BaseActivity;
 import com.common.lib.bean.LoanInfoBean;
+import com.common.lib.constant.Constants;
 import com.elephant.loan.R;
 import com.elephant.loan.apapter.MyLoanAdapter;
 import com.elephant.loan.contract.MyLoanActivityContract;
@@ -82,7 +83,10 @@ public class MyLoanActivity extends BaseActivity<MyLoanActivityContract.Presente
                         case R.id.tvLookContract:
                             break;
                         case R.id.tvLoanDetail:
-                            openActivity(LoanDetailActivity.class);
+                            LoanInfoBean bean = getAdapter().getItem(position);
+                            Bundle bundle = new Bundle();
+                            bundle.putSerializable(Constants.BUNDLE_EXTRA, bean);
+                            openActivity(LoanDetailActivity.class, bundle);
                             break;
                     }
                 }

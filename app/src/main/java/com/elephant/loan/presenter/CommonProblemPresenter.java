@@ -1,37 +1,35 @@
 package com.elephant.loan.presenter;
 
-import com.common.lib.bean.RealInfoBean;
-import com.common.lib.constant.EventBusEvent;
+import com.common.lib.bean.ArticleBean;
 import com.common.lib.mvp.BasePresenter;
 import com.common.lib.network.HttpListener;
 import com.common.lib.network.HttpMethods;
 import com.common.lib.network.HttpObserver;
-import com.elephant.loan.contract.HandWriteContract;
+import com.elephant.loan.contract.CommonProblemContract;
 
-import org.greenrobot.eventbus.EventBus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.File;
-import java.util.HashMap;
+import java.util.ArrayList;
 
 
-public class HandWritePresenter extends BasePresenter<HandWriteContract.View> implements HandWriteContract.Presenter {
+public class CommonProblemPresenter extends BasePresenter<CommonProblemContract.View> implements CommonProblemContract.Presenter {
 
-    public HandWritePresenter(@NotNull HandWriteContract.View rootView) {
+    public CommonProblemPresenter(@NotNull CommonProblemContract.View rootView) {
         super(rootView);
     }
 
+
     @Override
-    public void uploadHandWrite(File sign) {
-        HttpMethods.Companion.getInstance().writeSign(sign,
-                new HttpObserver(true, getRootView(), new HttpListener<RealInfoBean>() {
+    public void getArticleList() {
+        HttpMethods.Companion.getInstance().articleList(
+                new HttpObserver(true, getRootView(), new HttpListener<ArrayList<ArticleBean>>() {
                     @Override
-                    public void onSuccess(@Nullable RealInfoBean bean, @Nullable String msg) {
+                    public void onSuccess(@Nullable ArrayList<ArticleBean> list, @Nullable String msg) {
                         if (getRootView() == null) {
                             return;
                         }
-                        getRootView().uploadSuccess(bean, msg);
+                        getRootView().getArticleListSuccess(list);
                     }
 
                     @Override
@@ -39,7 +37,7 @@ public class HandWritePresenter extends BasePresenter<HandWriteContract.View> im
                         if (getRootView() == null) {
                             return;
                         }
-                        getRootView().uploadFailed(msg);
+                        getRootView().showErrorDialog(code, msg);
                     }
 
                     @Override

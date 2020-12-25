@@ -6,16 +6,10 @@ import android.view.View;
 
 import com.common.lib.activity.BaseActivity;
 import com.common.lib.bean.RealInfoBean;
-import com.common.lib.constant.EventBusEvent;
 import com.common.lib.manager.DataManager;
-import com.common.lib.mvp.contract.EmptyContract;
-import com.common.lib.mvp.presenter.EmptyPresenter;
 import com.elephant.loan.R;
 import com.elephant.loan.contract.RealNameContract;
 import com.elephant.loan.presenter.RealNamePresenter;
-
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -103,19 +97,5 @@ public class RealNameVerifyActivity extends BaseActivity<RealNameContract.Presen
     @Override
     public void getRealInfoSuccess(RealInfoBean bean) {
         updateUIText();
-    }
-
-    @Override
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onReceive(HashMap<String, Object> map) {
-        if (map != null) {
-            try {
-                if (map.containsKey(EventBusEvent.REFRESH_INFO)) {
-                    getPresenter().getRealInfo();
-                }
-            } catch (Exception e) {
-
-            }
-        }
     }
 }

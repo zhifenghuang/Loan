@@ -54,6 +54,7 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
         mRange = getString(R.string.app_money_0);
         mLoanValue = "45000";
         resetView();
+        getPresenter().getLoanInfo();
     }
 
     @Override
@@ -214,6 +215,9 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
     }
 
     private void countTime(final TextView tv, final MyDialogFragment dialogFragment) {
+        if (getView() == null) {
+            return;
+        }
         tv.setText(getString(R.string.app_the_window_will_close_xxx_second, String.valueOf(mTotalTime)));
         tv.postDelayed(new Runnable() {
             @Override

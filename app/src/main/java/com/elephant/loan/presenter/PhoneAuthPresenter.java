@@ -33,7 +33,7 @@ public class PhoneAuthPresenter extends BasePresenter<PhoneAuthContract.View> im
                         if (getRootView() == null) {
                             return;
                         }
-                        getRootView().showErrorDialog(code, msg);
+                        getRootView().uploadFailed(msg);
                     }
 
                     @Override

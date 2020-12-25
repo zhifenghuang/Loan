@@ -4,8 +4,6 @@ import com.common.lib.bean.RealInfoBean;
 import com.common.lib.mvp.IPresenter;
 import com.common.lib.mvp.IView;
 
-import java.util.ArrayList;
-
 public class RealNameContract {
     public interface View extends IView {
         public void getRealInfoSuccess(RealInfoBean bean);

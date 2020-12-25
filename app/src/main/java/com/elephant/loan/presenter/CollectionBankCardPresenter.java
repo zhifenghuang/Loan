@@ -33,7 +33,7 @@ public class CollectionBankCardPresenter extends BasePresenter<CollectionBankCar
                         if (getRootView() == null) {
                             return;
                         }
-                        getRootView().showErrorDialog(code, msg);
+                        getRootView().uploadFailed(msg);
                     }
 
                     @Override

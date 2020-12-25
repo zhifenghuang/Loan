@@ -170,7 +170,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/app_shape_4968ea_20"
+            android:background="@drawable/app_shape_4968ea_25"
             android:gravity="center"
             android:text="@string/app_loan_detail"
             android:textColor="@color/color_ff_ff_ff"

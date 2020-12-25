@@ -19,6 +19,7 @@ import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.common.lib.constant.Constants.JPG_EXTENSION
+import com.common.lib.constant.Constants.PNG_EXTENSION
 import com.common.lib.utils.LanguageUtil.getLanguage
 import java.io.*
 import java.text.SimpleDateFormat
@@ -30,6 +31,15 @@ class BaseUtils {
 
         fun createImagePath(context: Context): String {
             val fileName: String = UidUtil.createUid() + JPG_EXTENSION
+            val dirPath = Environment.getExternalStorageDirectory()
+                .toString() + "/Android/data/" + context.packageName + "/download"
+            val file = File(dirPath)
+            if (!file.exists() || !file.isDirectory) file.mkdirs()
+            return "$dirPath/$fileName"
+        }
+
+        fun createPNGImagePath(context: Context): String {
+            val fileName: String = UidUtil.createUid() + PNG_EXTENSION
             val dirPath = Environment.getExternalStorageDirectory()
                 .toString() + "/Android/data/" + context.packageName + "/download"
             val file = File(dirPath)
@@ -166,11 +176,11 @@ class BaseUtils {
                 e.printStackTrace()
             } finally {
                 try {
-                    fout?.close()
                     if (bos != null) {
                         bos.flush()
                         bos.close()
                     }
+                    fout?.close()
                 } catch (e: IOException) {
                     e.printStackTrace()
                 }
@@ -185,7 +195,7 @@ class BaseUtils {
          * @param bmp
          */
         fun savePng(bmp: Bitmap, context: Context): File {
-            val jpegFile = File(createImagePath(context))
+            val jpegFile = File(createPNGImagePath(context))
             var fout: FileOutputStream? = null
             var bos: BufferedOutputStream? = null
             try {
@@ -197,11 +207,11 @@ class BaseUtils {
                 e.printStackTrace()
             } finally {
                 try {
-                    fout?.close()
                     if (bos != null) {
                         bos.flush()
                         bos.close()
                     }
+                    fout?.close()
                 } catch (e: IOException) {
                     e.printStackTrace()
                 }
@@ -226,11 +236,11 @@ class BaseUtils {
                 e.printStackTrace()
             } finally {
                 try {
-                    fout?.close()
                     if (bos != null) {
                         bos.flush()
                         bos.close()
                     }
+                    fout?.close()
                 } catch (e: IOException) {
                     e.printStackTrace()
                 }
@@ -539,9 +549,13 @@ class BaseUtils {
             val hour1 = calendar[Calendar.HOUR_OF_DAY]
             val minute1 = calendar[Calendar.MINUTE]
             if (year != year1) {
-                return year1.toString() + "-" + getNewText(month1) + "-" + getNewText(day1) + " " + getNewText(hour1) + ":" + getNewText(minute1)
+                return year1.toString() + "-" + getNewText(month1) + "-" + getNewText(day1) + " " + getNewText(
+                    hour1
+                ) + ":" + getNewText(minute1)
             } else if (month != month1 || day != day1) {
-                return getNewText(month1) + "-" + getNewText(day1) + " " + getNewText(hour1) + ":" + getNewText(minute1)
+                return getNewText(month1) + "-" + getNewText(day1) + " " + getNewText(hour1) + ":" + getNewText(
+                    minute1
+                )
             }
             return getNewText(hour1) + ":" + getNewText(minute1)
         }

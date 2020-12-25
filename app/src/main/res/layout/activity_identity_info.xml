@@ -41,6 +41,16 @@
             android:textColorHint="@color/color_db_db_db"
             android:textSize="@dimen/dimen_16" />
 
+        <TextView
+            android:id="@+id/tvRealName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:gravity="center_vertical|right"
+            android:singleLine="true"
+            android:textColor="@color/color_0d_0d_0d"
+            android:textSize="@dimen/dimen_16" />
+
 
     </LinearLayout>
 
@@ -78,6 +88,16 @@
             android:inputType="number"
             android:textColor="@color/color_0d_0d_0d"
             android:textColorHint="@color/color_db_db_db"
+            android:textSize="@dimen/dimen_16" />
+
+        <TextView
+            android:id="@+id/tvCerNo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:singleLine="true"
+            android:visibility="gone"
+            android:textColor="@color/color_0d_0d_0d"
             android:textSize="@dimen/dimen_16" />
     </LinearLayout>
 

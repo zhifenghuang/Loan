@@ -36,7 +36,7 @@ public class DataInfoPresenter extends BasePresenter<DataInfoContract.View> impl
                         if (getRootView() == null) {
                             return;
                         }
-                        getRootView().showErrorDialog(code, msg);
+                        getRootView().uploadFailed(msg);
                     }
 
                     @Override

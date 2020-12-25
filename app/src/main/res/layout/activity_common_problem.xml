@@ -14,10 +14,11 @@
         android:layout_height="@dimen/dimen_10"
         android:background="@color/color_f2_f3_f8" />
 
-    <com.common.lib.view.SmartRefreshRecyclerView
-        android:id="@+id/smartRefreshLayout"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="@color/color_f2_f3_f8"/>
 
 
 </LinearLayout>

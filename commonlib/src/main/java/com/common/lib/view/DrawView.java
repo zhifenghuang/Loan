@@ -124,6 +124,13 @@ public class DrawView extends View {
         return mDrawPathsList == null || mDrawPathsList.isEmpty();
     }
 
+    public void reDraw() {
+        if(mDrawPathsList!=null){
+            mDrawPathsList.clear();
+        }
+        invalidate();
+    }
+
 
     public boolean isDrawLineInfoInvalid(DrawLineInfo drawLineInfo) {   //判断DrawLineInfo是否无效
         return drawLineInfo == null || drawLineInfo.drawPaths == null || drawLineInfo.drawPaths.isEmpty();

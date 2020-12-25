@@ -4,21 +4,30 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import com.common.lib.activity.BaseActivity;
 import com.common.lib.bean.RealInfoBean;
 import com.common.lib.constant.Constants;
+import com.common.lib.dialog.MyDialogFragment;
+import com.common.lib.interfaces.OnClickCallback;
 import com.common.lib.manager.DataManager;
+import com.common.lib.network.HttpMethods;
 import com.common.lib.utils.BaseUtils;
 import com.common.lib.utils.BitmapUtil;
 import com.common.lib.utils.ChooseImageUtils;
 import com.common.lib.utils.CompressionBitmapUtil;
+import com.common.lib.utils.LogUtil;
 import com.elephant.loan.R;
 import com.elephant.loan.contract.IdentityInfoContract;
 import com.elephant.loan.presenter.IdentityInfoPresenter;
+import com.google.gson.Gson;
 import com.jakewharton.rxbinding3.widget.RxTextView;
 import com.lzy.imagepicker.ImagePicker;
 import com.lzy.imagepicker.bean.ImageItem;
@@ -58,9 +67,33 @@ public class IdentityInfoActivity extends BaseActivity<IdentityInfoContract.Pres
     @Override
     protected void onCreated(@Nullable Bundle savedInstanceState) {
         setText(R.id.tv_title, R.string.app_identity_info);
-        initInputListener();
-        mIsAllBlank = false;
-        setViewsOnClickListener(R.id.tvSubmit, R.id.rlCerFront, R.id.rlCerBack);
+
+        RealInfoBean realInfoBean = DataManager.Companion.getInstance().getMyInfo();
+        if (TextUtils.isEmpty(realInfoBean.getName())) {
+            initInputListener();
+            mIsAllBlank = false;
+            setViewsOnClickListener(R.id.tvSubmit, R.id.rlCerFront, R.id.rlCerBack);
+        } else {
+            setViewGone(R.id.etRealName, R.id.etCerNo, R.id.tvCerBack, R.id.tvCerFront);
+            setViewVisible(R.id.tvRealName, R.id.tvCerNo);
+            TextView tvSubmit = findViewById(R.id.tvSubmit);
+            tvSubmit.setBackgroundResource(R.drawable.app_shape_879cf5_25);
+            tvSubmit.setEnabled(false);
+            tvSubmit.setText(getString(R.string.app_had_submit));
+            setText(R.id.tvRealName, realInfoBean.getName());
+            setText(R.id.tvCerNo, realInfoBean.getId_card());
+            LogUtil.LogE(new Gson().toJson(realInfoBean));
+
+            String cardImg = realInfoBean.getCard_img1().replace("\\", "/");
+            BaseUtils.StaticParams.loadImage(this, 0,
+                    HttpMethods.Companion.getInstance().getBaseUrl() + cardImg,
+                    findViewById(R.id.ivCerFront));
+            cardImg = realInfoBean.getCard_img2().replace("\\", "/");
+            BaseUtils.StaticParams.loadImage(this, 0,
+                    HttpMethods.Companion.getInstance().getBaseUrl() + cardImg,
+                    findViewById(R.id.ivCerBack));
+        }
+
     }
 
     @NotNull
@@ -85,15 +118,96 @@ public class IdentityInfoActivity extends BaseActivity<IdentityInfoContract.Pres
     }
 
     @Override
-    public void uploadSuccess(String msg) {
+    public void uploadSuccess(RealInfoBean bean, String msg) {
         if (!TextUtils.isEmpty(msg)) {
             showToast(msg);
         }
-        RealInfoBean bean = DataManager.Companion.getInstance().getMyInfo();
-        bean.setName(getTextById(R.id.etRealName));
-        bean.setId_card(getTextById(R.id.etCerNo));
-        DataManager.Companion.getInstance().saveMyInfo(bean);
+        RealInfoBean realInfoBean = DataManager.Companion.getInstance().getMyInfo();
+        realInfoBean.setName(bean.getName());
+        realInfoBean.setId_card(bean.getId_card());
+        realInfoBean.setCard_img1(bean.getCard_img1());
+        realInfoBean.setCard_img2(bean.getCard_img2());
+        DataManager.Companion.getInstance().saveMyInfo(realInfoBean);
         finish();
+    }
+
+    @Override
+    public void onBackClick(View view) {
+        RealInfoBean realInfoBean = DataManager.Companion.getInstance().getMyInfo();
+        if (TextUtils.isEmpty(realInfoBean.getName())) {
+            showTwoBtnDialog(null,
+                    getString(R.string.app_sure_back),
+                    ContextCompat.getColor(this, R.color.color_0d_0d_0d),
+                    getString(R.string.app_cancel),
+                    getString(R.string.app_ok),
+                    new OnClickCallback() {
+                        @Override
+                        public void onClick(int viewId) {
+                            if (viewId == R.id.btn2) {
+                                finish();
+                            }
+                        }
+                    });
+        } else {
+            finish();
+        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            onBackClick(null);
+            return true;
+        } else {
+            return super.onKeyDown(keyCode, event);
+        }
+
+    }
+
+    @Override
+    public void uploadFailed(String msg) {
+        showUploadFailedDialog();
+    }
+
+    private int mTotalTime;
+
+    private void showUploadFailedDialog() {
+        final MyDialogFragment dialogFragment = new MyDialogFragment(R.layout.layout_loan_status_dialog);
+        dialogFragment.setOutClickDismiss(false);
+        dialogFragment.setOnMyDialogListener(new MyDialogFragment.OnMyDialogListener() {
+            @Override
+            public void initView(View view) {
+                ((ImageView) view.findViewById(R.id.ivStatus)).setImageResource(R.drawable.jd_home_t_zhu);
+                ((TextView) view.findViewById(R.id.tvStatus)).setText(getString(R.string.app_failed));
+                ((TextView) view.findViewById(R.id.tvTip)).setText(getString(R.string.app_failed_reason));
+                mTotalTime = 3;
+                countTime(view.findViewById(R.id.tvCloseTip), dialogFragment);
+            }
+
+            @Override
+            public void onViewClick(int viewId) {
+
+            }
+        });
+        dialogFragment.show(getSupportFragmentManager(), "MyDialogFragment");
+    }
+
+    private void countTime(final TextView tv, final MyDialogFragment dialogFragment) {
+        if (isDestroyed()) {
+            return;
+        }
+        tv.setText(getString(R.string.app_the_window_will_close_xxx_second, String.valueOf(mTotalTime)));
+        tv.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                --mTotalTime;
+                if (mTotalTime == 0) {
+                    dialogFragment.dismiss();
+                } else {
+                    countTime(tv, dialogFragment);
+                }
+            }
+        }, 1000);
     }
 
     @Override

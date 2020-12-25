@@ -8,6 +8,7 @@ import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnKeyListener
+import android.view.inputmethod.InputMethodManager
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.common.lib.R
@@ -74,7 +75,8 @@ class VerifyCodeView(context: Context?, attrs: AttributeSet?) : RelativeLayout(c
             etCode.isFocusable = true
             etCode.isFocusableInTouchMode = true
             etCode.requestFocus()
-            (context as BaseActivity<*>).showKeyboard(etCode)
+            val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.showSoftInput(etCode, 0)
         }, 500)
     }
 
@@ -86,7 +88,7 @@ class VerifyCodeView(context: Context?, attrs: AttributeSet?) : RelativeLayout(c
 //        val color_default = ContextCompat.getColor(context,R.color.color_404552)
 //        val color_focus = ContextCompat.getColor(context,R.color.color_dabc86)
         for (i in 0 until MAX_CODE_SIZE) {
-            tvCodes[i].text = if (size > i) mCodes[i] else ""
+            tvCodes[i].text = if (size > i) "*" else ""
 //            tvCodes[i].setTextColor(if (i == size - 1) color_focus else Color.WHITE)
 //            lines[i].setBackgroundColor(if (i == size - 1) color_focus else color_default)
         }
