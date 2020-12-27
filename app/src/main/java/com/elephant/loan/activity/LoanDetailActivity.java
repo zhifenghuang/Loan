@@ -48,12 +48,14 @@ public class LoanDetailActivity extends BaseActivity<EmptyContract.Presenter> im
         setText(R.id.tvProgress1, R.string.app_submit_complete);
         setText(R.id.tvProgress2, R.string.app_loan_status_0);
         if (status == 0) {
-            setText(R.id.tvExplain, R.string.app_loan_status_0);
+            setText(R.id.tvExplain, R.string.app_loan_status_0_explain);
             setText(R.id.tvBackMoneyInfo, R.string.app_loan_status_0);
             setText(R.id.tvProgress3, R.string.app_receive_success);
-            setText(R.id.tvBackMoneyMonth, mDetail.getRepay_m());
+            setText(R.id.tvBackMoneyMonth, R.string.app_loan_status_0);
+            setTextColor(R.id.tvBackMoneyMonth, R.color.color_e3_4e_47);
+            setTextColor(R.id.tvBackMoneyInfo, R.color.color_e3_4e_47);
         } else if (status == 1) {
-            setText(R.id.tvExplain, R.string.app_loan_status_1);
+            setText(R.id.tvExplain, R.string.app_loan_status_1_explain);
             setText(R.id.tvBackMoneyInfo, R.string.app_loan_status_1);
             setText(R.id.tvProgress3, R.string.app_loan_status_1);
             setTextColor(R.id.tvProgress2, R.color.color_0d_0d_0d);
@@ -64,20 +66,20 @@ public class LoanDetailActivity extends BaseActivity<EmptyContract.Presenter> im
             setTextColor(R.id.tvBackMoneyMonth, R.color.color_e3_4e_47);
             setTextColor(R.id.tvBackMoneyInfo, R.color.color_e3_4e_47);
         } else {
-            setText(R.id.tvExplain, R.string.app_loan_status_2_info);
+            setText(R.id.tvExplain, R.string.app_loan_status_2_explain);
             setText(R.id.tvBackMoneyInfo, R.string.app_loan_status_2_info);
             setTextColor(R.id.tvProgress2, R.color.color_0d_0d_0d);
             setText(R.id.tvProgress3, R.string.app_receive_success);
             setTextColor(R.id.tvProgress3, R.color.color_49_68_ea);
             setBackground(R.id.ivProgress3, R.drawable.app_shape_4968ea_stroke_2_circle);
             setBackgroundColor(R.id.lineProgress, R.color.color_49_68_ea);
-            setText(R.id.tvBackMoneyMonth, mDetail.getRepay_m());
+            setText(R.id.tvBackMoneyMonth, getString(R.string.app_back_month_xxx, mDetail.getRepay_m()));
         }
         setText(R.id.tvOrderNo, getString(R.string.app_loan_no_xxx, mDetail.getOrder_id()));
         setText(R.id.tvLoanMoney2, getString(R.string.app_loan_money_xxx, mDetail.getAmount()));
         setText(R.id.tvLoanTime2, getString(R.string.app_loan_time_xxx, mDetail.getTerm()));
         setText(R.id.tvReceiveBank, getString(R.string.app_receive_bank, bean.getBank_name()));
-        setText(R.id.tvBankCard, getString(R.string.app_receive_bank_card_id, bean.getBank_card()));
+        setText(R.id.tvBankCard, getString(R.string.app_receive_bank_card_id, bean.getBankCardNo()));
     }
 
     @NotNull

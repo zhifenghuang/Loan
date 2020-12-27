@@ -14,7 +14,6 @@ import androidx.core.content.ContextCompat;
 
 import com.common.lib.activity.BaseActivity;
 import com.common.lib.bean.RealInfoBean;
-import com.common.lib.constant.Constants;
 import com.common.lib.dialog.MyDialogFragment;
 import com.common.lib.interfaces.OnClickCallback;
 import com.common.lib.manager.DataManager;
@@ -31,8 +30,6 @@ import com.google.gson.Gson;
 import com.jakewharton.rxbinding3.widget.RxTextView;
 import com.lzy.imagepicker.ImagePicker;
 import com.lzy.imagepicker.bean.ImageItem;
-
-import org.greenrobot.eventbus.EventBus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -93,7 +90,6 @@ public class IdentityInfoActivity extends BaseActivity<IdentityInfoContract.Pres
                     HttpMethods.Companion.getInstance().getBaseUrl() + cardImg,
                     findViewById(R.id.ivCerBack));
         }
-
     }
 
     @NotNull
@@ -106,13 +102,18 @@ public class IdentityInfoActivity extends BaseActivity<IdentityInfoContract.Pres
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tvSubmit:
-                getPresenter().uploadIdentityInfo(getTextById(R.id.etRealName), getTextById(R.id.etCerNo), mCerFrontFile, mCerBackFile);
+                String cerNo = getTextById(R.id.etCerNo);
+                if (cerNo.length() != 13) {
+                    showToast(R.string.app_please_input_cer_no);
+                    return;
+                }
+                getPresenter().uploadIdentityInfo(getTextById(R.id.etRealName), cerNo, mCerFrontFile, mCerBackFile);
                 break;
             case R.id.rlCerFront:
-                ChooseImageUtils.chooseImage(this, CER_FRONT_PHOTO);
+                showSelectPhotoDialog(CER_FRONT_PHOTO);
                 break;
             case R.id.rlCerBack:
-                ChooseImageUtils.chooseImage(this, CER_BACK_PHOTO);
+                showSelectPhotoDialog(CER_BACK_PHOTO);
                 break;
         }
     }
@@ -208,6 +209,32 @@ public class IdentityInfoActivity extends BaseActivity<IdentityInfoContract.Pres
                 }
             }
         }, 1000);
+    }
+
+    private void showSelectPhotoDialog(final int code) {
+        final MyDialogFragment dialogFragment = new MyDialogFragment(R.layout.layout_select_media_type);
+        dialogFragment.setOutClickDismiss(false);
+        dialogFragment.setOnMyDialogListener(new MyDialogFragment.OnMyDialogListener() {
+            @Override
+            public void initView(View view) {
+                ((TextView) view.findViewById(R.id.btnTakePhoto)).setText(getString(R.string.app_take_photo));
+                ((TextView) view.findViewById(R.id.btnAlbum)).setText(getString(R.string.app_album));
+                dialogFragment.setDialogViewsOnClickListener(view, R.id.btnTakePhoto, R.id.btnAlbum, R.id.btnCancel);
+            }
+
+            @Override
+            public void onViewClick(int viewId) {
+                switch (viewId) {
+                    case R.id.btnTakePhoto:
+                        ChooseImageUtils.openCamera(IdentityInfoActivity.this, code);
+                        break;
+                    case R.id.btnAlbum:
+                        ChooseImageUtils.chooseImage(IdentityInfoActivity.this, code);
+                        break;
+                }
+            }
+        });
+        dialogFragment.show(getSupportFragmentManager(), "MyDialogFragment");
     }
 
     @Override

@@ -95,6 +95,16 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
         getPresenter().balance();
     }
 
+    public void toWalletFragment() {
+        switchFragment(mBaseFragment.get(1));
+        resetBottomBar(1);
+    }
+
+    public void toServiceFragment() {
+        switchFragment(mBaseFragment.get(2));
+        resetBottomBar(2);
+    }
+
     private void resetBottomBar(int currentPos) {
         mCurrentItem = currentPos;
         LinearLayout llBottom = findViewById(R.id.llBottom);

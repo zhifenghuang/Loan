@@ -6,6 +6,7 @@ import com.common.lib.network.HttpListener;
 import com.common.lib.network.HttpMethods;
 import com.common.lib.network.HttpObserver;
 import com.elephant.loan.contract.MyLoanContract;
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -81,7 +82,7 @@ public class MyLoanPresenter extends BasePresenter<MyLoanContract.View> implemen
                         if (getRootView() == null) {
                             return;
                         }
-                        getRootView().applyLoanSuccess();
+                        getRootView().applyLoanSuccess(msg);
                     }
 
                     @Override
@@ -89,15 +90,11 @@ public class MyLoanPresenter extends BasePresenter<MyLoanContract.View> implemen
                         if (getRootView() == null) {
                             return;
                         }
-                        getRootView().applyLoanFailed();
+                        getRootView().applyLoanFailed(msg);
                     }
 
                     @Override
                     public void connectError(@Nullable Throwable e) {
-                        if (getRootView() == null) {
-                            return;
-                        }
-                        getRootView().applyLoanFailed();
                     }
                 }, getCompositeDisposable()));
     }

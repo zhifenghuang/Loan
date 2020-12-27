@@ -12,9 +12,9 @@ public class MyLoanContract {
 
         public void getLoanInfoSuccess(ArrayList<HashMap<String, String>> list);
 
-        public void applyLoanSuccess();
+        public void applyLoanSuccess(String msg);
 
-        public void applyLoanFailed();
+        public void applyLoanFailed(String msg);
     }
 
     public interface Presenter extends IPresenter {

@@ -126,7 +126,7 @@ public class WalletFragment extends BaseFragment<WalletContract.Presenter> imple
             setViewVisible(R.id.tvBankName, R.id.tvBankCardNo);
             setViewGone(R.id.tvNoBankCard);
             setText(R.id.tvBankName, infoBean.getBank_name());
-            setText(R.id.tvBankCardNo, infoBean.getBank_card());
+            setText(R.id.tvBankCardNo, infoBean.getBankCardNo());
         }
     }
 
@@ -176,16 +176,20 @@ public class WalletFragment extends BaseFragment<WalletContract.Presenter> imple
         TextView tvWithdrawStatus = getView().findViewById(R.id.tvWithdrawStatus);
         if (status == 0) {
             setText(tvWithdrawStatus, R.string.app_withdraw_status_0);
+            setText(R.id.tvWithdrawReason, R.string.app_withdraw_status_0_reason);
             setTextColor(tvWithdrawStatus, R.color.color_f2_bc_0b);
         } else if (status == 1) {
             setText(tvWithdrawStatus, R.string.app_no);
+            setText(R.id.tvWithdrawReason, R.string.app_no);
             setTextColor(tvWithdrawStatus, R.color.color_0d_0d_0d);
         } else if (status == 2) {
             setText(tvWithdrawStatus, R.string.app_withdraw_status_2);
             setTextColor(tvWithdrawStatus, R.color.color_25_ac_1b);
+            setText(R.id.tvWithdrawReason, bean.getTips());
         } else {
             setText(tvWithdrawStatus, R.string.app_withdraw_status_3);
             setTextColor(tvWithdrawStatus, R.color.color_f6_3e_3e);
+            setText(R.id.tvWithdrawReason, bean.getTips());
         }
     }
 

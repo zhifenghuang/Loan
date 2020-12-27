@@ -1,5 +1,7 @@
 package com.elephant.loan.activity;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -55,7 +57,7 @@ public class CollectionBankCardActivity extends BaseActivity<CollectionBankCardC
             setText(R.id.tvOwnerName, realInfoBean.getBank_user());
             setText(R.id.tvCerNo, realInfoBean.getBank_id_card());
             setText(R.id.tvBankName2, realInfoBean.getBank_name());
-            setText(R.id.tvBankCardNo, realInfoBean.getBank_card());
+            setText(R.id.tvBankCardNo, realInfoBean.getBankCardNo());
             TextView tvSubmit = findViewById(R.id.tvSubmit);
             tvSubmit.setBackgroundResource(R.drawable.app_shape_879cf5_25);
             tvSubmit.setEnabled(false);
@@ -76,7 +78,17 @@ public class CollectionBankCardActivity extends BaseActivity<CollectionBankCardC
                 showSelectBankDialog();
                 break;
             case R.id.tvSubmit:
-                getPresenter().uploadBankInfo(getTextById(R.id.etOwnerName), getTextById(R.id.etCerNo), getTextById(R.id.tvBankName), getTextById(R.id.etBankCardNo));
+                String cerNo = getTextById(R.id.etCerNo);
+                if (cerNo.length() != 13) {
+                    showToast(R.string.app_please_input_cer_no);
+                    return;
+                }
+                String bankCard = getTextById(R.id.etBankCardNo);
+                if (bankCard.length() != 10 && bankCard.length() != 16) {
+                    showToast(R.string.app_please_input_card_no);
+                    return;
+                }
+                getPresenter().uploadBankInfo(getTextById(R.id.etOwnerName), cerNo, getTextById(R.id.tvBankName), bankCard);
                 break;
         }
     }
@@ -87,10 +99,13 @@ public class CollectionBankCardActivity extends BaseActivity<CollectionBankCardC
             @Override
             public void initView(View view) {
                 WheelView wheelView = view.findViewById(R.id.wheelView);
-                final ArrayList<String> list = new ArrayList<>();
+                ArrayList<String> list = new ArrayList<>();
+                ArrayList<Bitmap> iconList = new ArrayList<>();
                 for (int i = 0; i < 24; ++i) {
+                    iconList.add(((BitmapDrawable) getDrawable(getResources().getIdentifier("app_bank_" + i, "drawable", getPackageName()))).getBitmap());
                     list.add(getString(getResources().getIdentifier("app_bank_" + i, "string", getPackageName())));
                 }
+                wheelView.setIcons(iconList);
                 wheelView.setData(list);
                 dialogFragment.setDialogViewsOnClickListener(view, R.id.ivClose, R.id.tvOk);
             }
@@ -211,7 +226,7 @@ public class CollectionBankCardActivity extends BaseActivity<CollectionBankCardC
                 RxTextView.textChanges(etCerNo).skip(1),
                 RxTextView.textChanges(tvBankName).skip(1),
                 RxTextView.textChanges(etBankCardNo).skip(1),
-                new Function4<CharSequence, CharSequence, CharSequence, CharSequence,Boolean>() {
+                new Function4<CharSequence, CharSequence, CharSequence, CharSequence, Boolean>() {
                     @Override
                     public Boolean apply(@NonNull CharSequence charSequence, @NonNull CharSequence charSequence2, @NonNull CharSequence charSequence3, @NonNull CharSequence charSequence4) throws Exception {
                         return !TextUtils.isEmpty(getTextById(R.id.etOwnerName))

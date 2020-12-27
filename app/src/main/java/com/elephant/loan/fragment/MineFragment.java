@@ -59,6 +59,7 @@ public class MineFragment extends BaseFragment<MineContract.Presenter> implement
                 openActivity(SettingActivity.class);
                 break;
             case R.id.llWallet:
+                ((MainActivity) getActivity()).toWalletFragment();
                 break;
             case R.id.llRealNameVerify:
                 openActivity(RealNameVerifyActivity.class);
@@ -70,7 +71,8 @@ public class MineFragment extends BaseFragment<MineContract.Presenter> implement
                 openActivity(MyBackLoanActivity.class);
                 break;
             case R.id.llOnlineService:
-                getPresenter().getServiceUrl();
+                //getPresenter().getServiceUrl();
+                ((MainActivity) getActivity()).toServiceFragment();
                 break;
             case R.id.llCommonQuestion:
                 openActivity(CommonProblemActivity.class);

@@ -3,6 +3,7 @@ package com.common.lib.view;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
@@ -17,6 +18,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.common.lib.R;
+import com.common.lib.utils.BaseUtils;
 
 import java.util.ArrayList;
 
@@ -41,11 +43,16 @@ public class WheelView extends View {
     /**
      * 选择的内容
      */
-    private ArrayList<ItemObject> itemList = new ArrayList<ItemObject>();
+    private ArrayList<ItemObject> itemList = new ArrayList<>();
     /**
      * 设置数据
      */
-    private ArrayList<String> dataList = new ArrayList<String>();
+    private ArrayList<String> dataList = new ArrayList<>();
+
+    /**
+     * 图标
+     */
+    private ArrayList<Bitmap> iconList = new ArrayList<>();
     /**
      * 按下的坐标
      */
@@ -284,6 +291,9 @@ public class WheelView extends View {
                 itmItemObject.itemText = dataList.get(i);
                 itmItemObject.x = 0;
                 itmItemObject.y = i * unitHeight;
+                if (iconList != null && iconList.size() > i) {
+                    itmItemObject.icon = iconList.get(i);
+                }
                 itemList.add(itmItemObject);
             }
             isClearing = false;
@@ -512,6 +522,13 @@ public class WheelView extends View {
     }
 
     /**
+     * @param icons
+     */
+    public void setIcons(ArrayList<Bitmap> icons) {
+        this.iconList = icons;
+    }
+
+    /**
      * 设置数据 （第一次）
      *
      * @param data
@@ -681,6 +698,8 @@ public class WheelView extends View {
          */
         private Rect textRect;
 
+        private Bitmap icon;
+
         public ItemObject() {
             super();
         }
@@ -726,9 +745,14 @@ public class WheelView extends View {
             if (!isInView())
                 return;
 
+            float startX = x + controlWidth / 2 - textRect.width() / 2;
+            float startY = y + move + unitHeight / 2 + textRect.height() / 2;
+            if (icon != null) {
+                canvas.drawBitmap(icon, startX - icon.getWidth() - BaseUtils.StaticParams.dp2px(getContext(), 4),
+                        startY - icon.getHeight() + (icon.getHeight() - textRect.height()) / 2, null);
+            }
             // 绘制内容
-            canvas.drawText(itemText, x + controlWidth / 2 - textRect.width()
-                            / 2, y + move + unitHeight / 2 + textRect.height() / 2,
+            canvas.drawText(itemText, startX, startY,
                     textPaint);
 
         }

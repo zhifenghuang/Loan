@@ -70,10 +70,6 @@ public class LoginActivity extends BaseActivity<LoginContract.Presenter> impleme
         switch (viewId) {
             case R.id.tvLogin:
                 String phone = getTextById(R.id.etPhone);
-                if (TextUtils.isEmpty(phone)) {
-                    showToast(getString(R.string.app_please_input_phone));
-                    return;
-                }
                 if (!isPhoneCorrect(phone)) {
                     showToast(getString(R.string.app_input_phone_wrong));
                     return;

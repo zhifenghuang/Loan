@@ -181,18 +181,18 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
     }
 
     @Override
-    public void applyLoanSuccess() {
-        showApplyLoanResultDialog(true);
+    public void applyLoanSuccess(String msg) {
+        showApplyLoanResultDialog(true, msg);
     }
 
     @Override
-    public void applyLoanFailed() {
-        showApplyLoanResultDialog(false);
+    public void applyLoanFailed(String msg) {
+        showApplyLoanResultDialog(false, msg);
     }
 
     private int mTotalTime;
 
-    private void showApplyLoanResultDialog(final boolean isSuccess) {
+    private void showApplyLoanResultDialog(final boolean isSuccess, final String msg) {
         final MyDialogFragment dialogFragment = new MyDialogFragment(R.layout.layout_loan_status_dialog);
         dialogFragment.setOutClickDismiss(false);
         dialogFragment.setOnMyDialogListener(new MyDialogFragment.OnMyDialogListener() {
@@ -200,7 +200,7 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
             public void initView(View view) {
                 if (!isSuccess) {
                     ((ImageView) view.findViewById(R.id.ivStatus)).setImageResource(R.drawable.jd_t_fail);
-                    ((TextView) view.findViewById(R.id.tvStatus)).setText(getString(R.string.app_loan_failed_tip));
+                    ((TextView) view.findViewById(R.id.tvStatus)).setText(msg == null ? "" : msg);
                 }
                 mTotalTime = 5;
                 countTime(view.findViewById(R.id.tvCloseTip), dialogFragment);

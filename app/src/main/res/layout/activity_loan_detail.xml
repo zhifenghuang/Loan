@@ -383,7 +383,6 @@
                         android:id="@+id/tvBackMoneyMonth"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/app_back_month"
                         android:textColor="@color/color_0d_0d_0d"
                         android:textSize="@dimen/dimen_16" />
 
