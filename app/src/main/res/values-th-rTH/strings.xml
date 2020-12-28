@@ -50,7 +50,6 @@
     <string name="app_loan_success_tip">สมัครสินเชื่อของคุณสำเร็จแล้ว\nหลังจากการตรวจสอบเงินกู้สำเร็จแล้วทางเราจะแจ้งให้คุณทราบผ่าน SMS หรือทางโทรศัพท์"</string>
     <string name="app_the_window_will_close_xxx_second">หน้าต่างนี้จะปิดโดยอัตโนมัติหลังจากผ่านไป%1$ssวินาที</string>
 
-
     <string name="app_sure_loan_info">ยืนยันการกู้เงิน</string>
     <string name="app_loan_user_info">ชื่อผู้กู้: %1$s\n\nหมายเลขบัตรประจำตัวของผู้กู้: %2$s\n\nหมายเลขโทรศัพท์ของผู้กู้: %3$s\n\nวงเงินกู้โดยประมาณ: %4$s\n\nระยะกู้ยืม: %5$s\n\nดอกเบี้ยรายเดือน: %6$s\n</string>
 

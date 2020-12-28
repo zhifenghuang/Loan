@@ -200,7 +200,8 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
             public void initView(View view) {
                 if (!isSuccess) {
                     ((ImageView) view.findViewById(R.id.ivStatus)).setImageResource(R.drawable.jd_t_fail);
-                    ((TextView) view.findViewById(R.id.tvStatus)).setText(msg == null ? "" : msg);
+                    ((TextView) view.findViewById(R.id.tvStatus)).setText(getString(R.string.app_sorry));
+                    ((TextView) view.findViewById(R.id.tvTip)).setText(msg == null ? "" : msg);
                 }
                 mTotalTime = 5;
                 countTime(view.findViewById(R.id.tvCloseTip), dialogFragment);

@@ -50,7 +50,6 @@
     <string name="app_loan_success_tip">你的贷款订单申请成功\n贷款审核成功后，本平台会通过短信或电话通知你</string>
     <string name="app_the_window_will_close_xxx_second">此窗口会在%1$s秒后自动关闭</string>
 
-
     <string name="app_sure_loan_info">贷款信息确认</string>
     <string name="app_loan_user_info">贷款人姓名：%1$s\n\n贷款人身份证号：%2$s\n\n贷款人手机号：%3$s\n\n预计贷款金额：%4$s\n\n贷款时间：%5$s\n\n个月每月利率：%6$s\n</string>
 
