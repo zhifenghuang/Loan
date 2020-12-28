@@ -71,7 +71,6 @@ public class MineFragment extends BaseFragment<MineContract.Presenter> implement
                 openActivity(MyBackLoanActivity.class);
                 break;
             case R.id.llOnlineService:
-                //getPresenter().getServiceUrl();
                 ((MainActivity) getActivity()).toServiceFragment();
                 break;
             case R.id.llCommonQuestion:
@@ -85,13 +84,8 @@ public class MineFragment extends BaseFragment<MineContract.Presenter> implement
         BalanceBean bean = DataManager.Companion.getInstance().getBalance();
         setText(R.id.tvBalance, bean == null ? "0.00" : String.valueOf(bean.getMoney()));
         RealInfoBean infoBean = DataManager.Companion.getInstance().getMyInfo();
-        if (TextUtils.isEmpty(infoBean.getName())) {
-            setText(R.id.tvId, "");
-            setText(R.id.tvName, infoBean.getLoginAccount());
-        } else {
-            setText(R.id.tvId, String.valueOf(infoBean.getUser_id()));
-            setText(R.id.tvName, infoBean.getName());
-        }
+        setText(R.id.tvId, DataManager.Companion.getInstance().getLoginPhone());
+        setText(R.id.tvName, infoBean.getName());
         if (TextUtils.isEmpty(infoBean.getName())
                 || TextUtils.isEmpty(infoBean.getEducation())
                 || TextUtils.isEmpty(infoBean.getBank_id_card())

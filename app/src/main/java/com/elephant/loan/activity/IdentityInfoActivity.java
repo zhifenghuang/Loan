@@ -30,6 +30,7 @@ import com.google.gson.Gson;
 import com.jakewharton.rxbinding3.widget.RxTextView;
 import com.lzy.imagepicker.ImagePicker;
 import com.lzy.imagepicker.bean.ImageItem;
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -219,6 +220,7 @@ public class IdentityInfoActivity extends BaseActivity<IdentityInfoContract.Pres
             public void initView(View view) {
                 ((TextView) view.findViewById(R.id.btnTakePhoto)).setText(getString(R.string.app_take_photo));
                 ((TextView) view.findViewById(R.id.btnAlbum)).setText(getString(R.string.app_album));
+                ((TextView) view.findViewById(R.id.btnCancel)).setText(getString(R.string.app_cancel));
                 dialogFragment.setDialogViewsOnClickListener(view, R.id.btnTakePhoto, R.id.btnAlbum, R.id.btnCancel);
             }
 
@@ -246,7 +248,7 @@ public class IdentityInfoActivity extends BaseActivity<IdentityInfoContract.Pres
                     case CER_FRONT_PHOTO:
                     case CER_BACK_PHOTO:
                         if (imageItems != null && imageItems.size() > 0) {
-                            File file = new File(CompressionBitmapUtil.compressImage(imageItems.get(0).path));
+                            File file = new File(imageItems.get(0).path);
                             if (file.length() > PHOTO_MAX_SIZE) {   //大于2M压缩处理
                                 Bitmap bmp = BitmapUtil.INSTANCE.getBitmapFromFile(file, getDisplayMetrics().widthPixels, getDisplayMetrics().heightPixels);
                                 bmp.recycle();

@@ -23,6 +23,7 @@ public class ChooseImageUtils {
         imagePicker.setSelectLimit(1);
         //不进行裁剪
         imagePicker.setCrop(false);
+
         Intent intent = new Intent(activity, ImageGridActivity.class);
         activity.startActivityForResult(intent, requestCode);
     }

@@ -85,6 +85,18 @@ class DataManager private constructor() {
         return PrefUtil.getString(ConfigurationManager.getInstance().getContext(), "token", "")
     }
 
+    fun saveLoginPhone(loginPhone: String) {
+        PrefUtil.putString(
+            ConfigurationManager.getInstance().getContext(),
+            "loginPhone",
+            loginPhone
+        )
+    }
+
+    fun getLoginPhone(): String {
+        return PrefUtil.getString(ConfigurationManager.getInstance().getContext(), "loginPhone", "")
+    }
+
     fun saveBalance(bean: BalanceBean?) {
         PrefUtil.putString(
             ConfigurationManager.getInstance().getContext(),

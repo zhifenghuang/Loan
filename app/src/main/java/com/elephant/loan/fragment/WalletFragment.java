@@ -112,13 +112,8 @@ public class WalletFragment extends BaseFragment<WalletContract.Presenter> imple
             setViewVisible(R.id.tvWithdraw);
         }
         RealInfoBean infoBean = DataManager.Companion.getInstance().getMyInfo();
-        if (TextUtils.isEmpty(infoBean.getName())) {
-            setText(R.id.tvId, "");
-            setText(R.id.tvName, infoBean.getLoginAccount());
-        } else {
-            setText(R.id.tvId, String.valueOf(infoBean.getUser_id()));
-            setText(R.id.tvName, infoBean.getName());
-        }
+        setText(R.id.tvId, DataManager.Companion.getInstance().getLoginPhone());
+        setText(R.id.tvName, infoBean.getName());
         if (TextUtils.isEmpty(infoBean.getBank_card())) {
             setViewGone(R.id.tvBankName, R.id.tvBankCardNo);
             setViewVisible(R.id.tvNoBankCard);

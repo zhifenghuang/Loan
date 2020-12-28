@@ -57,7 +57,7 @@ public class CollectionBankCardActivity extends BaseActivity<CollectionBankCardC
             setText(R.id.tvOwnerName, realInfoBean.getBank_user());
             setText(R.id.tvCerNo, realInfoBean.getBank_id_card());
             setText(R.id.tvBankName2, realInfoBean.getBank_name());
-            setText(R.id.tvBankCardNo, realInfoBean.getBankCardNo());
+            setText(R.id.tvBankCardNo, realInfoBean.getBank_card());
             TextView tvSubmit = findViewById(R.id.tvSubmit);
             tvSubmit.setBackgroundResource(R.drawable.app_shape_879cf5_25);
             tvSubmit.setEnabled(false);

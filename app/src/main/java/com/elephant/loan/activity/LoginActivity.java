@@ -12,7 +12,6 @@ import androidx.core.content.ContextCompat;
 
 import com.common.lib.activity.BaseActivity;
 import com.common.lib.manager.DataManager;
-import com.common.lib.utils.BaseUtils;
 import com.common.lib.utils.MD5Util;
 import com.common.lib.utils.NetUtil;
 import com.elephant.loan.R;

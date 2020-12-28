@@ -237,6 +237,7 @@ public class DataInfoActivity extends BaseActivity<DataInfoContract.Presenter> i
                     list.add(getString(R.string.app_income_2));
                     list.add(getString(R.string.app_income_3));
                     list.add(getString(R.string.app_income_4));
+                    list.add(getString(R.string.app_income_5));
                 }
                 wheelView.setData(list);
                 dialogFragment.setDialogViewsOnClickListener(view, R.id.ivClose, R.id.tvOk);

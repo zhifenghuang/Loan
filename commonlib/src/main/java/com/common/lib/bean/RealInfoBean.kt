@@ -22,7 +22,6 @@ class RealInfoBean : Serializable {
     var sign = ""
     var created_at = ""
     var updated_at = ""
-    var loginAccount = ""
 
     fun getBankCardNo(): String? {
         val length = bank_card.length

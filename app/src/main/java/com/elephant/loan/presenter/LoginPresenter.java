@@ -6,6 +6,7 @@ import com.common.lib.mvp.BasePresenter;
 import com.common.lib.network.HttpListener;
 import com.common.lib.network.HttpMethods;
 import com.common.lib.network.HttpObserver;
+import com.common.lib.utils.LogUtil;
 import com.common.lib.utils.MD5Util;
 import com.elephant.loan.contract.LoginContract;
 
@@ -56,8 +57,8 @@ public class LoginPresenter extends BasePresenter<LoginContract.View> implements
                             return;
                         }
                         RealInfoBean bean = new RealInfoBean();
-                        bean.setLoginAccount(phone);
                         DataManager.Companion.getInstance().saveMyInfo(bean);
+                        DataManager.Companion.getInstance().saveLoginPhone(phone);
                         DataManager.Companion.getInstance().saveToken(token);
                         getRootView().loginSuccess();
                     }
