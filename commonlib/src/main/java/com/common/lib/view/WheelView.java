@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -16,6 +17,8 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.core.content.ContextCompat;
 
 import com.common.lib.R;
 import com.common.lib.utils.BaseUtils;
@@ -187,6 +190,8 @@ public class WheelView extends View {
         return true;
     }
 
+    private Paint mPaint;
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -194,6 +199,24 @@ public class WheelView extends View {
         drawLine(canvas);
         drawList(canvas);
         drawMask(canvas);
+
+        if (mPaint == null) {
+            mPaint = new Paint();
+            mPaint.reset();
+            mPaint.setAntiAlias(true);
+            mPaint.setStyle(Paint.Style.STROKE);
+            mPaint.setColor(Color.GRAY);
+            mPaint.setStrokeWidth(BaseUtils.StaticParams.dp2px(getContext(), 1));
+        }
+
+        if (iconList != null && !iconList.isEmpty()) {
+            int padding = BaseUtils.StaticParams.dp2px(getContext(), 15);
+            int padding2 = BaseUtils.StaticParams.dp2px(getContext(), 70);
+            int y = getHeight() / 2 + BaseUtils.StaticParams.dp2px(getContext(), 7);
+            canvas.drawLine(padding, y, getWidth() / 2 - padding2, y, mPaint);
+            canvas.drawLine(getWidth() / 2 + padding2 - padding / 2, y,
+                    getWidth() - padding, y, mPaint);
+        }
 
     }
 
@@ -693,6 +716,7 @@ public class WheelView extends View {
          * 字体画笔
          */
         private TextPaint textPaint;
+
         /**
          * 字体范围矩形
          */
@@ -711,6 +735,7 @@ public class WheelView extends View {
          * @param containerWidth 容器宽度
          */
         public void drawSelf(Canvas canvas, int containerWidth) {
+
 
             if (textPaint == null) {
                 textPaint = new TextPaint();
@@ -748,12 +773,17 @@ public class WheelView extends View {
             float startX = x + controlWidth / 2 - textRect.width() / 2;
             float startY = y + move + unitHeight / 2 + textRect.height() / 2;
             if (icon != null) {
-                canvas.drawBitmap(icon, startX - icon.getWidth() - BaseUtils.StaticParams.dp2px(getContext(), 4),
+                canvas.drawBitmap(icon, startX - icon.getWidth(),
                         startY - icon.getHeight() + (icon.getHeight() - textRect.height()) / 2, null);
+                // 绘制内容
+                canvas.drawText(itemText, startX + BaseUtils.StaticParams.dp2px(getContext(), 12), startY,
+                        textPaint);
+            } else {
+                // 绘制内容
+                canvas.drawText(itemText, startX, startY,
+                        textPaint);
             }
-            // 绘制内容
-            canvas.drawText(itemText, startX, startY,
-                    textPaint);
+
 
         }
 

@@ -185,6 +185,9 @@
     <string name="app_please_select_bank">请选择所属银行</string>
     <string name="app_bank_card_no">银行卡号</string>
     <string name="app_please_input_card_no">请输入10位或16位银行卡卡号</string>
+    <string name="app_select_education">选择学历</string>
+    <string name="app_select_income">选择收入</string>
+    <string name="app_select_bank">选择银行</string>
 
     <string name="app_phone_number">手机号码</string>
 

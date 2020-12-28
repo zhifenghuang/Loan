@@ -98,6 +98,8 @@ public class CollectionBankCardActivity extends BaseActivity<CollectionBankCardC
         dialogFragment.setOnMyDialogListener(new MyDialogFragment.OnMyDialogListener() {
             @Override
             public void initView(View view) {
+                TextView tvTitle = view.findViewById(R.id.tvTitle);
+                tvTitle.setText(getString(R.string.app_select_bank));
                 WheelView wheelView = view.findViewById(R.id.wheelView);
                 ArrayList<String> list = new ArrayList<>();
                 ArrayList<Bitmap> iconList = new ArrayList<>();

@@ -179,6 +179,10 @@
     <string name="app_failed_reason">้อมูลที่คุณป้อนไม่ถูกต้องหรือไม่สมบูรณ์\nโปรดตรวจสอบข้อมูลใหม่</string>
     <string name="app_sure_back">ยังไม่มีการส่งข้อมูลที่คุณกรอก\nแน่ใจไหมว่าต้องการกลับไปที่หน้าหลัก</string>
 
+    <string name="app_select_education">ระดับการศึกษา</string>
+    <string name="app_select_income">เลือกรายได้</string>
+    <string name="app_select_bank">เลือกธนาคาร</string>
+
 
     <string name="app_card_owner_name">ชื่อผู้ถือบัตบัญชีธนาคารร</string>
     <string name="app_please_input_card_owner_name">โปรดป้อนชื่อเจ้าของบัตร</string>

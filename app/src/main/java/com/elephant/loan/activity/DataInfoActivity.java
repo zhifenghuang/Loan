@@ -222,13 +222,16 @@ public class DataInfoActivity extends BaseActivity<DataInfoContract.Presenter> i
             @Override
             public void initView(View view) {
                 WheelView wheelView = view.findViewById(R.id.wheelView);
+                TextView tvTitle = view.findViewById(R.id.tvTitle);
                 final ArrayList<String> list = new ArrayList<>();
                 if (type == 0) {
+                    tvTitle.setText(getString(R.string.app_select_education));
                     list.add(getString(R.string.app_education_0));
                     list.add(getString(R.string.app_education_1));
                     list.add(getString(R.string.app_education_2));
                     list.add(getString(R.string.app_education_3));
                 } else if (type == 1) {
+                    tvTitle.setText(getString(R.string.app_select_income));
                     list.add(getString(R.string.app_income_0));
                     list.add(getString(R.string.app_income_1));
                     list.add(getString(R.string.app_income_2));

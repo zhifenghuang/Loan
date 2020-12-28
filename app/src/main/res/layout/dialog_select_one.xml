@@ -26,6 +26,18 @@
             android:layout_gravity="right"
             android:src="@drawable/jd_home_t_close" />
 
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="-20dp"
+            android:gravity="center"
+            android:text="@string/app_sure_loan_info"
+            android:textColor="@color/color_00_00_00"
+            android:textSize="@dimen/dimen_18"
+            android:textStyle="bold" />
+
 
         <com.common.lib.view.WheelView
             android:id="@+id/wheelView"

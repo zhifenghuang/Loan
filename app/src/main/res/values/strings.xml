@@ -187,6 +187,10 @@
     <string name="app_bank_card_no">หมายเลขบัตรธนาคาร</string>
     <string name="app_please_input_card_no">กรุณากรอกหมายเลขบัตรธนาคาร 10 หรือ 16 หลัก</string>
 
+    <string name="app_select_education">ระดับการศึกษา</string>
+    <string name="app_select_income">เลือกรายได้</string>
+    <string name="app_select_bank">เลือกธนาคาร</string>
+
     <string name="app_phone_number">หมายเลขโทรศัพท์</string>
 
     <string name="app_write_again">กรอกใหม่</string>
