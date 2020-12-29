@@ -210,11 +210,18 @@ public class WheelView extends View {
         }
 
         if (iconList != null && !iconList.isEmpty()) {
-            int padding = BaseUtils.StaticParams.dp2px(getContext(), 15);
+            int padding = BaseUtils.StaticParams.dp2px(getContext(), 10);
             int padding2 = BaseUtils.StaticParams.dp2px(getContext(), 70);
             int y = getHeight() / 2 + BaseUtils.StaticParams.dp2px(getContext(), 7);
             canvas.drawLine(padding, y, getWidth() / 2 - padding2, y, mPaint);
             canvas.drawLine(getWidth() / 2 + padding2 - padding / 2, y,
+                    getWidth() - padding, y, mPaint);
+        } else {
+            int padding = BaseUtils.StaticParams.dp2px(getContext(), 10);
+            int padding2 = BaseUtils.StaticParams.dp2px(getContext(), 90);
+            int y = getHeight() / 2 + BaseUtils.StaticParams.dp2px(getContext(), 7);
+            canvas.drawLine(padding, y, getWidth() / 2 - padding2, y, mPaint);
+            canvas.drawLine(getWidth() / 2 + padding2, y,
                     getWidth() - padding, y, mPaint);
         }
 

@@ -23,7 +23,7 @@
     <string name="app_quick_loan">กู้เร็ว</string>
     <string name="app_highest_money">สินเชื่อสูงสุดถึง 1ล้านบาท</string>
     <string name="app_ten_minute_loan">อนุมัติภายใน 10 นาที</string>
-    <string name="app_estimate_loan_value">วงเงินกู้โดยประมาณ(฿)</string>
+    <string name="app_estimate_loan_value">วงเงินกู้โดยประมาณ(บาท)</string>
     <string name="app_month_rate">อัตราดอกเบี้ยรายเดือน</string>
     <string name="app_loan_time_month">ระยะเวลากู้ยืม (เดือน)</string>
     <string name="app_loan_time">ระยะกู้ยืม: </string>
@@ -53,7 +53,7 @@
     <string name="app_sure_loan_info">ยืนยันการกู้เงิน</string>
     <string name="app_loan_user_info">ชื่อผู้กู้: %1$s\n\nหมายเลขบัตรประจำตัวของผู้กู้: %2$s\n\nหมายเลขโทรศัพท์ของผู้กู้: %3$s\n\nวงเงินกู้โดยประมาณ: %4$s\n\nระยะกู้ยืม: %5$s\n\nดอกเบี้ยรายเดือน: %6$s\n</string>
 
-    <string name="app_account_balance">ยอดเงินในบัญชี（฿）</string>
+    <string name="app_account_balance">ยอดเงินในบัญชี（บาท）</string>
     <string name="app_withdraw_now">ถอนเงินตอนนี้</string>
     <string name="app_my_bank_card">บัตรธนาคารของฉัน</string>
     <string name="app_no_bind_bank_card">ยังไม่ได้ผูกบัตรธนาคาร</string>
@@ -61,7 +61,7 @@
     <string name="app_withdraw_status_title">ความคืบหน้าในการถอน</string>
     <string name="app_withdraw_time">เวลาถอนเงิน：</string>
     <string name="app_withdraw_money">จำนวนเงินที่ถอน：</string>
-    <string name="app_xxx_money">%1$s（฿）</string>
+    <string name="app_xxx_money">%1$s（บาท）</string>
     <string name="app_withdraw_status">สถานะการถอน：</string>
     <string name="app_withdraw_status_0">กำลังตรวจสอบ</string>
     <string name="app_withdraw_status_0_reason">การถอนเงินอยู่ระหว่างการตรวจสอบ กรุณารอสักครู</string>
@@ -70,7 +70,7 @@
     <string name="app_withdraw_status_3">การถอนสำเร็จ</string>
     <string name="app_withdraw_reason">เหตุผล：</string>
     <string name="app_apply_withdraw">จำนวนเงินที่ถอน</string>
-    <string name="app_withdraw_money_xxx">จำนวนเงินที่ถอน：%1$s（฿）</string>
+    <string name="app_withdraw_money_xxx">จำนวนเงินที่ถอน：%1$s（บาท）</string>
     <string name="app_please_input_withdraw_password">โปรดป้อนรหัสผ่านการถอน6หลัก</string>
     <string name="app_withdraw_pas_tip">หากคุณลืมรหัสถอนหรือไม่มีรหัสถอนโปรดติดต่อฝ่ายบริการลูกค้าออนไลน์</string>
     <string name="app_withdraw_success_tip">การสมัครสินเชื่อของคุณสำเร็จ\nหลังจากการตรวจสอบสำเร็จ   แพลตฟอร์มจะแจ้งให้คุณทราบทาง SMS หรือโทรศัพท์</string>
@@ -223,11 +223,11 @@
     <string name="app_explain">คำอธิบาย</string>
     <string name="app_loan_detail_1">รายละเอียดเงินกู้</string>
     <string name="app_order_no">เลขที่ใบสั่งซื้อ: %1$s</string>
-    <string name="app_loan_money_xxx">จำนวนเงินกู้: ฿%1$s</string>
+    <string name="app_loan_money_xxx">จำนวนเงินกู้: บาท%1$s</string>
     <string name="app_loan_time_xxx">ระยะกู้ยืม: %1$s个月</string>
     <string name="app_receive_bank">บัญชีธนาคาร: %1$s</string>
     <string name="app_receive_bank_card_id">หมายเลขบัตรธนาคาร: %1$s</string>
     <string name="app_back_month">ชำระคืนรายเดือน: </string>
-    <string name="app_back_month_xxx">ชำระคืนรายเดือน%1$s฿</string>
+    <string name="app_back_month_xxx">ชำระคืนรายเดือน%1$sบาท</string>
     <string name="app_back_information">คำอธิบายในการชำระคืน: </string>
 </resources>

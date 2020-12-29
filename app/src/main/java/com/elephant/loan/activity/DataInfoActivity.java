@@ -87,7 +87,6 @@ public class DataInfoActivity extends BaseActivity<DataInfoContract.Presenter> i
             rbHadCar.setEnabled(false);
             rbNoCar.setEnabled(false);
         }
-
     }
 
     @NotNull

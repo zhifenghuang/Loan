@@ -23,7 +23,7 @@
     <string name="app_quick_loan">快速放款</string>
     <string name="app_highest_money">最高可贷100万泰铢</string>
     <string name="app_ten_minute_loan">10分钟放款</string>
-    <string name="app_estimate_loan_value">预计贷款金额（฿）</string>
+    <string name="app_estimate_loan_value">预计贷款金额（บาท）</string>
     <string name="app_month_rate">月利率</string>
     <string name="app_loan_time_month">贷款时间（月）</string>
     <string name="app_loan_time">贷款时间</string>
@@ -53,7 +53,7 @@
     <string name="app_sure_loan_info">贷款信息确认</string>
     <string name="app_loan_user_info">贷款人姓名：%1$s\n\n贷款人身份证号：%2$s\n\n贷款人手机号：%3$s\n\n预计贷款金额：%4$s\n\n贷款时间：%5$s\n\n个月每月利率：%6$s\n</string>
 
-    <string name="app_account_balance">账户余额（฿）</string>
+    <string name="app_account_balance">账户余额（บาท）</string>
     <string name="app_withdraw_now">立即提现</string>
     <string name="app_my_bank_card">我的银行卡</string>
     <string name="app_no_bind_bank_card">没有绑定的银行卡</string>
@@ -61,7 +61,7 @@
     <string name="app_withdraw_status_title">提现状态</string>
     <string name="app_withdraw_time">提现时间：</string>
     <string name="app_withdraw_money">提现金额：</string>
-    <string name="app_xxx_money">%1$s（฿）</string>
+    <string name="app_xxx_money">%1$s（บาท）</string>
     <string name="app_withdraw_status">提现状态：</string>
     <string name="app_withdraw_status_0">提现审核</string>
     <string name="app_withdraw_status_0_reason">提现正在审核中，请耐心等待</string>
@@ -70,7 +70,7 @@
     <string name="app_withdraw_status_3">提现成功</string>
     <string name="app_withdraw_reason">原因：</string>
     <string name="app_apply_withdraw">申请提现</string>
-    <string name="app_withdraw_money_xxx">提现金额：%1$s（฿）</string>
+    <string name="app_withdraw_money_xxx">提现金额：%1$s（บาท）</string>
     <string name="app_please_input_withdraw_password">请输入6位的提现密码</string>
     <string name="app_withdraw_pas_tip">如果忘记提现密码或者没有提现密码\n请联系在线客服</string>
     <string name="app_withdraw_success_tip">你的贷款订单申请成功\n贷款审核成功后，本平台会通过短信或电话通知你</string>
@@ -221,11 +221,11 @@
     <string name="app_explain">说明：</string>
     <string name="app_loan_detail_1">贷款明细</string>
     <string name="app_order_no">订单编号：%1$s</string>
-    <string name="app_loan_money_xxx">贷款金额：฿%1$s</string>
+    <string name="app_loan_money_xxx">贷款金额：บาท%1$s</string>
     <string name="app_loan_time_xxx">贷款时间：%1$s个月</string>
     <string name="app_receive_bank">到账银行：%1$s</string>
     <string name="app_receive_bank_card_id">到账卡号：%1$s</string>
     <string name="app_back_month">每月还款：</string>
-    <string name="app_back_month_xxx">每月还款%1$s฿</string>
+    <string name="app_back_month_xxx">每月还款%1$sบาท</string>
     <string name="app_back_information">还款说明：</string>
 </resources>

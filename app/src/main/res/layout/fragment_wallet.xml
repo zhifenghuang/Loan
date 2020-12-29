@@ -181,105 +181,200 @@
                 android:textSize="@dimen/dimen_18"
                 android:textStyle="bold" />
 
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_0_5"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:background="@color/color_8b_8b_8b" />
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_20"
+                android:layout_height="45dp"
                 android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/dimen_0_5"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_8b_8b_8b" />
 
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="@dimen/dimen_90"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
                     android:text="@string/app_withdraw_time"
                     android:textColor="@color/color_8b_8b_8b"
                     android:textSize="@dimen/dimen_16" />
 
+                <View
+                    android:layout_width="@dimen/dimen_0_5"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_8b_8b_8b" />
+
                 <TextView
                     android:id="@+id/tvWithdrawTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
                     android:text="@string/app_no"
                     android:textColor="@color/color_0d_0d_0d"
                     android:textSize="@dimen/dimen_16" />
 
+                <View
+                    android:layout_width="@dimen/dimen_0_5"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_8b_8b_8b" />
+
             </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_0_5"
+                android:background="@color/color_8b_8b_8b" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_20"
+                android:layout_height="45dp"
                 android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/dimen_0_5"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_8b_8b_8b" />
 
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="@dimen/dimen_90"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
                     android:text="@string/app_withdraw_money"
                     android:textColor="@color/color_8b_8b_8b"
                     android:textSize="@dimen/dimen_16" />
 
+                <View
+                    android:layout_width="@dimen/dimen_0_5"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_8b_8b_8b" />
+
                 <TextView
                     android:id="@+id/tvWithdrawMoney"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
                     android:text="@string/app_no"
                     android:textColor="@color/color_0d_0d_0d"
                     android:textSize="@dimen/dimen_16" />
 
+                <View
+                    android:layout_width="@dimen/dimen_0_5"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_8b_8b_8b" />
+
             </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_0_5"
+                android:background="@color/color_8b_8b_8b" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_20"
+                android:layout_height="45dp"
                 android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/dimen_0_5"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_8b_8b_8b" />
 
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="@dimen/dimen_90"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
                     android:text="@string/app_withdraw_status"
                     android:textColor="@color/color_8b_8b_8b"
                     android:textSize="@dimen/dimen_16" />
 
+                <View
+                    android:layout_width="@dimen/dimen_0_5"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_8b_8b_8b" />
+
                 <TextView
                     android:id="@+id/tvWithdrawStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
                     android:text="@string/app_no"
                     android:textColor="@color/color_0d_0d_0d"
                     android:textSize="@dimen/dimen_16" />
 
+                <View
+                    android:layout_width="@dimen/dimen_0_5"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_8b_8b_8b" />
+
             </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_0_5"
+                android:background="@color/color_8b_8b_8b" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_20"
+                android:minHeight="45dp"
                 android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/dimen_0_5"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_8b_8b_8b" />
 
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="@dimen/dimen_90"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
                     android:text="@string/app_withdraw_reason"
                     android:textColor="@color/color_8b_8b_8b"
                     android:textSize="@dimen/dimen_16" />
 
+                <View
+                    android:layout_width="@dimen/dimen_0_5"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_8b_8b_8b" />
+
                 <TextView
                     android:id="@+id/tvWithdrawReason"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
                     android:text="@string/app_no"
                     android:textColor="@color/color_0d_0d_0d"
                     android:textSize="@dimen/dimen_16" />
 
+                <View
+                    android:layout_width="@dimen/dimen_0_5"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_8b_8b_8b" />
+
             </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_0_5"
+                android:background="@color/color_8b_8b_8b" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
