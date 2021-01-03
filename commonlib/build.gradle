@@ -55,4 +55,6 @@ dependencies {
     api 'com.lzy.widget:ninegridview:0.2.1'
     api 'com.lzy.widget:view-core:0.2.1'
 
+    api 'com.xj.marqueeView:marqueeView:0.1.20'
+
 }

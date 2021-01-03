@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Loan</string>
+    <string name="app_name">Fast Loan</string>
 
     <string name="app_can_loan_highest_money">วงเงินกู้สูงสุด 1,000,000 บาท</string>
     <string name="app_loan_tip">10 นาทีเข้าบัญชีดอกเบี้ยรายเดือนเพียง 0.5%\nไม่มีหลักประกันคุณสามารถขอสินเชื่อได้ด้วยบัตรประชาชนของคุณ</string>
@@ -18,7 +18,7 @@
     <string name="app_service">ฝ่ายบริการลูกค้า</string>
     <string name="app_mine">ของฉัน</string>
 
-    <string name="app_jd_e_loan">Loan</string>
+    <string name="app_jd_e_loan">Fast Loan</string>
     <string name="app_easy_loan">เงินกู้ง่าย</string>
     <string name="app_quick_loan">กู้เร็ว</string>
     <string name="app_highest_money">สินเชื่อสูงสุดถึง 1ล้านบาท</string>

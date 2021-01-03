@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Loan</string>
+    <string name="app_name">Fast Loan</string>
 
     <string name="app_can_loan_highest_money">最高1,000,000贷款额度</string>
     <string name="app_loan_tip">10分钟到账月利率最低只需0.5％\n无需抵押凭身份证即可贷款</string>
@@ -18,7 +18,7 @@
     <string name="app_service">客服</string>
     <string name="app_mine">我的</string>
 
-    <string name="app_jd_e_loan">京东E贷</string>
+    <string name="app_jd_e_loan">Fast Loan</string>
     <string name="app_easy_loan">轻松贷款</string>
     <string name="app_quick_loan">快速放款</string>
     <string name="app_highest_money">最高可贷100万泰铢</string>

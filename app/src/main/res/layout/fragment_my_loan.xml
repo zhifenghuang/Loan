@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_f2_f3_f8"
@@ -393,17 +394,35 @@
         android:textColor="@color/color_ff_ff_ff"
         android:textSize="@dimen/dimen_18" />
 
-    <TextView
-        android:id="@+id/tvBanner"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/dimen_16"
-        android:layout_marginTop="@dimen/dimen_16"
-        android:layout_marginRight="@dimen/dimen_16"
-        android:drawableLeft="@drawable/jd_home_laba"
-        android:drawablePadding="@dimen/dimen_2"
-        android:textColor="@color/color_ff_9e_01"
-        android:textSize="@dimen/dimen_13" />
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dimen_16"
+        android:paddingTop="@dimen/dimen_16"
+        android:paddingRight="@dimen/dimen_16">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingTop="@dimen/dimen_3"
+            android:src="@drawable/jd_home_laba" />
+
+        <com.xj.marqueeview.MarqueeView
+            android:id="@+id/marqueeView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dimen_2"
+            app:mvAnimDuration="500"
+            app:mvDirection="bottom_to_top"
+            app:mvInterval="3000" />
+
+
+    </LinearLayout>
+
 
     <View
         android:layout_width="match_parent"

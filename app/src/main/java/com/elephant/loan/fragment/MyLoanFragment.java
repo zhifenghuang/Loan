@@ -1,26 +1,35 @@
 package com.elephant.loan.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
 import com.common.lib.bean.RealInfoBean;
 import com.common.lib.dialog.MyDialogFragment;
 import com.common.lib.fragment.BaseFragment;
 import com.common.lib.manager.DataManager;
+import com.common.lib.utils.LogUtil;
 import com.elephant.loan.R;
 import com.elephant.loan.activity.RealNameVerifyActivity;
 import com.elephant.loan.contract.MyLoanContract;
 import com.elephant.loan.presenter.MyLoanPresenter;
+import com.xj.marqueeview.MarqueeView;
+import com.xj.marqueeview.base.ItemViewDelegate;
+import com.xj.marqueeview.base.MultiItemTypeAdapter;
+import com.xj.marqueeview.base.ViewHolder;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -31,6 +40,35 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
     private String mMonth;
     private String mRange;
     private String mRate, mLoanValue;
+
+    private MyHandler myHandler;
+
+    private static class MyHandler extends Handler {
+        // 定义弱引用实例
+        private WeakReference<MyLoanFragment> mFragmentWeakReference;
+
+        public MyHandler(MyLoanFragment fragment) {
+            // 使用WeakReference弱引用持有Activity实例
+            this.mFragmentWeakReference = new WeakReference<>(fragment);
+        }
+
+        // 通过重写handlerMessage() 从而确定更新UI的操作
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 0:
+                    MyLoanFragment fragment = mFragmentWeakReference.get();
+                    if (fragment != null && fragment.getView() != null) {
+                        fragment.getPresenter().banner();
+                        sendEmptyMessageDelayed(0, 5 * 1000);
+                    }
+                    break;
+            }
+        }
+    }
+
+    ;
 
     @NotNull
     @Override
@@ -53,6 +91,8 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
         mRate = "0.5%";
         mRange = getString(R.string.app_money_0);
         mLoanValue = "45000";
+        myHandler = new MyHandler(this);
+        myHandler.sendEmptyMessage(0);
         resetView();
         getPresenter().getLoanInfo();
     }
@@ -163,16 +203,27 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
 
     @Override
     protected void updateUIText() {
-        getPresenter().banner();
     }
+
+    private MultiItemTypeAdapter<String> mMultiItemTypeAdapter;
+    private ArrayList<String> mListBanner;
 
     @Override
     public void getBannerSuccess(String banner) {
         if (getView() == null || TextUtils.isEmpty(banner)) {
             return;
         }
-        setText(R.id.tvBanner, banner);
+        MarqueeView marqueeView = getView().findViewById(R.id.marqueeView);
+        mListBanner = new ArrayList<>();
+        mListBanner.add(banner);
+        mListBanner.add(banner);
+        mMultiItemTypeAdapter = new MultiItemTypeAdapter(getActivity(), mListBanner);
+        mMultiItemTypeAdapter.addItemViewDelegate(new TextItemViewDelegate());
+        marqueeView.setAdapter(mMultiItemTypeAdapter);
+        marqueeView.stopFilp();
+        marqueeView.startFlip();
     }
+
 
     @Override
     public void getLoanInfoSuccess(ArrayList<HashMap<String, String>> list) {
@@ -289,5 +340,34 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
         }
         tvs[0].setBackgroundResource(R.drawable.app_shape_4968ea_4);
         tvs[0].setTextColor(ContextCompat.getColor(getActivity(), R.color.color_ff_ff_ff));
+    }
+
+    @Override
+    public void onDestroyView() {
+        MarqueeView marqueeView = getView().findViewById(R.id.marqueeView);
+        marqueeView.stopFilp();
+        super.onDestroyView();
+        // 外部类Activity生命周期结束时，同时清空消息队列 和 结束Handler生命周期
+        myHandler.removeCallbacksAndMessages(null);
+    }
+
+    static class TextItemViewDelegate implements ItemViewDelegate<String> {
+
+        @Override
+        public int getItemViewLayoutId() {
+            return R.layout.item_banner;
+        }
+
+        @Override
+        public boolean isForViewType(String item, int position) {
+            return true;
+        }
+
+        @Override
+        public void convert(ViewHolder holder, String multiTypeBean, int position) {
+            holder.setText(R.id.tvBanner, multiTypeBean);
+        }
+
+
     }
 }

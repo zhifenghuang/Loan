@@ -93,7 +93,7 @@ class HttpMethods private constructor() {
     }
 
     public fun getBaseUrl(): String {
-        return "http://103.231.255.117:88/"
+        return "http://146.196.52.180:88/"
     }
 
     fun register(
