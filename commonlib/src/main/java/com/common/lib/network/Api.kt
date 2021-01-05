@@ -56,11 +56,15 @@ interface Api {
     @GET("api/article/list")
     fun articleList(): Observable<BasicResponse<ArrayList<ArticleBean>>>
 
+    @GET("api/article/contract")
+    fun contract(@Query("type") type: Int): Observable<BasicResponse<ArrayList<ArticleBean>>>
+
     @GET("api/cashout/umoney")
     fun balance(): Observable<BasicResponse<BalanceBean>>
 
     @GET("api/loan/info")
     fun loanInfo(): Observable<BasicResponse<ArrayList<LoanInfoBean>>>
+
 
     @POST("api/params/cpwd")
     fun changePsw(

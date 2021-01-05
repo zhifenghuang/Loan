@@ -29,7 +29,7 @@ public class MyLoanAdapter extends BaseQuickAdapter<LoanInfoBean, BaseViewHolder
                 .setText(R.id.tvLoanMoney, item.getAmount())
                 .setText(R.id.tvLoanTime, item.getTerm() + mContext.getString(R.string.app_sum_month))
                 .setText(R.id.tvMonthRate, item.getRate() + "%")
-                .setText(R.id.tvApplyTime, item.getCreated_at());
+                .setText(R.id.tvApplyTime, item.getCreated_at().substring(0, 10));
 
         int status = item.getStatus();
         if (status == 0) {

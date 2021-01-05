@@ -157,7 +157,7 @@ public class LoginActivity extends BaseActivity<LoginContract.Presenter> impleme
 
     @Override
     public void getVerCodeSuccess() {
-
+        showToast(getString(R.string.app_get_ver_code_success));
     }
 
     @Override

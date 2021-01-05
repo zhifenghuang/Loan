@@ -1,6 +1,7 @@
 package com.elephant.loan;
 
 import android.content.Context;
+import android.os.StrictMode;
 
 import androidx.multidex.MultiDexApplication;
 import com.common.lib.manager.ConfigurationManager;
@@ -41,6 +42,13 @@ public class BaseApplication extends MultiDexApplication {
     public void onCreate() {
         super.onCreate();
         ConfigurationManager.Companion.getInstance().setContext(this);
+
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                .detectDiskReads().detectDiskWrites().detectNetwork()
+                .penaltyLog().build());
+        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+                .detectLeakedSqlLiteObjects().detectLeakedClosableObjects()
+                .penaltyLog().penaltyDeath().build());
     }
 
     @Override

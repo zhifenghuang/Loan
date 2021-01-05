@@ -1,6 +1,7 @@
 package com.elephant.loan.apapter;
 
 import android.content.Context;
+import android.text.Html;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
@@ -24,7 +25,7 @@ public class CommonProblemAdapter extends BaseQuickAdapter<ArticleBean, BaseView
     @Override
     protected void convert(@NotNull BaseViewHolder helper, ArticleBean item) {
         helper.setText(R.id.tvTitle, item.getTitle())
-                .setText(R.id.tvContent, item.getContent())
+                .setText(R.id.tvContent, Html.fromHtml(item.getContent()))
                 .setGone(R.id.line, helper.getAdapterPosition() == getItemCount() - 1);
         if (item.isShowContent()) {
             helper.setGone(R.id.tvContent, false);

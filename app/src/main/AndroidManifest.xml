@@ -82,6 +82,10 @@
         <activity
             android:name=".activity.LoanDetailActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.ContractActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

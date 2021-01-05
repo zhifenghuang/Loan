@@ -47,9 +47,14 @@ public class WalletFragment extends BaseFragment<WalletContract.Presenter> imple
     protected void initView(@NotNull View view, @Nullable Bundle savedInstanceState) {
         setTopStatusBarStyle(view);
         setViewsOnClickListener(R.id.tvWithdraw);
-        if (DataManager.Companion.getInstance().getBalance() == null) {
-            ((MainActivity) getActivity()).getBalance();
+        refreshWallet();
+    }
+
+    public void refreshWallet() {
+        if (getActivity() == null || getPresenter() == null) {
+            return;
         }
+        ((MainActivity) getActivity()).getBalance();
         getPresenter().getWithDrawDetail();
     }
 
@@ -166,7 +171,7 @@ public class WalletFragment extends BaseFragment<WalletContract.Presenter> imple
         }
         WithdrawDetailBean bean = list.get(0);
         setText(R.id.tvWithdrawTime, bean.getCreated_at());
-        setText(R.id.tvWithdrawMoney, bean.getMoney() + "（฿）");
+        setText(R.id.tvWithdrawMoney, bean.getMoney() + "บาท");
         int status = bean.getStatus();
         TextView tvWithdrawStatus = getView().findViewById(R.id.tvWithdrawStatus);
         if (status == 0) {
@@ -176,6 +181,8 @@ public class WalletFragment extends BaseFragment<WalletContract.Presenter> imple
         } else if (status == 1) {
             setText(tvWithdrawStatus, R.string.app_no);
             setText(R.id.tvWithdrawReason, R.string.app_no);
+            setText(R.id.tvWithdrawTime, R.string.app_no);
+            setText(R.id.tvWithdrawMoney, R.string.app_no);
             setTextColor(tvWithdrawStatus, R.color.color_0d_0d_0d);
         } else if (status == 2) {
             setText(tvWithdrawStatus, R.string.app_withdraw_status_2);
@@ -196,10 +203,12 @@ public class WalletFragment extends BaseFragment<WalletContract.Presenter> imple
             public void initView(View view) {
                 if (isSuccess) {
                     ((ImageView) view.findViewById(R.id.ivStatus)).setImageResource(R.drawable.jd_home_t_chengg);
-                    ((TextView) view.findViewById(R.id.tvStatus)).setText(msg == null ? "" : msg);
+                    ((TextView) view.findViewById(R.id.tvStatus)).setText(getString(R.string.app_contralation));
+                    ((TextView) view.findViewById(R.id.tvTip)).setText(msg == null ? "" : msg);
                 } else {
                     ((ImageView) view.findViewById(R.id.ivStatus)).setImageResource(R.drawable.jd_home_t_zhu);
-                    ((TextView) view.findViewById(R.id.tvStatus)).setText(msg == null ? "" : msg);
+                    ((TextView) view.findViewById(R.id.tvStatus)).setText(getString(R.string.app_sorry));
+                    ((TextView) view.findViewById(R.id.tvTip)).setText(msg == null ? "" : msg);
                 }
                 mTotalTime = 3;
                 countTime(view.findViewById(R.id.tvCloseTip), dialogFragment);

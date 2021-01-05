@@ -251,8 +251,8 @@ public class IdentityInfoActivity extends BaseActivity<IdentityInfoContract.Pres
                             File file = new File(imageItems.get(0).path);
                             if (file.length() > PHOTO_MAX_SIZE) {   //大于2M压缩处理
                                 Bitmap bmp = BitmapUtil.INSTANCE.getBitmapFromFile(file, getDisplayMetrics().widthPixels, getDisplayMetrics().heightPixels);
-                                bmp.recycle();
                                 file = BaseUtils.StaticParams.saveJpeg(bmp, this);
+                                bmp.recycle();
                             } else {
                                 String newPath = BaseUtils.StaticParams.getSaveFilePath(this, UUID.randomUUID().toString() + ".jpg");
                                 BaseUtils.StaticParams.copyFile(file.getAbsolutePath(), newPath);

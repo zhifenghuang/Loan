@@ -47,6 +47,6 @@ public class AboutUsActivity extends BaseActivity<AboutUsContract.Presenter> imp
             return;
         }
         setText(R.id.tvTitle, list.get(0).getTitle());
-        setText(R.id.tvContent, list.get(0).getContent());
+        setHtml(R.id.tvContent, list.get(0).getContent());
     }
 }

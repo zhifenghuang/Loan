@@ -79,12 +79,16 @@ public class MyLoanActivity extends BaseActivity<MyLoanActivityContract.Presente
             mAdapter.setOnItemChildClickListener(new OnItemChildClickListener() {
                 @Override
                 public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
+                    LoanInfoBean bean = getAdapter().getItem(position);
                     switch (view.getId()) {
                         case R.id.tvLookContract:
+                            Bundle bundle = new Bundle();
+                            bundle.putInt(Constants.BUNDLE_EXTRA, 200);
+                            bundle.putSerializable(Constants.BUNDLE_EXTRA_2, bean);
+                            openActivity(ContractActivity.class, bundle);
                             break;
                         case R.id.tvLoanDetail:
-                            LoanInfoBean bean = getAdapter().getItem(position);
-                            Bundle bundle = new Bundle();
+                            bundle = new Bundle();
                             bundle.putSerializable(Constants.BUNDLE_EXTRA, bean);
                             openActivity(LoanDetailActivity.class, bundle);
                             break;

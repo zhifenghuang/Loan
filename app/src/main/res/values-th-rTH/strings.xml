@@ -10,6 +10,7 @@
     <string name="app_please_input_password">กรุณาใส่รหัสผ่านของคุณ</string>
     <string name="app_please_input_verify_code">กรุณาใส่รหัสยืนยัน</string>
     <string name="app_get_ver_code">รับรหัสยืนยัน</string>
+    <string name="app_get_ver_code_success">รับรหัสยืนยันสำเร็จแล้ว</string>
     <string name="app_send_again">ส่งใหม่</string>
     <string name="app_register_login">ลงทะเบียนและเข้าสู่ระบบ</string>
 
@@ -183,7 +184,7 @@
     <string name="app_select_bank">เลือกธนาคาร</string>
 
 
-    <string name="app_card_owner_name">ชื่อผู้ถือบัตบัญชีธนาคารร</string>
+    <string name="app_card_owner_name">ชชื่อผู้ถือบัตรบัญชีธนาคาร</string>
     <string name="app_please_input_card_owner_name">โปรดป้อนชื่อเจ้าของบัตร</string>
     <string name="app_open_card_bank">บัญชีธนาคาร</string>
     <string name="app_please_select_bank">กรุณาเลือกธนาคาร</string>
@@ -200,6 +201,7 @@
     <string name="app_loan_money">จำนวนเงินกู้</string>
     <string name="app_apply_time">เวลาสมัคร</string>
     <string name="app_look_contract">ตรวจสอบสัญญา</string>
+    <string name="app_contract">สนธิสัญญา</string>
     <string name="app_loan_detail">รายละเอียดเงินกู้</string>
     <string name="app_loan_status_0">กำลังตรวจสอบ</string>
     <string name="app_loan_status_0_explain">สินเชื่อส่วนบุคคลของคุณอยู่ระหว่างการตรวจสอบโปรดรอสักครู่หลังจากตรวจสอบสินเชื่อแล้วคุณจะได้รับแจ้งทาง SMS หรือทางโทรศัพท์โปรดตรวจสอบ</string>
@@ -223,7 +225,7 @@
     <string name="app_explain">คำอธิบาย</string>
     <string name="app_loan_detail_1">รายละเอียดเงินกู้</string>
     <string name="app_order_no">เลขที่ใบสั่งซื้อ: %1$s</string>
-    <string name="app_loan_money_xxx">จำนวนเงินกู้: บาท%1$s</string>
+    <string name="app_loan_money_xxx">จำนวนเงินกู้: %1$sบาท</string>
     <string name="app_loan_time_xxx">ระยะกู้ยืม: %1$s个月</string>
     <string name="app_receive_bank">บัญชีธนาคาร: %1$s</string>
     <string name="app_receive_bank_card_id">หมายเลขบัตรธนาคาร: %1$s</string>

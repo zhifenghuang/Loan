@@ -12,12 +12,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
+import com.common.lib.bean.LoanInfoBean;
 import com.common.lib.bean.RealInfoBean;
+import com.common.lib.constant.Constants;
 import com.common.lib.dialog.MyDialogFragment;
 import com.common.lib.fragment.BaseFragment;
 import com.common.lib.manager.DataManager;
+import com.common.lib.utils.BaseUtils;
 import com.common.lib.utils.LogUtil;
 import com.elephant.loan.R;
+import com.elephant.loan.activity.ContractActivity;
 import com.elephant.loan.activity.RealNameVerifyActivity;
 import com.elephant.loan.contract.MyLoanContract;
 import com.elephant.loan.presenter.MyLoanPresenter;
@@ -190,6 +194,17 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
                         dialogFragment.dismiss();
                         break;
                     case R.id.tvLookContract:
+                        LoanInfoBean bean = new LoanInfoBean();
+                        bean.setAmount(mLoanValue);
+                        bean.setAmount_class(mRange);
+                        bean.setTerm(mMonth);
+                        bean.setOrder_id("");
+                        bean.setCreated_at(BaseUtils.StaticParams.longToDate2(System.currentTimeMillis()));
+                        bean.setRate(mRate.substring(mRate.length() - 1));
+                        Bundle bundle = new Bundle();
+                        bundle.putInt(Constants.BUNDLE_EXTRA, 100);
+                        bundle.putSerializable(Constants.BUNDLE_EXTRA_2, bean);
+                        openActivity(ContractActivity.class, bundle);
                         break;
                     case R.id.btn:
                         getPresenter().applyLoan(mLoanValue, mRange, mMonth);

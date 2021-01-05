@@ -3,6 +3,7 @@ package com.common.lib.activity
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.text.Html
 import android.util.DisplayMetrics
@@ -20,6 +21,7 @@ import com.common.lib.constant.EventBusEvent
 import com.common.lib.fragment.BaseFragment
 import com.common.lib.mvp.IPresenter
 import com.common.lib.utils.BaseUtils
+import com.common.lib.utils.LogUtil
 import com.common.lib.utils.StringUtil
 import com.gyf.immersionbar.ImmersionBar
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -28,6 +30,8 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
+import java.io.InputStream
+import java.net.URL
 import java.util.concurrent.TimeUnit
 
 abstract class BaseActivity<P : IPresenter> : BaseDialogActivity(), View.OnClickListener {
@@ -182,7 +186,27 @@ abstract class BaseActivity<P : IPresenter> : BaseDialogActivity(), View.OnClick
     }
 
     protected fun setHtml(id: Int, str: String) {
-        findViewById<TextView>(id).setText(Html.fromHtml(str))
+        findViewById<TextView>(id).setText(
+            Html.fromHtml(
+                str,
+                Html.ImageGetter { source ->
+                    var `is`: InputStream? = null
+                    try {
+                        `is` = URL(source).content as InputStream
+                        val d =
+                            Drawable.createFromStream(`is`, "src")
+                        d.setBounds(
+                            0, 0, d.intrinsicWidth,
+                            d.intrinsicHeight
+                        )
+                        `is`!!.close()
+                        return@ImageGetter d
+                    } catch (e: Exception) {
+                        return@ImageGetter null
+                    }
+                }, null
+            )
+        )
     }
 
     protected fun getTextById(id: Int): String {

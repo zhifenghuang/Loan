@@ -176,6 +176,14 @@ class HttpMethods private constructor() {
         toSubscribe(observable, observer)
     }
 
+    fun contract(
+        type: Int,
+        observer: HttpObserver<BasicResponse<ArrayList<ArticleBean>>, ArrayList<ArticleBean>>
+    ) {
+        val observable = api.contract(type)
+        toSubscribe(observable, observer)
+    }
+
     fun balance(
         observer: HttpObserver<BasicResponse<BalanceBean>, BalanceBean>
     ) {

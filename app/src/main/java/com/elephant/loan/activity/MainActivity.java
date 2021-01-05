@@ -107,6 +107,9 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
 
     private void resetBottomBar(int currentPos) {
         mCurrentItem = currentPos;
+        if (currentPos == 1) {
+            ((WalletFragment) mBaseFragment.get(1)).refreshWallet();
+        }
         LinearLayout llBottom = findViewById(R.id.llBottom);
         int count = llBottom.getChildCount();
         ViewGroup itemView;
