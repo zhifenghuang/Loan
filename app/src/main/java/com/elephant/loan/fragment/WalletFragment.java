@@ -170,14 +170,14 @@ public class WalletFragment extends BaseFragment<WalletContract.Presenter> imple
             return;
         }
         WithdrawDetailBean bean = list.get(0);
-        setText(R.id.tvWithdrawTime, bean.getCreated_at());
-        setText(R.id.tvWithdrawMoney, bean.getMoney() + "บาท");
         int status = bean.getStatus();
         TextView tvWithdrawStatus = getView().findViewById(R.id.tvWithdrawStatus);
         if (status == 0) {
+            setText(R.id.tvWithdrawTime, bean.getCreated_at().substring(0, 10));
             setText(tvWithdrawStatus, R.string.app_withdraw_status_0);
             setText(R.id.tvWithdrawReason, R.string.app_withdraw_status_0_reason);
             setTextColor(tvWithdrawStatus, R.color.color_f2_bc_0b);
+            setText(R.id.tvWithdrawMoney, bean.getMoney() + "บาท");
         } else if (status == 1) {
             setText(tvWithdrawStatus, R.string.app_no);
             setText(R.id.tvWithdrawReason, R.string.app_no);
@@ -185,13 +185,17 @@ public class WalletFragment extends BaseFragment<WalletContract.Presenter> imple
             setText(R.id.tvWithdrawMoney, R.string.app_no);
             setTextColor(tvWithdrawStatus, R.color.color_0d_0d_0d);
         } else if (status == 2) {
+            setText(R.id.tvWithdrawTime, bean.getCreated_at().substring(0, 10));
             setText(tvWithdrawStatus, R.string.app_withdraw_status_2);
             setTextColor(tvWithdrawStatus, R.color.color_25_ac_1b);
             setText(R.id.tvWithdrawReason, bean.getTips());
+            setText(R.id.tvWithdrawMoney, bean.getMoney() + "บาท");
         } else {
+            setText(R.id.tvWithdrawTime, bean.getCreated_at().substring(0, 10));
             setText(tvWithdrawStatus, R.string.app_withdraw_status_3);
             setTextColor(tvWithdrawStatus, R.color.color_f6_3e_3e);
             setText(R.id.tvWithdrawReason, bean.getTips());
+            setText(R.id.tvWithdrawMoney, bean.getMoney() + "บาท");
         }
     }
 

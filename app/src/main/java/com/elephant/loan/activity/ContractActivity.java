@@ -66,13 +66,13 @@ public class ContractActivity extends BaseActivity<ContractContract.Presenter> i
                 replace("{user_name}", bean.getName())
                 .replace("{id_card}", bean.getId_card())
                 .replace("{loan_money2}", mLoanInfo.getAmount())
-                .replace("{loan_time}", mLoanInfo.getTerm() + getString(R.string.app_sum_month))
+                .replace("{loan_time}", mLoanInfo.getTerm())
                 .replace("{loan_phone}", bean.getPhone())
                 .replace("{contract_no}", mLoanInfo.getOrder_id())
                 .replace("{loan_date}", mLoanInfo.getCreated_at().substring(0, 10))
                 .replace("{loan_date_time}", mLoanInfo.getCreated_at().substring(0, 10))
                 .replace("{loan_money1}", mLoanInfo.getAmount_class())
-                .replace("{loan_term}", mLoanInfo.getTerm() + getString(R.string.app_sum_month))
+                .replace("{loan_term}", mLoanInfo.getTerm())
                 .replace("{loan_rate}", mLoanInfo.getRate() + "%")
                 .replace("{user_sign}", signUrl);
         setHtml(R.id.tvContent, content);

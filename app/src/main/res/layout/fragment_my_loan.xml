@@ -201,7 +201,7 @@
             android:layout_weight="1"
             android:background="@drawable/app_shape_4968ea_4"
             android:gravity="center"
-            android:text="@string/app_money_0"
+            android:text="@string/app_money_0_title"
             android:textColor="@color/color_ff_ff_ff"
             android:textSize="@dimen/dimen_10"
             android:textStyle="bold" />
@@ -217,7 +217,7 @@
             android:layout_weight="1"
             android:background="@drawable/app_shape_ffffff_4"
             android:gravity="center"
-            android:text="@string/app_money_1"
+            android:text="@string/app_money_1_title"
             android:textColor="@color/color_8b_8b_8b"
             android:textSize="@dimen/dimen_10"
             android:textStyle="bold" />
@@ -233,7 +233,7 @@
             android:layout_weight="1"
             android:background="@drawable/app_shape_ffffff_4"
             android:gravity="center"
-            android:text="@string/app_money_2"
+            android:text="@string/app_money_2_title"
             android:textColor="@color/color_8b_8b_8b"
             android:textSize="@dimen/dimen_10"
             android:textStyle="bold" />
@@ -256,7 +256,7 @@
             android:layout_weight="1"
             android:background="@drawable/app_shape_ffffff_4"
             android:gravity="center"
-            android:text="@string/app_money_3"
+            android:text="@string/app_money_3_title"
             android:textColor="@color/color_8b_8b_8b"
             android:textSize="@dimen/dimen_10"
             android:textStyle="bold" />
@@ -272,7 +272,7 @@
             android:layout_weight="1"
             android:background="@drawable/app_shape_ffffff_4"
             android:gravity="center"
-            android:text="@string/app_money_4"
+            android:text="@string/app_money_4_title"
             android:textColor="@color/color_8b_8b_8b"
             android:textSize="@dimen/dimen_10"
             android:textStyle="bold" />
@@ -288,7 +288,7 @@
             android:layout_weight="1"
             android:background="@drawable/app_shape_ffffff_4"
             android:gravity="center"
-            android:text="@string/app_money_5"
+            android:text="@string/app_money_5_title"
             android:textColor="@color/color_8b_8b_8b"
             android:textSize="@dimen/dimen_10"
             android:textStyle="bold" />

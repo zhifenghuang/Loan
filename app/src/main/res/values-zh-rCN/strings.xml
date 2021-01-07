@@ -35,6 +35,13 @@
     <string name="app_money_3">200,000-500,000</string>
     <string name="app_money_4">500,000-1,000,000</string>
     <string name="app_money_5">1,000,000以上</string>
+    <string name="app_money_0_title">10k-50k</string>
+    <string name="app_money_1_title">50k-100k</string>
+    <string name="app_money_2_title">100k-200k</string>
+    <string name="app_money_3_title">200k-500k</string>
+    <string name="app_money_4_title">500k-1,000k</string>
+    <string name="app_money_5_title">1,000k以上</string>
+
     <string name="app_loan_time_0">12个月</string>
     <string name="app_loan_time_1">18个月</string>
     <string name="app_loan_time_2">24个月</string>
@@ -52,7 +59,7 @@
     <string name="app_the_window_will_close_xxx_second">此窗口会在%1$s秒后自动关闭</string>
 
     <string name="app_sure_loan_info">贷款信息确认</string>
-    <string name="app_loan_user_info">贷款人姓名：%1$s\n\n贷款人身份证号：%2$s\n\n贷款人手机号：%3$s\n\n预计贷款金额：%4$s\n\n贷款时间：%5$s\n\n个月每月利率：%6$s\n</string>
+    <string name="app_loan_user_info">贷款人姓名：%1$s\n\n贷款人身份证号：%2$s\n\n贷款人手机号：%3$s\n\n预计贷款金额：%4$s\n\n贷款时间：%5$s\n\n每月利率：%6$s\n</string>
 
     <string name="app_account_balance">账户余额（บาท）</string>
     <string name="app_withdraw_now">立即提现</string>

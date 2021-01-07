@@ -35,6 +35,12 @@
     <string name="app_money_3">200,000-500,000</string>
     <string name="app_money_4">500,000-1,000,000</string>
     <string name="app_money_5">สูงกว่า 1,000,000</string>
+    <string name="app_money_0_title">10k-50k</string>
+    <string name="app_money_1_title">50k-100k</string>
+    <string name="app_money_2_title">100k-200k</string>
+    <string name="app_money_3_title">200k-500k</string>
+    <string name="app_money_4_title">500k-1,000k</string>
+    <string name="app_money_5_title">สูงกว่า 1,000k</string>
     <string name="app_loan_time_0">12เดือน</string>
     <string name="app_loan_time_1">18เดือน</string>
     <string name="app_loan_time_2">24เดือน</string>
@@ -184,7 +190,7 @@
     <string name="app_select_bank">เลือกธนาคาร</string>
 
 
-    <string name="app_card_owner_name">ชชื่อผู้ถือบัตรบัญชีธนาคาร</string>
+    <string name="app_card_owner_name">ชื่อผู้ถือบัตรบัญชีธนาคาร</string>
     <string name="app_please_input_card_owner_name">โปรดป้อนชื่อเจ้าของบัตร</string>
     <string name="app_open_card_bank">บัญชีธนาคาร</string>
     <string name="app_please_select_bank">กรุณาเลือกธนาคาร</string>

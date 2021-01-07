@@ -59,7 +59,7 @@
             android:layout_marginLeft="@dimen/dimen_10"
             android:layout_marginRight="@dimen/dimen_12"
             android:text="@string/app_loan_agreement"
-            android:textColor="@color/color_db_db_db"
+            android:textColor="@color/color_e3_4e_47"
             android:textSize="@dimen/dimen_13" />
 
 

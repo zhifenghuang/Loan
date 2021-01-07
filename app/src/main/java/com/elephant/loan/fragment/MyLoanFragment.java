@@ -48,15 +48,12 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
     private MyHandler myHandler;
 
     private static class MyHandler extends Handler {
-        // 定义弱引用实例
         private WeakReference<MyLoanFragment> mFragmentWeakReference;
 
         public MyHandler(MyLoanFragment fragment) {
-            // 使用WeakReference弱引用持有Activity实例
             this.mFragmentWeakReference = new WeakReference<>(fragment);
         }
 
-        // 通过重写handlerMessage() 从而确定更新UI的操作
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -115,7 +112,7 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
                     return;
                 }
                 mLoanValue = (String) v.getTag();
-                mRange = ((TextView) v).getText().toString();
+                mRange = (String) v.getTag(R.id.tag);
                 mRange = mRange.replaceAll("\n", "");
                 setText(R.id.tvMoney, mRange);
                 resetTabs((TextView) v, getView().findViewById(R.id.tvRange1), getView().findViewById(R.id.tvRange2), getView().findViewById(R.id.tvRange3),
@@ -331,16 +328,22 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
                 } else if (key.equals("loan_class_1")) {
                     mLoanValue = value;
                     getView().findViewById(R.id.tvRange1).setTag(value);
+                    getView().findViewById(R.id.tvRange1).setTag(R.id.tag, getString(R.string.app_money_0));
                 } else if (key.equals("loan_class_2")) {
                     getView().findViewById(R.id.tvRange2).setTag(value);
+                    getView().findViewById(R.id.tvRange2).setTag(R.id.tag, getString(R.string.app_money_1));
                 } else if (key.equals("loan_class_3")) {
                     getView().findViewById(R.id.tvRange3).setTag(value);
+                    getView().findViewById(R.id.tvRange3).setTag(R.id.tag, getString(R.string.app_money_2));
                 } else if (key.equals("loan_class_4")) {
                     getView().findViewById(R.id.tvRange4).setTag(value);
+                    getView().findViewById(R.id.tvRange4).setTag(R.id.tag, getString(R.string.app_money_3));
                 } else if (key.equals("loan_class_5")) {
                     getView().findViewById(R.id.tvRange5).setTag(value);
+                    getView().findViewById(R.id.tvRange5).setTag(R.id.tag, getString(R.string.app_money_4));
                 } else if (key.equals("loan_class_6")) {
                     getView().findViewById(R.id.tvRange6).setTag(value);
+                    getView().findViewById(R.id.tvRange6).setTag(R.id.tag, getString(R.string.app_money_5));
                 }
             } catch (Exception e) {
 
