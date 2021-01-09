@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class MyLoanContract {
     public interface View extends IView {
-        public void getBannerSuccess(String banner);
+        public void getBannerSuccess(ArrayList<String> banners);
 
         public void getLoanInfoSuccess(ArrayList<HashMap<String, String>> list);
 

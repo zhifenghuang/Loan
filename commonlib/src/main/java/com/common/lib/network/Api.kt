@@ -45,7 +45,7 @@ interface Api {
     ): Observable<BasicResponse<ArrayList<HashMap<String, String>>>>
 
     @GET("api/params/banner")
-    fun banner(): Observable<BasicResponse<String>>
+    fun banner(): Observable<BasicResponse<ArrayList<String>>>
 
     @GET("api/params/kfurl")
     fun serviceUrl(): Observable<BasicResponse<String>>

@@ -413,7 +413,7 @@
         <com.xj.marqueeview.MarqueeView
             android:id="@+id/marqueeView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/dimen_2"
             app:mvAnimDuration="500"

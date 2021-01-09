@@ -1,15 +1,14 @@
 package com.elephant.loan.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
 import com.common.lib.bean.LoanInfoBean;
@@ -26,8 +25,7 @@ import com.elephant.loan.activity.RealNameVerifyActivity;
 import com.elephant.loan.contract.MyLoanContract;
 import com.elephant.loan.presenter.MyLoanPresenter;
 import com.xj.marqueeview.MarqueeView;
-import com.xj.marqueeview.base.ItemViewDelegate;
-import com.xj.marqueeview.base.MultiItemTypeAdapter;
+import com.xj.marqueeview.base.CommonAdapter;
 import com.xj.marqueeview.base.ViewHolder;
 
 import org.jetbrains.annotations.NotNull;
@@ -36,6 +34,7 @@ import org.jetbrains.annotations.Nullable;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> implements MyLoanContract.View {
 
@@ -60,7 +59,7 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
             switch (msg.what) {
                 case 0:
                     MyLoanFragment fragment = mFragmentWeakReference.get();
-                    if (fragment != null && fragment.getView() != null) {
+                    if (fragment != null && fragment.getView() != null && fragment.mListBanner == null) {
                         fragment.getPresenter().banner();
                         sendEmptyMessageDelayed(0, 5 * 1000);
                     }
@@ -217,22 +216,18 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
     protected void updateUIText() {
     }
 
-    private MultiItemTypeAdapter<String> mMultiItemTypeAdapter;
-    private ArrayList<String> mListBanner;
+    public ArrayList<String> mListBanner;
 
     @Override
-    public void getBannerSuccess(String banner) {
-        if (getView() == null || TextUtils.isEmpty(banner)) {
+    public void getBannerSuccess(ArrayList<String> banners) {
+        if (getView() == null || banners == null || banners.isEmpty()) {
             return;
         }
+        mListBanner = banners;
+        LogUtil.LogE("size: " + banners.size());
         MarqueeView marqueeView = getView().findViewById(R.id.marqueeView);
-        mListBanner = new ArrayList<>();
-        mListBanner.add(banner);
-        mListBanner.add(banner);
-        mMultiItemTypeAdapter = new MultiItemTypeAdapter(getActivity(), mListBanner);
-        mMultiItemTypeAdapter.addItemViewDelegate(new TextItemViewDelegate());
-        marqueeView.setAdapter(mMultiItemTypeAdapter);
-        marqueeView.stopFilp();
+        SimpleTextAdapter simpleTextAdapter = new SimpleTextAdapter(getActivity(), mListBanner);
+        marqueeView.setAdapter(simpleTextAdapter);
         marqueeView.startFlip();
     }
 
@@ -369,23 +364,18 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
         myHandler.removeCallbacksAndMessages(null);
     }
 
-    static class TextItemViewDelegate implements ItemViewDelegate<String> {
 
-        @Override
-        public int getItemViewLayoutId() {
-            return R.layout.item_banner;
+    static class SimpleTextAdapter extends CommonAdapter<String> {
+
+        public SimpleTextAdapter(Context context, List<String> datas) {
+            super(context, R.layout.item_banner, datas);
         }
 
         @Override
-        public boolean isForViewType(String item, int position) {
-            return true;
+        protected void convert(ViewHolder viewHolder, String item, int position) {
+            TextView tv = viewHolder.getView(R.id.tvBanner);
+            tv.setText(item);
         }
-
-        @Override
-        public void convert(ViewHolder holder, String multiTypeBean, int position) {
-            holder.setText(R.id.tvBanner, multiTypeBean);
-        }
-
 
     }
 }

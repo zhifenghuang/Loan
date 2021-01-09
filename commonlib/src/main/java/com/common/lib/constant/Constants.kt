@@ -19,4 +19,9 @@ object Constants {
 
     const val OPEN_ALBUM_CODE = 1000
     const val OPEN_CAMERA_CODE = 1001
+
+
+    const val APP_VERSION = 0  //0表示泰国版，1表示越南版
+
+
 }

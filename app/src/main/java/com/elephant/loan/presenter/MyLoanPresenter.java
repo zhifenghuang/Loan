@@ -24,13 +24,13 @@ public class MyLoanPresenter extends BasePresenter<MyLoanContract.View> implemen
     @Override
     public void banner() {
         HttpMethods.Companion.getInstance().banner(
-                new HttpObserver(false, getRootView(), new HttpListener<String>() {
+                new HttpObserver(false, getRootView(), new HttpListener<ArrayList<String>>() {
                     @Override
-                    public void onSuccess(@Nullable String bean, @Nullable String msg) {
+                    public void onSuccess(@Nullable ArrayList<String> list, @Nullable String msg) {
                         if (getRootView() == null) {
                             return;
                         }
-                        getRootView().getBannerSuccess(bean);
+                        getRootView().getBannerSuccess(list);
                     }
 
                     @Override

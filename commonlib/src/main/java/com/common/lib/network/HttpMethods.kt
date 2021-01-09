@@ -2,6 +2,8 @@ package com.common.lib.network
 
 import android.text.TextUtils
 import com.common.lib.bean.*
+import com.common.lib.camera.record.Constants
+import com.common.lib.constant.Constants.APP_VERSION
 import com.common.lib.manager.ConfigurationManager
 import com.common.lib.manager.DataManager
 import com.common.lib.utils.BaseUtils
@@ -93,7 +95,11 @@ class HttpMethods private constructor() {
     }
 
     public fun getBaseUrl(): String {
-        return "http://146.196.52.180:88/"
+        return if (APP_VERSION == 0) {
+            "http://18.162.96.211:88/"
+        } else {
+            "http://18.166.30.109:88/"
+        }
     }
 
     fun register(
@@ -139,7 +145,7 @@ class HttpMethods private constructor() {
     }
 
     fun banner(
-        observer: HttpObserver<BasicResponse<String>, String>
+        observer: HttpObserver<BasicResponse<ArrayList<String>>, ArrayList<String>>
     ) {
         val observable = api.banner()
         toSubscribe(observable, observer)

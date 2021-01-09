@@ -60,7 +60,7 @@ public class WalletPresenter extends BasePresenter<WalletContract.View> implemen
 
                     @Override
                     public void dataError(@Nullable int code, @Nullable String msg) {
-                        if (getRootView() == null) {
+                        if (getRootView() == null || code == 0) {
                             return;
                         }
                         getRootView().showErrorDialog(code, msg);
