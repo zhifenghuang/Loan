@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 
 import com.common.lib.activity.BaseActivity;
+import com.common.lib.constant.Constants;
 import com.common.lib.manager.DataManager;
 import com.common.lib.utils.MD5Util;
 import com.common.lib.utils.NetUtil;
@@ -268,11 +269,15 @@ public class LoginActivity extends BaseActivity<LoginContract.Presenter> impleme
 
     private boolean isPhoneCorrect(String phone) {
         int length = phone.length();
-        if (length == 10) {
-            return phone.startsWith("06") || phone.startsWith("08") || phone.startsWith("09");
-        }
-        if (length == 9) {
-            return phone.startsWith("6") || phone.startsWith("8") || phone.startsWith("9");
+        if (Constants.APP_VERSION == 0) {
+            if (length == 10) {
+                return phone.startsWith("06") || phone.startsWith("08") || phone.startsWith("09");
+            }
+            if (length == 9) {
+                return phone.startsWith("6") || phone.startsWith("8") || phone.startsWith("9");
+            }
+        } else {
+            return (length == 10 && phone.startsWith("0")) || length == 9;
         }
         return false;
     }

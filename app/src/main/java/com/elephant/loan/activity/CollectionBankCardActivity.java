@@ -14,6 +14,7 @@ import androidx.core.content.ContextCompat;
 
 import com.common.lib.activity.BaseActivity;
 import com.common.lib.bean.RealInfoBean;
+import com.common.lib.constant.Constants;
 import com.common.lib.dialog.MyDialogFragment;
 import com.common.lib.interfaces.OnClickCallback;
 import com.common.lib.manager.DataManager;
@@ -79,14 +80,25 @@ public class CollectionBankCardActivity extends BaseActivity<CollectionBankCardC
                 break;
             case R.id.tvSubmit:
                 String cerNo = getTextById(R.id.etCerNo);
-                if (cerNo.length() != 13) {
-                    showToast(R.string.app_please_input_cer_no);
-                    return;
-                }
                 String bankCard = getTextById(R.id.etBankCardNo);
-                if (bankCard.length() != 10 && bankCard.length() != 16) {
-                    showToast(R.string.app_please_input_card_no);
-                    return;
+                if (Constants.APP_VERSION == 0) {
+                    if (cerNo.length() != 13) {
+                        showToast(R.string.app_please_input_cer_no);
+                        return;
+                    }
+                    if (bankCard.length() != 10 && bankCard.length() != 16) {
+                        showToast(R.string.app_please_input_card_no);
+                        return;
+                    }
+                } else {
+                    if (cerNo.length() != 9 && cerNo.length() != 12) {
+                        showToast(R.string.app_please_input_cer_no);
+                        return;
+                    }
+                    if (bankCard.length() < 9 || bankCard.length() > 19) {
+                        showToast(R.string.app_please_input_card_no);
+                        return;
+                    }
                 }
                 getPresenter().uploadBankInfo(getTextById(R.id.etOwnerName), cerNo, getTextById(R.id.tvBankName), bankCard);
                 break;
@@ -102,12 +114,81 @@ public class CollectionBankCardActivity extends BaseActivity<CollectionBankCardC
                 tvTitle.setText(getString(R.string.app_select_bank));
                 WheelView wheelView = view.findViewById(R.id.wheelView);
                 ArrayList<String> list = new ArrayList<>();
-                ArrayList<Bitmap> iconList = new ArrayList<>();
-                for (int i = 0; i < 24; ++i) {
-                    iconList.add(((BitmapDrawable) getDrawable(getResources().getIdentifier("app_bank_" + i, "drawable", getPackageName()))).getBitmap());
-                    list.add(getString(getResources().getIdentifier("app_bank_" + i, "string", getPackageName())));
+                if (Constants.APP_VERSION == 0) {
+                    ArrayList<Bitmap> iconList = new ArrayList<>();
+                    for (int i = 0; i < 24; ++i) {
+                        iconList.add(((BitmapDrawable) getDrawable(getResources().getIdentifier("app_bank_" + i, "drawable", getPackageName()))).getBitmap());
+                    }
+                    list.add("SCB");
+                    list.add("BAAC");
+                    list.add("BAY");
+                    list.add("BBL");
+                    list.add("CIMB");
+                    list.add("CITI");
+                    list.add("DB");
+                    list.add("GHB");
+                    list.add("GSB");
+                    list.add("HSBC");
+                    list.add("ICBC");
+                    list.add("ISBT");
+                    list.add("KBANK");
+                    list.add("KK");
+                    list.add("KTB");
+                    list.add("LHBANK");
+                    list.add("MHCB");
+                    list.add("SCBT");
+                    list.add("SMBC");
+                    list.add("TBANK");
+                    list.add("TCRB");
+                    list.add("TMB");
+                    list.add("TSCO");
+                    list.add("UOBT");
+                    wheelView.setIcons(iconList);
+                } else {
+                    list.add("ACB");
+                    list.add("TECHCOMBANK");
+                    list.add("SACOMBANK");
+                    list.add("VIETCOMBANK");
+                    list.add("VIETINBANK");
+                    list.add("BIDV");
+                    list.add("OCEANBANK");
+                    list.add("GPBANK");
+                    list.add("AGRIBANK");
+                    list.add("TPBANK");
+                    list.add("DONGABANK");
+                    list.add("SEABANK");
+                    list.add("ABBANK");
+                    list.add("BACABANK");
+                    list.add("VIETCAPITALBANK");
+                    list.add("MSB");
+                    list.add("KIENLONGBANK");
+                    list.add("NAMABANK");
+                    list.add("NCB");
+                    list.add("VPBANK");
+                    list.add("HDBANK");
+                    list.add("OCB");
+                    list.add("MB");
+                    list.add("PVCOMBANK");
+                    list.add("VIB");
+                    list.add("SCB");
+                    list.add("SAIGONBANK");
+                    list.add("SHB");
+                    list.add("VIETABANK");
+                    list.add("BAOVIETBANK");
+                    list.add("PGBANK");
+                    list.add("EXIMBANK");
+                    list.add("LVPB");
+                    list.add("IBK");
+                    list.add("SHBVN");
+                    list.add("UOB");
+                    list.add("IVB");
+                    list.add("CIMB");
+                    list.add("PBVN");
+                    list.add("VRB");
+                    list.add("MHB");
+                    list.add("HLB");
+                    list.add("WOO");
                 }
-                wheelView.setIcons(iconList);
                 wheelView.setData(list);
                 dialogFragment.setDialogViewsOnClickListener(view, R.id.ivClose, R.id.tvOk);
             }

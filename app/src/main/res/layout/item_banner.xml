@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/color_ff_9e_01"
+        android:singleLine="true"
         android:textSize="@dimen/dimen_13" />
 
 

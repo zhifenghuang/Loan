@@ -224,7 +224,6 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
             return;
         }
         mListBanner = banners;
-        LogUtil.LogE("size: " + banners.size());
         MarqueeView marqueeView = getView().findViewById(R.id.marqueeView);
         SimpleTextAdapter simpleTextAdapter = new SimpleTextAdapter(getActivity(), mListBanner);
         marqueeView.setAdapter(simpleTextAdapter);
@@ -374,6 +373,9 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
         @Override
         protected void convert(ViewHolder viewHolder, String item, int position) {
             TextView tv = viewHolder.getView(R.id.tvBanner);
+            if (item.contains("\n")) {
+                item = item.replace("\n", "");
+            }
             tv.setText(item);
         }
 

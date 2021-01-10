@@ -14,6 +14,7 @@ import androidx.core.content.ContextCompat;
 
 import com.common.lib.activity.BaseActivity;
 import com.common.lib.bean.RealInfoBean;
+import com.common.lib.constant.Constants;
 import com.common.lib.dialog.MyDialogFragment;
 import com.common.lib.interfaces.OnClickCallback;
 import com.common.lib.manager.DataManager;
@@ -104,9 +105,16 @@ public class IdentityInfoActivity extends BaseActivity<IdentityInfoContract.Pres
         switch (v.getId()) {
             case R.id.tvSubmit:
                 String cerNo = getTextById(R.id.etCerNo);
-                if (cerNo.length() != 13) {
-                    showToast(R.string.app_please_input_cer_no);
-                    return;
+                if (Constants.APP_VERSION == 0) {
+                    if (cerNo.length() != 13) {
+                        showToast(R.string.app_please_input_cer_no);
+                        return;
+                    }
+                } else {
+                    if (cerNo.length() != 9 && cerNo.length() != 12) {
+                        showToast(R.string.app_please_input_cer_no);
+                        return;
+                    }
                 }
                 getPresenter().uploadIdentityInfo(getTextById(R.id.etRealName), cerNo, mCerFrontFile, mCerBackFile);
                 break;

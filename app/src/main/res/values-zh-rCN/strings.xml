@@ -156,31 +156,6 @@
     <string name="app_income_4">1,000,001-5,000,000</string>
     <string name="app_income_5">5,000,001以上</string>
 
-    <string name="app_bank_0">SCB</string>
-    <string name="app_bank_1">BAAC</string>
-    <string name="app_bank_2">BAY</string>
-    <string name="app_bank_3">BBL</string>
-    <string name="app_bank_4">CIMB</string>
-    <string name="app_bank_5">CITI</string>
-    <string name="app_bank_6">DB</string>
-    <string name="app_bank_7">GHB</string>
-    <string name="app_bank_8">GSB</string>
-    <string name="app_bank_9">HSBC</string>
-    <string name="app_bank_10">ICBC</string>
-    <string name="app_bank_11">ISBT</string>
-    <string name="app_bank_12">KBANK</string>
-    <string name="app_bank_13">KK</string>
-    <string name="app_bank_14">KTB</string>
-    <string name="app_bank_15">LHBANK</string>
-    <string name="app_bank_16">MHCB</string>
-    <string name="app_bank_17">SCBT</string>
-    <string name="app_bank_18">SMBC</string>
-    <string name="app_bank_19">TBANK</string>
-    <string name="app_bank_20">TCRB</string>
-    <string name="app_bank_21">TMB</string>
-    <string name="app_bank_22">TSCO</string>
-    <string name="app_bank_23">UOBT</string>
-
     <string name="app_failed">失败</string>
     <string name="app_failed_reason">您输入的信息无效或不完整。\n请检查新的信息</string>
     <string name="app_sure_back">你当前填写的信息尚未提交\n确定要返回主界面吗</string>

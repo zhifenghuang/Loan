@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<resources>
+    <string name="common_ok">xác nhận</string>
+    <string name="common_cancel">hủy bỏ</string>
+    <string name="common_take_photo">Chụp ảnh</string>
+    <string name="common_record">Chụp ảnh</string>
+    <string name="common_album">Chọn từ album điện thoại</string>
+</resources>

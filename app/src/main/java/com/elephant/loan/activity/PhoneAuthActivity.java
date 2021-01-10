@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat;
 
 import com.common.lib.activity.BaseActivity;
 import com.common.lib.bean.RealInfoBean;
+import com.common.lib.constant.Constants;
 import com.common.lib.dialog.MyDialogFragment;
 import com.common.lib.interfaces.OnClickCallback;
 import com.common.lib.manager.DataManager;
@@ -185,11 +186,15 @@ public class PhoneAuthActivity extends BaseActivity<PhoneAuthContract.Presenter>
 
     private boolean isPhoneCorrect(String phone) {
         int length = phone.length();
-        if (length == 10) {
-            return phone.startsWith("06") || phone.startsWith("08") || phone.startsWith("09");
-        }
-        if (length == 9) {
-            return phone.startsWith("6") || phone.startsWith("8") || phone.startsWith("9");
+        if (Constants.APP_VERSION == 0) {
+            if (length == 10) {
+                return phone.startsWith("06") || phone.startsWith("08") || phone.startsWith("09");
+            }
+            if (length == 9) {
+                return phone.startsWith("6") || phone.startsWith("8") || phone.startsWith("9");
+            }
+        } else {
+            return (length == 10 && phone.startsWith("0")) || length == 9;
         }
         return false;
     }
