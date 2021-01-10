@@ -65,7 +65,7 @@ public class ContractActivity extends BaseActivity<ContractContract.Presenter> i
         String content = list.get(0).getContent().
                 replace("{user_name}", bean.getName())
                 .replace("{id_card}", bean.getId_card())
-                .replace("{loan_money2}", mLoanInfo.getAmount())
+                .replace("{loan_money2}", mLoanInfo.geAmountStr())
                 .replace("{loan_time}", mLoanInfo.getTerm())
                 .replace("{loan_phone}", bean.getPhone())
                 .replace("{contract_no}", mLoanInfo.getOrder_id())

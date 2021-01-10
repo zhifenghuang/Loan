@@ -110,10 +110,10 @@ public class WalletFragment extends BaseFragment<WalletContract.Presenter> imple
     protected void updateUIText() {
         BalanceBean bean = DataManager.Companion.getInstance().getBalance();
         if (bean == null || bean.getMoney() <= 0.0) {
-            setText(R.id.tvBalance, "0.00");
+            setText(R.id.tvBalance, "0");
             setViewGone(R.id.tvWithdraw);
         } else {
-            setText(R.id.tvBalance, String.valueOf(bean.getMoney()));
+            setText(R.id.tvBalance, bean.getMoneyStr());
             setViewVisible(R.id.tvWithdraw);
         }
         RealInfoBean infoBean = DataManager.Companion.getInstance().getMyInfo();
@@ -177,7 +177,7 @@ public class WalletFragment extends BaseFragment<WalletContract.Presenter> imple
             setText(tvWithdrawStatus, R.string.app_withdraw_status_0);
             setText(R.id.tvWithdrawReason, R.string.app_withdraw_status_0_reason);
             setTextColor(tvWithdrawStatus, R.color.color_f2_bc_0b);
-            setText(R.id.tvWithdrawMoney, bean.getMoney() + "บาท");
+            setText(R.id.tvWithdrawMoney, bean.geMoneyStr() + "บาท");
         } else if (status == 1) {
             setText(tvWithdrawStatus, R.string.app_no);
             setText(R.id.tvWithdrawReason, R.string.app_no);
@@ -189,13 +189,13 @@ public class WalletFragment extends BaseFragment<WalletContract.Presenter> imple
             setText(tvWithdrawStatus, R.string.app_withdraw_status_2);
             setTextColor(tvWithdrawStatus, R.color.color_25_ac_1b);
             setText(R.id.tvWithdrawReason, bean.getTips());
-            setText(R.id.tvWithdrawMoney, bean.getMoney() + "บาท");
+            setText(R.id.tvWithdrawMoney, bean.geMoneyStr() + "บาท");
         } else {
             setText(R.id.tvWithdrawTime, bean.getCreated_at().substring(0, 10));
             setText(tvWithdrawStatus, R.string.app_withdraw_status_3);
             setTextColor(tvWithdrawStatus, R.color.color_f6_3e_3e);
             setText(R.id.tvWithdrawReason, bean.getTips());
-            setText(R.id.tvWithdrawMoney, bean.getMoney() + "บาท");
+            setText(R.id.tvWithdrawMoney, bean.geMoneyStr() + "บาท");
         }
     }
 

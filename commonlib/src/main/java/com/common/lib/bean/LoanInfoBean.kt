@@ -1,6 +1,7 @@
 package com.common.lib.bean
 
 import java.io.Serializable
+import java.text.DecimalFormat
 
 class LoanInfoBean : Serializable {
     var id = 0
@@ -16,4 +17,22 @@ class LoanInfoBean : Serializable {
     var repay_m = ""
     var created_at = ""
     var updated_at = ""
+
+    fun geAmountStr(): String {
+        try {
+            return DecimalFormat.getNumberInstance().format(amount.toInt())
+        } catch (e: Exception) {
+
+        }
+        return amount;
+    }
+
+    fun geRepayStr(): String {
+        try {
+            return DecimalFormat.getNumberInstance().format(repay_m.toInt())
+        } catch (e: Exception) {
+
+        }
+        return repay_m;
+    }
 }

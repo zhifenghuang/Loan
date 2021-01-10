@@ -68,8 +68,6 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
         }
     }
 
-    ;
-
     @NotNull
     @Override
     protected MyLoanContract.Presenter onCreatePresenter() {
@@ -95,6 +93,10 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
         myHandler.sendEmptyMessage(0);
         resetView();
         getPresenter().getLoanInfo();
+        if (Constants.APP_VERSION == 1) {
+            setViewGone(R.id.tv);
+            setText(R.id.tvTitle, "");
+        }
     }
 
     @Override
@@ -302,7 +304,8 @@ public class MyLoanFragment extends BaseFragment<MyLoanContract.Presenter> imple
                 key = map.get("key");
                 value = map.get("value");
                 if (key.equals("loan_rate")) {
-                    mRate = Integer.parseInt(value) * 0.01 + "%";
+                    mRate = value + "%";
+                    LogUtil.LogE("rate: " + mRate);
                     setText(R.id.tvRate, mRate);
                 } else if (key.equals("loan_term") && !TextUtils.isEmpty(value)) {
                     String[] terms = value.split(",");

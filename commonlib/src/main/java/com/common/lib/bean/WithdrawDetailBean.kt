@@ -2,6 +2,7 @@ package com.common.lib.bean
 
 import android.text.TextUtils
 import java.io.Serializable
+import java.text.DecimalFormat
 
 class WithdrawDetailBean : Serializable {
     var id = 0
@@ -11,6 +12,15 @@ class WithdrawDetailBean : Serializable {
     var money = ""
     var created_at = ""
     var updated_at = ""
+
+    fun geMoneyStr(): String {
+        try {
+            return DecimalFormat.getNumberInstance().format(money.toInt())
+        } catch (e: Exception) {
+
+        }
+        return money;
+    }
 //
 //    fun getMoneyStr(): String? {
 //        if (TextUtils.isEmpty(money)) {

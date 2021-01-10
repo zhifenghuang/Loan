@@ -82,7 +82,7 @@ public class MineFragment extends BaseFragment<MineContract.Presenter> implement
     @Override
     protected void updateUIText() {
         BalanceBean bean = DataManager.Companion.getInstance().getBalance();
-        setText(R.id.tvBalance, bean == null ? "0.00" : String.valueOf(bean.getMoney()));
+        setText(R.id.tvBalance, bean == null ? "0" : bean.getMoneyStr());
         RealInfoBean infoBean = DataManager.Companion.getInstance().getMyInfo();
         setText(R.id.tvId, DataManager.Companion.getInstance().getLoginPhone());
         setText(R.id.tvName, infoBean.getName());

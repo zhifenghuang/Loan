@@ -41,6 +41,10 @@ public class SplashActivity extends BaseActivity<EmptyContract.Presenter> implem
         }
         getResources().updateConfiguration(configuration, displayMetrics);
 
+        if (Constants.APP_VERSION == 1) {
+            setImage(R.id.iv, R.drawable.qidongy);
+        }
+
         findViewById(R.id.iv).postDelayed(new Runnable() {
             @Override
             public void run() {

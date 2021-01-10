@@ -41,7 +41,7 @@ public class LoanDetailActivity extends BaseActivity<EmptyContract.Presenter> im
         RealInfoBean bean = DataManager.Companion.getInstance().getMyInfo();
         setText(R.id.tvNo, getString(R.string.app_loan_no_xxx, mDetail.getOrder_id()));
         setText(R.id.tvTime, mDetail.getCreated_at().substring(0, 10));
-        setText(R.id.tvLoanMoney, mDetail.getAmount());
+        setText(R.id.tvLoanMoney, mDetail.geAmountStr());
         setText(R.id.tvLoanTime, mDetail.getTerm());
 
         int status = mDetail.getStatus();
@@ -73,10 +73,10 @@ public class LoanDetailActivity extends BaseActivity<EmptyContract.Presenter> im
             setTextColor(R.id.tvProgress3, R.color.color_49_68_ea);
             setBackground(R.id.ivProgress3, R.drawable.app_shape_4968ea_stroke_2_circle);
             setBackgroundColor(R.id.lineProgress, R.color.color_49_68_ea);
-            setText(R.id.tvBackMoneyMonth, getString(R.string.app_back_month_xxx, mDetail.getRepay_m()));
+            setText(R.id.tvBackMoneyMonth, getString(R.string.app_back_month_xxx, mDetail.geRepayStr()));
         }
         setText(R.id.tvOrderNo, getString(R.string.app_loan_no_xxx, mDetail.getOrder_id()));
-        setText(R.id.tvLoanMoney2, getString(R.string.app_loan_money_xxx, mDetail.getAmount()));
+        setText(R.id.tvLoanMoney2, getString(R.string.app_loan_money_xxx, mDetail.geAmountStr()));
         setText(R.id.tvLoanTime2, getString(R.string.app_loan_time_xxx, mDetail.getTerm()));
         setText(R.id.tvReceiveBank, getString(R.string.app_receive_bank, bean.getBank_name()));
         setText(R.id.tvBankCard, getString(R.string.app_receive_bank_card_id, bean.getBankCardNo()));

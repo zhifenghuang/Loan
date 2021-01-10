@@ -1,28 +1,28 @@
 <resources>
     <string name="app_name">Fast Loan</string>
 
-    <string name="app_can_loan_highest_money">Dòng cho vay lên đến 1.000.000 đồng</string>
-    <string name="app_loan_tip">10 phút đến tài khoản hàng tháng lãi suất thấp 0.5%\nBạn có thể vay không cần thế chấp và CMND</string>
+    <string name="app_can_loan_highest_money">Lên đến 100.000.000 VND</string>
+    <string name="app_loan_tip">Lãi suất hàng tháng là 0,5% ngay lập tức.\nBạn có thể vay bằng CMND</string>
     <string name="app_login">đăng nhập</string>
     <string name="app_register">đăng ký</string>
-    <string name="app_please_input_phone">Xin vui lòng điền số điện thoại của bạn</string>
-    <string name="app_input_phone_wrong">Định dạng số điện thoại không đúng</string>
-    <string name="app_please_input_password">Xin hãy điền mật khẩu</string>
-    <string name="app_please_input_verify_code">Xin vui lòng nhập mã xác minh của bạn</string>
+    <string name="app_please_input_phone">điền số di động</string>
+    <string name="app_input_phone_wrong">số di dông không chính xác</string>
+    <string name="app_please_input_password">Nhập mật khẩu</string>
+    <string name="app_please_input_verify_code">Nhập mã xác nhận</string>
     <string name="app_get_ver_code">lấy mã xác minh</string>
     <string name="app_get_ver_code_success">Nhận mã xác minh thành công</string>
     <string name="app_send_again">Gửi lại</string>
-    <string name="app_register_login">Đăng ký và đăng nhập</string>
+    <string name="app_register_login">đăng ký và đăng nhập</string>
 
-    <string name="app_my_loan">Khoản vay của tôi</string>
+    <string name="app_my_loan">khoản vay của tôi</string>
     <string name="app_wallet">ví tiền</string>
-    <string name="app_service">dịch vụ khách hàng</string>
-    <string name="app_mine"> của tôi</string>
+    <string name="app_service">dịch vụ</string>
+    <string name="app_mine">của tôi</string>
 
     <string name="app_jd_e_loan">Fast Loan</string>
-    <string name="app_easy_loan">Cho vay dễ danh</string>
-    <string name="app_quick_loan">khoản vay nhanh</string>
-    <string name="app_highest_money">Có thể cho vay lên đến 1 triệu vnd</string>
+    <string name="app_easy_loan">Fast Loan tiền vay</string>
+    <string name="app_quick_loan">vay tiền nhanh</string>
+    <string name="app_highest_money">Khoản vay tối đa 1 tỷ đồng</string>
     <string name="app_ten_minute_loan">Cho vay 10 phút</string>
     <string name="app_estimate_loan_value">Khoản vay ước tính(đồng)</string>
     <string name="app_month_rate">Lãi suất hàng tháng</string>
@@ -48,9 +48,9 @@
     <string name="app_loan_time_3">36 tháng</string>
     <string name="app_sum_month">tháng</string>
     <string name="app_sorry">Lấy làm tiếc</string>
-    <string name="app_please_verify_real_name_first">Đăng ký khoản vay sau khi xác thực tên thật</string>
+    <string name="app_please_verify_real_name_first">Vui lòng xác minh tên thật của bạn trước khi đăng ký vay</string>
     <string name="app_click_to_real_name">Nhấp để làm mới giao diện xác thực tên thật</string>
-    <string name="app_click_look_contract">Bấm để kiểm tra hợp đồng vay</string>
+    <string name="app_click_look_contract">Bấm xem hợp đồng vay</string>
     <string name="app_loan_agreement">Bản thân tôi cũng đã đọc kỹ hợp đồng vay và kiểm tra thông tin khoản vay kỹ càng. Sau khi nhấn nút OK để đăng ký vay, hợp đồng vay sẽ có hiệu lực. Nếu vi phạm hợp đồng vì lý do cá nhân, tôi sẵn sàng chịu mọi hậu quả pháp lý.</string>
     <string name="app_sure_apply_loan">Xác định đăng ký khoản vay</string>
 
@@ -61,12 +61,12 @@
     <string name="app_sure_loan_info">Xác nhận thông tin khoản vay</string>
     <string name="app_loan_user_info">Tên Thấu kính：%1$s\n\nSố thẻ căn cước của Kính thư：%2$s\n\nSố điện thoại di động của máy kéo：%3$s\n\nGiá khoản vay：%4$s\n\nThời gian vay：%5$s\n\nTỷ lệ lãi suất tháng：%6$s\n</string>
 
-    <string name="app_account_balance">số dư tài khoản（đồng）</string>
+    <string name="app_account_balance">Số dư tài khoản（đồng）</string>
     <string name="app_withdraw_now">Rút tiền ngay bây giờ</string>
     <string name="app_my_bank_card">Thẻ ngân hàng của tôi</string>
     <string name="app_no_bind_bank_card">Không ràng buộc thẻ ngân hàng</string>
     <string name="app_bank_protect_account_money">Sự an toàn của quỹ tài khoản được đảm bảo bởi ngân hàng</string>
-    <string name="app_withdraw_status_title">Tình trạng rút tiền</string>
+    <string name="app_withdraw_status_title">trạng thái rút tiền</string>
     <string name="app_withdraw_time">thời gian rút tiền:</string>
     <string name="app_withdraw_money">Số tiền rút:</string>
     <string name="app_xxx_money">%1$s（đồng）</string>
@@ -79,21 +79,21 @@
     <string name="app_withdraw_reason">nguyên nhân:</string>
     <string name="app_apply_withdraw">nộp đơn rút tiền</string>
     <string name="app_withdraw_money_xxx">số tiền rút:%1$s（đồng）</string>
-    <string name="app_please_input_withdraw_password">Vui lòng nhập mật khẩu rút tiền gồm 6 chữ số</string>
-    <string name="app_withdraw_pas_tip">Nếu bạn quên mật khẩu rút tiền hoặc không có mật khẩu rút tiền\nVui lòng liên hệ với dịch vụ khách hàng trực tuyến</string>
-    <string name="app_withdraw_success_tip">Đơn yêu cầu khoản vay thành công\nSau khi kiểm tra khoản vay thành công, nền tảng sẽ thông báo cho bạn qua SMS hoặc điện thoại</string>
-    <string name="app_withdraw_failed_tip">Bạn không có số tiền để rút vào lúc này và không thể rút</string>
+    <string name="app_please_input_withdraw_password">Nhập mật khẩu gồm 6 chữ số</string>
+    <string name="app_withdraw_pas_tip">Không có mật khẩu rút tiền\nVui lòng liên hệ với dịch vụ khách hàng trực tuyến</string>
+    <string name="app_withdraw_success_tip">Đơn đặt hàng khoản vay thành công\nVui lòng đợi xem xét</string>
+    <string name="app_withdraw_failed_tip">Không có số tiền nào có thể rút được</string>
 
     <string name="app_your_line_service_manager">Người quản lý dịch vụ khách hàng zalo chuyên dụng của bạn</string>
     <string name="app_click_contact">Bấm để liên hệ</string>
-    <string name="app_service_time">Giờ làm việc của dịch vụ chăm sóc khách hàng là: 09:00 đến 09:00 mỗi ngày</string>
+    <string name="app_service_time">Giờ làm việc: 09:00 đến 09:00 mỗi ngày</string>
 
     <string name="app_wallet_balance">Số dư trên ví</string>
     <string name="app_real_name_verify">Xác minh tên thật</string>
     <string name="app_not_verify">không xác nhận</string>
-    <string name="app_verified">xác minh</string>
+    <string name="app_verified">đã công nhận</string>
     <string name="app_my_loan_2">khoản vay của tôi</string>
-    <string name="app_my_back_money">khoản trả nợ của tôi</string>
+    <string name="app_my_back_money">trả nợ của tôi</string>
     <string name="app_online_service">dịch vụ trực tuyến</string>
     <string name="app_common_question">vấn đề thường gặp</string>
 
@@ -102,7 +102,7 @@
     <string name="app_about_us">về chúng tôi</string>
     <string name="app_version">phiên bản</string>
     <string name="app_logout">đăng xuất</string>
-    <string name="app_sure_logout">Bạn có chắc chắn đăng xuất không</string>
+    <string name="app_sure_logout">Bạn có chắc chắn đăng xuất không?</string>
 
     <string name="app_old_psw">mật khẩu củ</string>
     <string name="app_please_input_old_psw">Vui lòng nhập mật khẩu cũ</string>
@@ -114,40 +114,40 @@
     <string name="app_identity_security_auth">Xác minh danh tính</string>
     <string name="app_real_name_tip">Để đảm bảo an toàn cho tiền của bạn, vui lòng điền trung thực các thông tin sau</string>
     <string name="app_identity_info">Thông tin nhận dạng</string>
-    <string name="app_completed">đã hoàn thành</string>
+    <string name="app_completed">hoàn thành</string>
     <string name="app_data_info">thông tin dữ liệu</string>
-    <string name="app_bank_card">Nhận thẻ ngân hàng</string>
+    <string name="app_bank_card">thẻ ngân hàng nhận tiền</string>
     <string name="app_phone_auth">Xác thực điện thoại di động</string>
-    <string name="app_hand_mark">chữ ký viết tay</string>
+    <string name="app_hand_mark">Chữ ký viết tay</string>
     <string name="app_go_blank">Điền vào</string>
 
     <string name="app_real_name">Họ tên thật</string>
-    <string name="app_please_input_real_name">Vui lòng nhập tên thật của bạn</string>
-    <string name="app_cer_no">số chứng minh</string>
+    <string name="app_please_input_real_name">Nhập tên thật của bạn</string>
+    <string name="app_cer_no">tài khoản  nhận dạng</string>
     <string name="app_please_input_cer_no">chữ Số 9 hoặc 12 chữ số</string>
-    <string name="app_upload_cer_phone">Tải lên ảnh ID</string>
+    <string name="app_upload_cer_phone">Tải lên ảnh cmnd</string>
     <string name="app_upload_front_cer_phone">Tải lên ảnh mặt trước của giấy tờ tùy thân</string>
     <string name="app_upload_back_cer_phone">Tải lên ảnh mặt sau của giấy tờ tùy thân của bạn</string>
     <string name="app_submit">xác nhận nộp</string>
     <string name="app_had_submit">đã nộp</string>
-    <string name="app_take_photo">Chụp ảnh</string>
-    <string name="app_album">Chọn từ album điện thoại</string>
+    <string name="app_take_photo">hình ảnh</string>
+    <string name="app_album">Chọn từ album</string>
 
-    <string name="app_education">học lực</string>
-    <string name="app_please_select_highest_education">Vui lòng chọn bằng cấp cao nhất của tôi</string>
+    <string name="app_education">học vấn</string>
+    <string name="app_please_select_highest_education">Chọn bằng cấp cao nhất của tôi</string>
     <string name="app_income_year">Thu nhập cá nhân hàng năm</string>
-    <string name="app_please_select_income_year">Vui lòng chọn thu nhập cá nhân hàng năm</string>
+    <string name="app_please_select_income_year">Chọn thu nhập cá nhân hàng năm</string>
     <string name="app_loan_use">Mục đích vay vốn</string>
-    <string name="app_please_input_loan_use">Vui lòng nhập mục đích vay</string>
-    <string name="app_had_house">bất động sản</string>
-    <string name="app_had_car">Xe hơi</string>
+    <string name="app_please_input_loan_use">Nhập mục đích vay</string>
+    <string name="app_had_house">căn nhà</string>
+    <string name="app_had_car">xe hơi</string>
     <string name="app_had">có</string>
     <string name="app_no">không</string>
     <string name="app_ok">xác nhận</string>
     <string name="app_cancel">hủy bỏ</string>
     <string name="app_education_0">Trung học cơ sở trở xuống</string>
     <string name="app_education_1">Trung học phổ thông</string>
-    <string name="app_education_2">trường đại học</string>
+    <string name="app_education_2">đại học</string>
     <string name="app_education_3">Trên đại học</string>
     <string name="app_income_0">trên 100,000</string>
     <string name="app_income_1">100,001-300,000</string>
@@ -165,10 +165,10 @@
     <string name="app_card_owner_name">tên chủ thẻ</string>
     <string name="app_please_input_card_owner_name">Vui lòng nhập tên chủ thẻ</string>
     <string name="app_open_card_bank">tài khoản ngân hàng</string>
-    <string name="app_please_select_bank">Vui lòng chọn ngân hàng</string>
-    <string name="app_bank_card_no">thẻ ngân hàng</string>
+    <string name="app_please_select_bank">Chọn ngân hàng</string>
+    <string name="app_bank_card_no">Số thẻ ngân hàng</string>
     <string name="app_please_input_card_no">Các chữ  số  từ 9 đến 19 chữ số</string>
-    <string name="app_select_education">Chọn một mức độ</string>
+    <string name="app_select_education">Chọn một mức học vấn</string>
     <string name="app_select_income">Chọn thu nhập</string>
     <string name="app_select_bank">Chọn ngân hàng</string>
 
@@ -176,41 +176,41 @@
 
     <string name="app_write_again">Viết lại</string>
     <string name="app_you_sign">Chữ ký của bạn</string>
-    <string name="app_hand_write_tip">Vui lòng ký tên trong dòng chấm. Chữ ký phải chuẩn, đầy đủ và rõ ràng</string>
+    <string name="app_hand_write_tip">Vui lòng ký tên trong dòng chấm</string>
 
-    <string name="app_loan_no_xxx">biển số tiền vay:%1$s</string>
+    <string name="app_loan_no_xxx">số đơn tiền vay:%1$s</string>
     <string name="app_loan_money">số tiền vay</string>
     <string name="app_apply_time">thời gian nộp đơn</string>
-    <string name="app_look_contract">Xem hợp đồng</string>
+    <string name="app_look_contract">kiểm tra hợp đồng</string>
     <string name="app_contract">hợp đồng</string>
     <string name="app_loan_detail">chi tiết khoản vay</string>
     <string name="app_loan_status_0">đang kiểm tra</string>
     <string name="app_loan_status_0_explain">Khoản vay cá nhân của bạn đang được xem xét, hãy kiên nhẫn. Có tin nhắn hoặc điện thoại thông báo xét duyệt khoản vay, các bạn chú ý kiểm tra nhé</string>
     <string name="app_loan_status_1">Kiểm tra thất bại</string>
-    <string name="app_loan_status_1_explain">Việc xem xét đơn đặt hàng khoản vay hiện tại không thành công, vui lòng liên hệ với dịch vụ khách hàng trực tuyến để biết lý do cụ thể</string>
+    <string name="app_loan_status_1_explain">kiểm tra đơn hàng khoản vay hiện tại không thành công, Vui lòng liên hệ dịch vụ khách hàng trực tuyến</string>
     <string name="app_loan_status_2">kiểm tra thành công</string>
     <string name="app_loan_status_2_explain">Khoản vay của bạn đã được áp dụng thành công, vui lòng vào ví để rút tiền mặt</string>
-    <string name="app_loan_status_2_info">Sau khi khoản vay thành công, bắt đầu từ ngày 10 của tháng tiếp theo, khoản thanh toán sẽ được tự động trừ vào số thẻ tín dụng của bạn</string>
-    <string name="app_you_have_no_loan_order">Bạn hiện không có lệnh vay nào</string>
+    <string name="app_loan_status_2_info"> sau khi vay tiền thành công , Bắt đầu vào ngày 10 của tháng sau,Sẽ tự động trừ số thẻ  tài khoản của bạn</string>
+    <string name="app_you_have_no_loan_order">Hiện tại không có lệnh cho vay</string>
 
     <string name="app_back_loan_time">Thời gian trả nợ</string>
     <string name="app_back_loan_money">Số tiền trả nợ</string>
     <string name="app_back_loan_way">cách trả nợ</string>
-    <string name="app_you_have_no_back_loan_order">Bạn hiện không có bất kỳ lệnh hoàn trả nào</string>
+    <string name="app_you_have_no_back_loan_order">Hiện tại không có lệnh hoàn trả</string>
 
 
-    <string name="app_loan_progress">Tiến độ cho vay</string>
-    <string name="app_submit_complete">Gửi hoàn tất</string>
+    <string name="app_loan_progress">lịch trình  cho vay</string>
+    <string name="app_submit_complete">gửi đi hoàn thành</string>
     <string name="app_receive_success">Được nhận thành công</string>
     <string name="app_information">Mô tả tình huống</string>
     <string name="app_explain">mô tả:</string>
     <string name="app_loan_detail_1">Chi tiết khoản vay</string>
-    <string name="app_order_no">mã số đơn:%1$s</string>
+    <string name="app_order_no">Số đơn vay tiền:%1$s</string>
     <string name="app_loan_money_xxx">số tiền vay:%1$sđồng</string>
-    <string name="app_loan_time_xxx">Thời gian cho vay:%1$s个月</string>
-    <string name="app_receive_bank">tài khoản ngân hàng:%1$s</string>
-    <string name="app_receive_bank_card_id">đến số thẻ:%1$s</string>
+    <string name="app_loan_time_xxx">thời gian vay tiền:%1$s</string>
+    <string name="app_receive_bank">tới tài khoản ngân hàng:%1$s</string>
+    <string name="app_receive_bank_card_id">tới thẻ ngân hàng:%1$s</string>
     <string name="app_back_month">Trả nợ hàng tháng:</string>
     <string name="app_back_month_xxx">Trả nợ hàng tháng%1$sđồng</string>
-    <string name="app_back_information">Hướng dẫn trả nợ:</string>
+    <string name="app_back_information">chi tiết trả nợ:</string>
 </resources>

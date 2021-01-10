@@ -2,7 +2,9 @@
 <resources>
     <string name="common_ok">xác nhận</string>
     <string name="common_cancel">hủy bỏ</string>
-    <string name="common_take_photo">Chụp ảnh</string>
-    <string name="common_record">Chụp ảnh</string>
-    <string name="common_album">Chọn từ album điện thoại</string>
+    <string name="common_take_photo">hình ảnh</string>
+    <string name="common_record">hình ảnh</string>
+    <string name="common_album">Chọn từ album</string>
+
+    <string name="common_network_error">mạng bất thường</string>
 </resources>

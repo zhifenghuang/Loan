@@ -5,4 +5,6 @@
     <string name="common_take_photo">ถ่ายภาพ</string>
     <string name="common_record">ถ่ายภาพ</string>
     <string name="common_album">เลือกจากอัลบั้มโทรศัพท์</string>
+
+    <string name="common_network_error">ยกเว้นเครือข่าย</string>
 </resources>

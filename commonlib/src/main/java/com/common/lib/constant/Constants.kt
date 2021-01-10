@@ -21,7 +21,7 @@ object Constants {
     const val OPEN_CAMERA_CODE = 1001
 
 
-    const val APP_VERSION = 0  //0表示泰国版，1表示越南版
+    const val APP_VERSION = 1  //0表示泰国版，1表示越南版
 
 
 }

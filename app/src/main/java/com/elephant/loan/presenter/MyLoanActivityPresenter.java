@@ -35,7 +35,7 @@ public class MyLoanActivityPresenter extends BasePresenter<MyLoanActivityContrac
                 if (getRootView() == null) {
                     return;
                 }
-                getRootView().showErrorDialog(code, msg);
+                getRootView().getMyLoanSuccess(null);
             }
 
             @Override

@@ -37,7 +37,7 @@ public class MyBackLoanPresenter extends BasePresenter<MyBackLoanContract.View> 
                         if (getRootView() == null) {
                             return;
                         }
-                        getRootView().showErrorDialog(code, msg);
+                        getRootView().getLoanRepaySuccess(null);
                     }
 
                     @Override

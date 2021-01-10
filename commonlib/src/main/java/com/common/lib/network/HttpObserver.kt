@@ -1,11 +1,15 @@
 package com.common.lib.network
 
 
+import android.app.Activity
 import android.content.ComponentName
 import android.content.Intent
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.common.lib.R
 import com.common.lib.bean.BasicResponse
 import com.common.lib.manager.ConfigurationManager
 import com.common.lib.manager.DataManager
@@ -82,6 +86,22 @@ class HttpObserver<T : BasicResponse<Data>, Data> : Observer<T> {
 
     override fun onError(e: Throwable) {
         hideLoading()
+        if (view == null) {
+            return
+        }
+        try {
+            val activity = if (view is Activity) {
+                view as Activity
+            } else {
+                (view as Fragment).activity
+            }
+            Toast.makeText(
+                activity,
+                activity!!.getString(R.string.common_network_error), Toast.LENGTH_SHORT
+            ).show()
+        } catch (e: Exception) {
+
+        }
         listener?.connectError(e)
     }
 
