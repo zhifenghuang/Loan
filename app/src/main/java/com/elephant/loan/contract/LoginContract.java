@@ -16,5 +16,7 @@ public class LoginContract {
         public void login(String phone, String password);
 
         public void register(String phone, String password, String code);
+
+        public void installIndex();
     }
 }

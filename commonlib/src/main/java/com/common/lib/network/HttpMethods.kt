@@ -102,6 +102,17 @@ class HttpMethods private constructor() {
         }
     }
 
+    fun installIndex(
+        observer: HttpObserver<BasicResponse<Any>, Any>
+    ) {
+        //device_type=设备类型:1安卓2苹果
+        val observable = api.installIndex(
+            1,
+            "android", BaseUtils.getDeviceId(ConfigurationManager.getInstance().getContext()!!)!!
+        )
+        toSubscribe(observable, observer)
+    }
+
     fun register(
         phone: String,
         password: String,
@@ -136,11 +147,7 @@ class HttpMethods private constructor() {
     fun paramsIndex(
         observer: HttpObserver<BasicResponse<ArrayList<HashMap<String, String>>>, ArrayList<HashMap<String, String>>>
     ) {
-        val observable = api.paramsIndex(
-            1,
-            "android",
-            BaseUtils.getDeviceId(ConfigurationManager.getInstance().getContext()!!)!!
-        )
+        val observable = api.paramsIndex()
         toSubscribe(observable, observer)
     }
 

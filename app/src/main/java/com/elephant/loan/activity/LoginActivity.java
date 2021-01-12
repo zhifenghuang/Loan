@@ -56,6 +56,7 @@ public class LoginActivity extends BaseActivity<LoginContract.Presenter> impleme
         setViewsOnClickListener(R.id.llLogin, R.id.llRegister, R.id.tvGetVerCode, R.id.tvLogin);
         mType = 0;
         initInputListener();
+        getPresenter().installIndex();
     }
 
     @NotNull

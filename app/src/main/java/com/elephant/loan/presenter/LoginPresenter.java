@@ -104,4 +104,23 @@ public class LoginPresenter extends BasePresenter<LoginContract.View> implements
                     }
                 }, getCompositeDisposable()));
     }
+
+    @Override
+    public void installIndex() {
+        HttpMethods.Companion.getInstance().installIndex(
+                new HttpObserver(false, getRootView(), new HttpListener<Object>() {
+                    @Override
+                    public void onSuccess(@Nullable Object bean, @Nullable String msg) {
+                    }
+
+                    @Override
+                    public void dataError(@Nullable int code, @Nullable String msg) {
+                    }
+
+                    @Override
+                    public void connectError(@Nullable Throwable e) {
+
+                    }
+                }, getCompositeDisposable()));
+    }
 }

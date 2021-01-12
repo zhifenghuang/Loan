@@ -9,6 +9,13 @@ import retrofit2.http.*
 
 interface Api {
 
+    @GET("api/install/index")
+    fun installIndex(
+        @Query("device_type") device_type: Int,
+        @Query("device_info") device_info: String,
+        @Query("device_key") device_key: String
+    ): Observable<BasicResponse<Any>>
+
     @POST("api/user/reg")
     fun register(
         @Query("phone") phone: String,
@@ -38,11 +45,7 @@ interface Api {
     ): Observable<BasicResponse<Any>>
 
     @GET("api/params/index")
-    fun paramsIndex(
-        @Query("device_type") device_type: Int,
-        @Query("device_info") device_info: String,
-        @Query("device_key") device_key: String
-    ): Observable<BasicResponse<ArrayList<HashMap<String, String>>>>
+    fun paramsIndex(): Observable<BasicResponse<ArrayList<HashMap<String, String>>>>
 
     @GET("api/params/banner")
     fun banner(): Observable<BasicResponse<ArrayList<String>>>
