@@ -88,7 +88,7 @@ public class LoginActivity extends BaseActivity<LoginContract.Presenter> impleme
                 }
                 mType = 0;
                 resetTabs(viewId, R.id.llRegister);
-                setViewGone(R.id.llVerCode, R.id.lineVerCode);
+                setViewInvisible(R.id.llVerCode, R.id.lineVerCode);
                 setText(R.id.tvLogin, R.string.app_login);
                 TextView tvLogin = findViewById(R.id.tvLogin);
                 if (!TextUtils.isEmpty(getTextById(R.id.etPhone))

@@ -241,6 +241,12 @@ abstract class BaseActivity<P : IPresenter> : BaseDialogActivity(), View.OnClick
         }
     }
 
+    protected fun setViewInvisible(vararg ids: Int) {
+        for (id in ids) {
+            findViewById<View>(id)?.visibility = View.INVISIBLE
+        }
+    }
+
     protected fun setViewInvisible(vararg views: View) {
         for (view in views) {
             view.visibility = View.INVISIBLE

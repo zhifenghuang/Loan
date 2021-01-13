@@ -3,6 +3,7 @@ package com.elephant.loan.fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 
 import com.common.lib.fragment.BaseFragment;
@@ -48,7 +49,7 @@ public class ServiceFragment extends BaseFragment<ServiceContract.Presenter> imp
 
     @Override
     public void getServiceSuccess(String serviceUrl) {
-        if (getView() == null) {
+        if (getView() == null || TextUtils.isEmpty(serviceUrl)) {
             return;
         }
         try {
