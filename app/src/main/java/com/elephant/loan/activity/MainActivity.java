@@ -43,6 +43,8 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
         initViews();
         switchFragment(mBaseFragment.get(0));
         resetBottomBar(0);
+
+    //    getPresenter().installIndex();
     }
 
     private void initFragments() {

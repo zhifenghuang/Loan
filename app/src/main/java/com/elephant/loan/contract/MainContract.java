@@ -13,5 +13,7 @@ public class MainContract {
         public void getRealInfo();
 
         public void balance();
+
+        public void installIndex();
     }
 }
