@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat;
 import com.common.lib.activity.BaseActivity;
 import com.common.lib.constant.Constants;
 import com.common.lib.manager.DataManager;
+import com.common.lib.utils.LogUtil;
 import com.common.lib.utils.MD5Util;
 import com.common.lib.utils.NetUtil;
 import com.elephant.loan.R;
@@ -76,7 +77,9 @@ public class LoginActivity extends BaseActivity<LoginContract.Presenter> impleme
                     return;
                 }
                 if (mType == 0) {
-                    getPresenter().login(phone, MD5Util.INSTANCE.getMd5(getTextById(R.id.etPassword)));
+                    String psw = getTextById(R.id.etPassword);
+                    LogUtil.LogE(psw);
+                    getPresenter().login(phone, MD5Util.INSTANCE.getMd5(psw));
                 } else {
                     getPresenter().register(phone, getTextById(R.id.etPassword),
                             getTextById(R.id.etVerCode));
